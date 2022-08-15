@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.xinggang.Mapper.CaomaoFengcaiMapper">
-  <resultMap id="BaseResultMap" type="com.example.xinggang.Entity.CaomaoFengcai">
+<mapper namespace="com.example.xinggang.Mapper.XiangtuMinsuMapper">
+  <resultMap id="BaseResultMap" type="com.example.xinggang.Entity.XiangtuMinsu">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-    <result column="mp4_url" jdbcType="VARCHAR" property="mp4Url" />
-    <result column="mp4_name" jdbcType="VARCHAR" property="mp4Name" />
+    <result column="pic_url" jdbcType="VARCHAR" property="picUrl" />
+    <result column="pic_name" jdbcType="VARCHAR" property="picName" />
+    <result column="pic_profile" jdbcType="VARCHAR" property="picProfile" />
     <result column="village_id" jdbcType="INTEGER" property="villageId" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -68,15 +69,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, create_time, update_time, mp4_url, mp4_name, village_id
+    id, create_time, update_time, pic_url, pic_name, pic_profile, village_id
   </sql>
-  <select id="selectByExample" parameterType="com.example.xinggang.Entity.CaomaoFengcaiExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.example.xinggang.Entity.XiangtuMinsuExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from caomao_fengcai
+    from xiangtu_minsu
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -87,29 +88,29 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from caomao_fengcai
+    from xiangtu_minsu
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from caomao_fengcai
+    delete from xiangtu_minsu
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.example.xinggang.Entity.CaomaoFengcaiExample">
-    delete from caomao_fengcai
+  <delete id="deleteByExample" parameterType="com.example.xinggang.Entity.XiangtuMinsuExample">
+    delete from xiangtu_minsu
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.example.xinggang.Entity.CaomaoFengcai">
-    insert into caomao_fengcai (id, create_time, update_time, 
-      mp4_url, mp4_name, village_id
-      )
+  <insert id="insert" parameterType="com.example.xinggang.Entity.XiangtuMinsu">
+    insert into xiangtu_minsu (id, create_time, update_time, 
+      pic_url, pic_name, pic_profile, 
+      village_id)
     values (#{id,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{mp4Url,jdbcType=VARCHAR}, #{mp4Name,jdbcType=VARCHAR}, #{villageId,jdbcType=INTEGER}
-      )
+      #{picUrl,jdbcType=VARCHAR}, #{picName,jdbcType=VARCHAR}, #{picProfile,jdbcType=VARCHAR}, 
+      #{villageId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.example.xinggang.Entity.CaomaoFengcai">
-    insert into caomao_fengcai
+  <insert id="insertSelective" parameterType="com.example.xinggang.Entity.XiangtuMinsu">
+    insert into xiangtu_minsu
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
@@ -120,11 +121,14 @@
       <if test="updateTime != null">
         update_time,
       </if>
-      <if test="mp4Url != null">
-        mp4_url,
+      <if test="picUrl != null">
+        pic_url,
       </if>
-      <if test="mp4Name != null">
-        mp4_name,
+      <if test="picName != null">
+        pic_name,
+      </if>
+      <if test="picProfile != null">
+        pic_profile,
       </if>
       <if test="villageId != null">
         village_id,
@@ -140,25 +144,28 @@
       <if test="updateTime != null">
         #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="mp4Url != null">
-        #{mp4Url,jdbcType=VARCHAR},
+      <if test="picUrl != null">
+        #{picUrl,jdbcType=VARCHAR},
       </if>
-      <if test="mp4Name != null">
-        #{mp4Name,jdbcType=VARCHAR},
+      <if test="picName != null">
+        #{picName,jdbcType=VARCHAR},
+      </if>
+      <if test="picProfile != null">
+        #{picProfile,jdbcType=VARCHAR},
       </if>
       <if test="villageId != null">
         #{villageId,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.example.xinggang.Entity.CaomaoFengcaiExample" resultType="java.lang.Long">
-    select count(*) from caomao_fengcai
+  <select id="countByExample" parameterType="com.example.xinggang.Entity.XiangtuMinsuExample" resultType="java.lang.Long">
+    select count(*) from xiangtu_minsu
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update caomao_fengcai
+    update xiangtu_minsu
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
@@ -169,11 +176,14 @@
       <if test="record.updateTime != null">
         update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.mp4Url != null">
-        mp4_url = #{record.mp4Url,jdbcType=VARCHAR},
+      <if test="record.picUrl != null">
+        pic_url = #{record.picUrl,jdbcType=VARCHAR},
       </if>
-      <if test="record.mp4Name != null">
-        mp4_name = #{record.mp4Name,jdbcType=VARCHAR},
+      <if test="record.picName != null">
+        pic_name = #{record.picName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.picProfile != null">
+        pic_profile = #{record.picProfile,jdbcType=VARCHAR},
       </if>
       <if test="record.villageId != null">
         village_id = #{record.villageId,jdbcType=INTEGER},
@@ -184,19 +194,20 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update caomao_fengcai
+    update xiangtu_minsu
     set id = #{record.id,jdbcType=INTEGER},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
-      mp4_url = #{record.mp4Url,jdbcType=VARCHAR},
-      mp4_name = #{record.mp4Name,jdbcType=VARCHAR},
+      pic_url = #{record.picUrl,jdbcType=VARCHAR},
+      pic_name = #{record.picName,jdbcType=VARCHAR},
+      pic_profile = #{record.picProfile,jdbcType=VARCHAR},
       village_id = #{record.villageId,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.xinggang.Entity.CaomaoFengcai">
-    update caomao_fengcai
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.xinggang.Entity.XiangtuMinsu">
+    update xiangtu_minsu
     <set>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -204,11 +215,14 @@
       <if test="updateTime != null">
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="mp4Url != null">
-        mp4_url = #{mp4Url,jdbcType=VARCHAR},
+      <if test="picUrl != null">
+        pic_url = #{picUrl,jdbcType=VARCHAR},
       </if>
-      <if test="mp4Name != null">
-        mp4_name = #{mp4Name,jdbcType=VARCHAR},
+      <if test="picName != null">
+        pic_name = #{picName,jdbcType=VARCHAR},
+      </if>
+      <if test="picProfile != null">
+        pic_profile = #{picProfile,jdbcType=VARCHAR},
       </if>
       <if test="villageId != null">
         village_id = #{villageId,jdbcType=INTEGER},
@@ -216,21 +230,23 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.xinggang.Entity.CaomaoFengcai">
-    update caomao_fengcai
+  <update id="updateByPrimaryKey" parameterType="com.example.xinggang.Entity.XiangtuMinsu">
+    update xiangtu_minsu
     set create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
-      mp4_url = #{mp4Url,jdbcType=VARCHAR},
-      mp4_name = #{mp4Name,jdbcType=VARCHAR},
+      pic_url = #{picUrl,jdbcType=VARCHAR},
+      pic_name = #{picName,jdbcType=VARCHAR},
+      pic_profile = #{picProfile,jdbcType=VARCHAR},
       village_id = #{villageId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <resultMap id="BaseResultMap" type="com.example.xinggang.Entity.CaomaoFengcai">
+  <resultMap id="BaseResultMap" type="com.example.xinggang.Entity.XiangtuMinsu">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-    <result column="mp4_url" jdbcType="VARCHAR" property="mp4Url" />
-    <result column="mp4_name" jdbcType="VARCHAR" property="mp4Name" />
+    <result column="pic_url" jdbcType="VARCHAR" property="picUrl" />
+    <result column="pic_name" jdbcType="VARCHAR" property="picName" />
+    <result column="pic_profile" jdbcType="VARCHAR" property="picProfile" />
     <result column="village_id" jdbcType="INTEGER" property="villageId" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -292,15 +308,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, create_time, update_time, mp4_url, mp4_name, village_id
+    id, create_time, update_time, pic_url, pic_name, pic_profile, village_id
   </sql>
-  <select id="selectByExample" parameterType="com.example.xinggang.Entity.CaomaoFengcaiExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.example.xinggang.Entity.XiangtuMinsuExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from caomao_fengcai
+    from xiangtu_minsu
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -311,29 +327,29 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from caomao_fengcai
+    from xiangtu_minsu
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from caomao_fengcai
+    delete from xiangtu_minsu
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.example.xinggang.Entity.CaomaoFengcaiExample">
-    delete from caomao_fengcai
+  <delete id="deleteByExample" parameterType="com.example.xinggang.Entity.XiangtuMinsuExample">
+    delete from xiangtu_minsu
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.example.xinggang.Entity.CaomaoFengcai">
-    insert into caomao_fengcai (id, create_time, update_time, 
-      mp4_url, mp4_name, village_id
-      )
+  <insert id="insert" parameterType="com.example.xinggang.Entity.XiangtuMinsu">
+    insert into xiangtu_minsu (id, create_time, update_time, 
+      pic_url, pic_name, pic_profile, 
+      village_id)
     values (#{id,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{mp4Url,jdbcType=VARCHAR}, #{mp4Name,jdbcType=VARCHAR}, #{villageId,jdbcType=INTEGER}
-      )
+      #{picUrl,jdbcType=VARCHAR}, #{picName,jdbcType=VARCHAR}, #{picProfile,jdbcType=VARCHAR}, 
+      #{villageId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.example.xinggang.Entity.CaomaoFengcai">
-    insert into caomao_fengcai
+  <insert id="insertSelective" parameterType="com.example.xinggang.Entity.XiangtuMinsu">
+    insert into xiangtu_minsu
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
@@ -344,11 +360,14 @@
       <if test="updateTime != null">
         update_time,
       </if>
-      <if test="mp4Url != null">
-        mp4_url,
+      <if test="picUrl != null">
+        pic_url,
       </if>
-      <if test="mp4Name != null">
-        mp4_name,
+      <if test="picName != null">
+        pic_name,
+      </if>
+      <if test="picProfile != null">
+        pic_profile,
       </if>
       <if test="villageId != null">
         village_id,
@@ -364,25 +383,28 @@
       <if test="updateTime != null">
         #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="mp4Url != null">
-        #{mp4Url,jdbcType=VARCHAR},
+      <if test="picUrl != null">
+        #{picUrl,jdbcType=VARCHAR},
       </if>
-      <if test="mp4Name != null">
-        #{mp4Name,jdbcType=VARCHAR},
+      <if test="picName != null">
+        #{picName,jdbcType=VARCHAR},
+      </if>
+      <if test="picProfile != null">
+        #{picProfile,jdbcType=VARCHAR},
       </if>
       <if test="villageId != null">
         #{villageId,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.example.xinggang.Entity.CaomaoFengcaiExample" resultType="java.lang.Long">
-    select count(*) from caomao_fengcai
+  <select id="countByExample" parameterType="com.example.xinggang.Entity.XiangtuMinsuExample" resultType="java.lang.Long">
+    select count(*) from xiangtu_minsu
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update caomao_fengcai
+    update xiangtu_minsu
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
@@ -393,11 +415,14 @@
       <if test="record.updateTime != null">
         update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.mp4Url != null">
-        mp4_url = #{record.mp4Url,jdbcType=VARCHAR},
+      <if test="record.picUrl != null">
+        pic_url = #{record.picUrl,jdbcType=VARCHAR},
       </if>
-      <if test="record.mp4Name != null">
-        mp4_name = #{record.mp4Name,jdbcType=VARCHAR},
+      <if test="record.picName != null">
+        pic_name = #{record.picName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.picProfile != null">
+        pic_profile = #{record.picProfile,jdbcType=VARCHAR},
       </if>
       <if test="record.villageId != null">
         village_id = #{record.villageId,jdbcType=INTEGER},
@@ -408,19 +433,20 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update caomao_fengcai
+    update xiangtu_minsu
     set id = #{record.id,jdbcType=INTEGER},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
-      mp4_url = #{record.mp4Url,jdbcType=VARCHAR},
-      mp4_name = #{record.mp4Name,jdbcType=VARCHAR},
+      pic_url = #{record.picUrl,jdbcType=VARCHAR},
+      pic_name = #{record.picName,jdbcType=VARCHAR},
+      pic_profile = #{record.picProfile,jdbcType=VARCHAR},
       village_id = #{record.villageId,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.xinggang.Entity.CaomaoFengcai">
-    update caomao_fengcai
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.xinggang.Entity.XiangtuMinsu">
+    update xiangtu_minsu
     <set>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -428,11 +454,14 @@
       <if test="updateTime != null">
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="mp4Url != null">
-        mp4_url = #{mp4Url,jdbcType=VARCHAR},
+      <if test="picUrl != null">
+        pic_url = #{picUrl,jdbcType=VARCHAR},
       </if>
-      <if test="mp4Name != null">
-        mp4_name = #{mp4Name,jdbcType=VARCHAR},
+      <if test="picName != null">
+        pic_name = #{picName,jdbcType=VARCHAR},
+      </if>
+      <if test="picProfile != null">
+        pic_profile = #{picProfile,jdbcType=VARCHAR},
       </if>
       <if test="villageId != null">
         village_id = #{villageId,jdbcType=INTEGER},
@@ -440,12 +469,13 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.xinggang.Entity.CaomaoFengcai">
-    update caomao_fengcai
+  <update id="updateByPrimaryKey" parameterType="com.example.xinggang.Entity.XiangtuMinsu">
+    update xiangtu_minsu
     set create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
-      mp4_url = #{mp4Url,jdbcType=VARCHAR},
-      mp4_name = #{mp4Name,jdbcType=VARCHAR},
+      pic_url = #{picUrl,jdbcType=VARCHAR},
+      pic_name = #{picName,jdbcType=VARCHAR},
+      pic_profile = #{picProfile,jdbcType=VARCHAR},
       village_id = #{villageId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
