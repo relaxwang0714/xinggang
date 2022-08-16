@@ -5,7 +5,7 @@ import com.example.xinggang.Entity.cunmingJifenExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-public interface cunmingJifenMapper {
+public interface CunmingJifenMapper {
     long countByExample(cunmingJifenExample example);
 
     int deleteByExample(cunmingJifenExample example);

@@ -8,6 +8,7 @@
     <result column="chanye_leixing" jdbcType="INTEGER" property="chanyeLeixing" />
     <result column="village_id" jdbcType="INTEGER" property="villageId" />
   </resultMap>
+<!--  where子句，遍历-->
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">

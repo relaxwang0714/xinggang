@@ -5,7 +5,7 @@ import com.example.xinggang.Entity.fengmaoGuankongExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-public interface fengmaoGuankongMapper {
+public interface FengmaoGuankongMapper {
     long countByExample(fengmaoGuankongExample example);
 
     int deleteByExample(fengmaoGuankongExample example);
