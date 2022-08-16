@@ -16,6 +16,9 @@ public class DigitalLifeService {
     LingliYouyueMapper lingliYouyueMapper;
     @Autowired
     LingliZhongxinMapper lingliZhongxinMapper;
+    @Autowired
+    RuoshiQuntiMapper ruoshiQuntiMapper;
+
 
 
 }

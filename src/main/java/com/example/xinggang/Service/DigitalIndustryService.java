@@ -1,5 +1,6 @@
 package com.example.xinggang.Service;
 
+import com.example.xinggang.Mapper.JingjiZengshouMapper;
 import com.example.xinggang.Mapper.JitiFangchanMapper;
 import com.example.xinggang.Mapper.TudiLiuzhuanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,4 +12,6 @@ public class DigitalIndustryService {
     JitiFangchanMapper jitiFangchanMapper;
     @Autowired
     TudiLiuzhuanMapper tudiLiuzhuanMapper;
+    @Autowired
+    JingjiZengshouMapper jingjiZengshouMapper;
 }

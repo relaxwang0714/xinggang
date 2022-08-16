@@ -18,17 +18,21 @@ public class DigitalGovernanceService {
     DangjianZhendiMapper dangjianZhendiMapper;
     @Autowired
     CaomaoYishiMapper caomaoYishiMapper;
-//    @Autowired
-//    CaomaoFengcaiMapper caomaoFengcaiMapper;
+    @Autowired
+    CaomaoFengcaiMapper caomaoFengcaiMapper;
     @Autowired
     XiangmuGongkaiMapper xiangmuGongkaiMapper;
     @Autowired
     JianchaLianluozhanMapper jianchaLianluozhanMapper;
-//    @Autowired
-//    CunmingJifenMapper cumnmingJifenMapper;
+    @Autowired
+    CunmingJifenMapper cumnmingJifenMapper;
     @Autowired
     ChuzufangMapper chuzufangMapper;
     @Autowired
     DianpuMapper dianpuMapper;
+    @Autowired
+    ShijianTongbanMapper shijianTongbanMapper;
+    @Autowired
+    CollegeMapper collegeMapper;
 
 }
