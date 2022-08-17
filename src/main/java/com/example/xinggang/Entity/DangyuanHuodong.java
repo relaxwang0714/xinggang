@@ -13,6 +13,8 @@ public class DangyuanHuodong {
 
     private String mp4Url;
 
+    private Integer villageId;
+
     public Integer getId() {
         return id;
     }
@@ -51,5 +53,13 @@ public class DangyuanHuodong {
 
     public void setMp4Url(String mp4Url) {
         this.mp4Url = mp4Url == null ? null : mp4Url.trim();
+    }
+
+    public Integer getVillageId() {
+        return villageId;
+    }
+
+    public void setVillageId(Integer villageId) {
+        this.villageId = villageId;
     }
 }

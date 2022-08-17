@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.xinggang.Mapper.FengmaoGuankongMapper">
-  <resultMap id="BaseResultMap" type="com.example.xinggang.Entity.fengmaoGuankong">
+  <resultMap id="BaseResultMap" type="com.example.xinggang.Entity.FengmaoGuankong">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
@@ -12,7 +12,7 @@
     <result column="phone" jdbcType="VARCHAR" property="phone" />
     <result column="village_id" jdbcType="INTEGER" property="villageId" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.example.xinggang.Entity.fengmaoGuankong">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.example.xinggang.Entity.FengmaoGuankong">
     <result column="shp" jdbcType="LONGVARCHAR" property="shp" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -80,7 +80,7 @@
   <sql id="Blob_Column_List">
     shp
   </sql>
-  <select id="selectByExampleWithBLOBs" parameterType="com.example.xinggang.Entity.fengmaoGuankongExample" resultMap="ResultMapWithBLOBs">
+  <select id="selectByExampleWithBLOBs" parameterType="com.example.xinggang.Entity.FengmaoGuankongExample" resultMap="ResultMapWithBLOBs">
     select
     <if test="distinct">
       distinct
@@ -96,7 +96,7 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByExample" parameterType="com.example.xinggang.Entity.fengmaoGuankongExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.example.xinggang.Entity.FengmaoGuankongExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -122,13 +122,13 @@
     delete from fengmao_guankong
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.example.xinggang.Entity.fengmaoGuankongExample">
+  <delete id="deleteByExample" parameterType="com.example.xinggang.Entity.FengmaoGuankongExample">
     delete from fengmao_guankong
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.example.xinggang.Entity.fengmaoGuankong">
+  <insert id="insert" parameterType="com.example.xinggang.Entity.FengmaoGuankong">
     insert into fengmao_guankong (id, create_time, update_time, 
       program_id, program_name, program_ara, 
       response_people, phone, village_id, 
@@ -138,7 +138,7 @@
       #{responsePeople,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{villageId,jdbcType=INTEGER}, 
       #{shp,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.example.xinggang.Entity.fengmaoGuankong">
+  <insert id="insertSelective" parameterType="com.example.xinggang.Entity.FengmaoGuankong">
     insert into fengmao_guankong
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -205,7 +205,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.example.xinggang.Entity.fengmaoGuankongExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.example.xinggang.Entity.FengmaoGuankongExample" resultType="java.lang.Long">
     select count(*) from fengmao_guankong
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -280,7 +280,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.xinggang.Entity.fengmaoGuankong">
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.xinggang.Entity.FengmaoGuankong">
     update fengmao_guankong
     <set>
       <if test="createTime != null">
@@ -313,7 +313,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.example.xinggang.Entity.fengmaoGuankong">
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.example.xinggang.Entity.FengmaoGuankong">
     update fengmao_guankong
     set create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
@@ -326,7 +326,7 @@
       shp = #{shp,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.xinggang.Entity.fengmaoGuankong">
+  <update id="updateByPrimaryKey" parameterType="com.example.xinggang.Entity.FengmaoGuankong">
     update fengmao_guankong
     set create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},

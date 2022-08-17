@@ -1,30 +1,30 @@
 package com.example.xinggang.Mapper;
 
-import com.example.xinggang.Entity.cunmingJifen;
-import com.example.xinggang.Entity.cunmingJifenExample;
+import com.example.xinggang.Entity.CunmingJifen;
+import com.example.xinggang.Entity.CunmingJifenExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface CunmingJifenMapper {
-    long countByExample(cunmingJifenExample example);
+    long countByExample(CunmingJifenExample example);
 
-    int deleteByExample(cunmingJifenExample example);
+    int deleteByExample(CunmingJifenExample example);
 
     int deleteByPrimaryKey(Integer id);
 
-    int insert(cunmingJifen record);
+    int insert(CunmingJifen record);
 
-    int insertSelective(cunmingJifen record);
+    int insertSelective(CunmingJifen record);
 
-    List<cunmingJifen> selectByExample(cunmingJifenExample example);
+    List<CunmingJifen> selectByExample(CunmingJifenExample example);
 
-    cunmingJifen selectByPrimaryKey(Integer id);
+    CunmingJifen selectByPrimaryKey(Integer id);
 
-    int updateByExampleSelective(@Param("record") cunmingJifen record, @Param("example") cunmingJifenExample example);
+    int updateByExampleSelective(@Param("record") CunmingJifen record, @Param("example") CunmingJifenExample example);
 
-    int updateByExample(@Param("record") cunmingJifen record, @Param("example") cunmingJifenExample example);
+    int updateByExample(@Param("record") CunmingJifen record, @Param("example") CunmingJifenExample example);
 
-    int updateByPrimaryKeySelective(cunmingJifen record);
+    int updateByPrimaryKeySelective(CunmingJifen record);
 
-    int updateByPrimaryKey(cunmingJifen record);
+    int updateByPrimaryKey(CunmingJifen record);
 }

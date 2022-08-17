@@ -424,6 +424,66 @@ public class DangyuanHuodongExample {
             addCriterion("mp4_url not between", value1, value2, "mp4Url");
             return (Criteria) this;
         }
+
+        public Criteria andVillageIdIsNull() {
+            addCriterion("village_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andVillageIdIsNotNull() {
+            addCriterion("village_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andVillageIdEqualTo(Integer value) {
+            addCriterion("village_id =", value, "villageId");
+            return (Criteria) this;
+        }
+
+        public Criteria andVillageIdNotEqualTo(Integer value) {
+            addCriterion("village_id <>", value, "villageId");
+            return (Criteria) this;
+        }
+
+        public Criteria andVillageIdGreaterThan(Integer value) {
+            addCriterion("village_id >", value, "villageId");
+            return (Criteria) this;
+        }
+
+        public Criteria andVillageIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("village_id >=", value, "villageId");
+            return (Criteria) this;
+        }
+
+        public Criteria andVillageIdLessThan(Integer value) {
+            addCriterion("village_id <", value, "villageId");
+            return (Criteria) this;
+        }
+
+        public Criteria andVillageIdLessThanOrEqualTo(Integer value) {
+            addCriterion("village_id <=", value, "villageId");
+            return (Criteria) this;
+        }
+
+        public Criteria andVillageIdIn(List<Integer> values) {
+            addCriterion("village_id in", values, "villageId");
+            return (Criteria) this;
+        }
+
+        public Criteria andVillageIdNotIn(List<Integer> values) {
+            addCriterion("village_id not in", values, "villageId");
+            return (Criteria) this;
+        }
+
+        public Criteria andVillageIdBetween(Integer value1, Integer value2) {
+            addCriterion("village_id between", value1, value2, "villageId");
+            return (Criteria) this;
+        }
+
+        public Criteria andVillageIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("village_id not between", value1, value2, "villageId");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

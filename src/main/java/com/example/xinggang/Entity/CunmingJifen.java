@@ -2,7 +2,7 @@ package com.example.xinggang.Entity;
 
 import java.util.Date;
 
-public class cunmingJifen {
+public class CunmingJifen {
     private Integer id;
 
     private Date createTime;

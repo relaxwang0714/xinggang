@@ -16,4 +16,20 @@ public class CountryController {
     public String yetaifenbu(HttpServletRequest request){
         return countryService.selectYetaiFenbuByVillageId(1);
     }
+    @RequestMapping("overview")
+    public String Overview(HttpServletRequest request){
+        return countryService.selectOverviewByVillageId(1);
+    }
+    @RequestMapping("zuimei")
+    public String Zuimei(HttpServletRequest request){
+        return countryService.selectZuimeiByVillageId(1);
+    }
+    @RequestMapping("xingangFengcai")
+    public String XingangFengcai(HttpServletRequest request){
+        return countryService.selectXingangFengcaiByVillageId(1);
+    }
+    @RequestMapping("xiangtuminsu")
+    public String Xiangtuminsu(HttpServletRequest request){
+        return countryService.selectXiangtuminsuByVillageId(1);
+    }
 }

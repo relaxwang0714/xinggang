@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.xinggang.Mapper.RuoshiQuntiMapper">
-  <resultMap id="BaseResultMap" type="com.example.xinggang.Entity.RuoshiQunti">
+<mapper namespace="com.example.xinggang.Mapper.JingjiZengshouMapper">
+  <resultMap id="BaseResultMap" type="com.example.xinggang.Entity.JingjiZengshou">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-    <result column="canjiren" jdbcType="INTEGER" property="canjiren" />
-    <result column="dibaohu" jdbcType="INTEGER" property="dibaohu" />
-    <result column="laoren" jdbcType="INTEGER" property="laoren" />
+    <result column="year" jdbcType="INTEGER" property="year" />
+    <result column="jiti_income" jdbcType="INTEGER" property="jitiIncome" />
+    <result column="nonghu_income" jdbcType="INTEGER" property="nonghuIncome" />
     <result column="village_id" jdbcType="INTEGER" property="villageId" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -69,15 +69,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, create_time, update_time, canjiren, dibaohu, laoren, village_id
+    id, create_time, update_time, year, jiti_income, nonghu_income, village_id
   </sql>
-  <select id="selectByExample" parameterType="com.example.xinggang.Entity.RuoshiQuntiExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.example.xinggang.Entity.JingjiZengshouExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from ruoshi_qunti
+    from jingji_zengshou
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -88,29 +88,29 @@
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from ruoshi_qunti
+    from jingji_zengshou
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from ruoshi_qunti
+    delete from jingji_zengshou
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.example.xinggang.Entity.RuoshiQuntiExample">
-    delete from ruoshi_qunti
+  <delete id="deleteByExample" parameterType="com.example.xinggang.Entity.JingjiZengshouExample">
+    delete from jingji_zengshou
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.example.xinggang.Entity.RuoshiQunti">
-    insert into ruoshi_qunti (id, create_time, update_time, 
-      canjiren, dibaohu, laoren, 
+  <insert id="insert" parameterType="com.example.xinggang.Entity.JingjiZengshou">
+    insert into jingji_zengshou (id, create_time, update_time, 
+      year, jiti_income, nonghu_income, 
       village_id)
     values (#{id,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{canjiren,jdbcType=INTEGER}, #{dibaohu,jdbcType=INTEGER}, #{laoren,jdbcType=INTEGER}, 
+      #{year,jdbcType=INTEGER}, #{jitiIncome,jdbcType=INTEGER}, #{nonghuIncome,jdbcType=INTEGER}, 
       #{villageId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.example.xinggang.Entity.RuoshiQunti">
-    insert into ruoshi_qunti
+  <insert id="insertSelective" parameterType="com.example.xinggang.Entity.JingjiZengshou">
+    insert into jingji_zengshou
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
@@ -121,14 +121,14 @@
       <if test="updateTime != null">
         update_time,
       </if>
-      <if test="canjiren != null">
-        canjiren,
+      <if test="year != null">
+        year,
       </if>
-      <if test="dibaohu != null">
-        dibaohu,
+      <if test="jitiIncome != null">
+        jiti_income,
       </if>
-      <if test="laoren != null">
-        laoren,
+      <if test="nonghuIncome != null">
+        nonghu_income,
       </if>
       <if test="villageId != null">
         village_id,
@@ -144,28 +144,28 @@
       <if test="updateTime != null">
         #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="canjiren != null">
-        #{canjiren,jdbcType=INTEGER},
+      <if test="year != null">
+        #{year,jdbcType=INTEGER},
       </if>
-      <if test="dibaohu != null">
-        #{dibaohu,jdbcType=INTEGER},
+      <if test="jitiIncome != null">
+        #{jitiIncome,jdbcType=INTEGER},
       </if>
-      <if test="laoren != null">
-        #{laoren,jdbcType=INTEGER},
+      <if test="nonghuIncome != null">
+        #{nonghuIncome,jdbcType=INTEGER},
       </if>
       <if test="villageId != null">
         #{villageId,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.example.xinggang.Entity.RuoshiQuntiExample" resultType="java.lang.Long">
-    select count(*) from ruoshi_qunti
+  <select id="countByExample" parameterType="com.example.xinggang.Entity.JingjiZengshouExample" resultType="java.lang.Long">
+    select count(*) from jingji_zengshou
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update ruoshi_qunti
+    update jingji_zengshou
     <set>
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
@@ -176,14 +176,14 @@
       <if test="record.updateTime != null">
         update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.canjiren != null">
-        canjiren = #{record.canjiren,jdbcType=INTEGER},
+      <if test="record.year != null">
+        year = #{record.year,jdbcType=INTEGER},
       </if>
-      <if test="record.dibaohu != null">
-        dibaohu = #{record.dibaohu,jdbcType=INTEGER},
+      <if test="record.jitiIncome != null">
+        jiti_income = #{record.jitiIncome,jdbcType=INTEGER},
       </if>
-      <if test="record.laoren != null">
-        laoren = #{record.laoren,jdbcType=INTEGER},
+      <if test="record.nonghuIncome != null">
+        nonghu_income = #{record.nonghuIncome,jdbcType=INTEGER},
       </if>
       <if test="record.villageId != null">
         village_id = #{record.villageId,jdbcType=INTEGER},
@@ -194,20 +194,20 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update ruoshi_qunti
+    update jingji_zengshou
     set id = #{record.id,jdbcType=INTEGER},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
-      canjiren = #{record.canjiren,jdbcType=INTEGER},
-      dibaohu = #{record.dibaohu,jdbcType=INTEGER},
-      laoren = #{record.laoren,jdbcType=INTEGER},
+      year = #{record.year,jdbcType=INTEGER},
+      jiti_income = #{record.jitiIncome,jdbcType=INTEGER},
+      nonghu_income = #{record.nonghuIncome,jdbcType=INTEGER},
       village_id = #{record.villageId,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.xinggang.Entity.RuoshiQunti">
-    update ruoshi_qunti
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.xinggang.Entity.JingjiZengshou">
+    update jingji_zengshou
     <set>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -215,14 +215,14 @@
       <if test="updateTime != null">
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="canjiren != null">
-        canjiren = #{canjiren,jdbcType=INTEGER},
+      <if test="year != null">
+        year = #{year,jdbcType=INTEGER},
       </if>
-      <if test="dibaohu != null">
-        dibaohu = #{dibaohu,jdbcType=INTEGER},
+      <if test="jitiIncome != null">
+        jiti_income = #{jitiIncome,jdbcType=INTEGER},
       </if>
-      <if test="laoren != null">
-        laoren = #{laoren,jdbcType=INTEGER},
+      <if test="nonghuIncome != null">
+        nonghu_income = #{nonghuIncome,jdbcType=INTEGER},
       </if>
       <if test="villageId != null">
         village_id = #{villageId,jdbcType=INTEGER},
@@ -230,13 +230,13 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.xinggang.Entity.RuoshiQunti">
-    update ruoshi_qunti
+  <update id="updateByPrimaryKey" parameterType="com.example.xinggang.Entity.JingjiZengshou">
+    update jingji_zengshou
     set create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
-      canjiren = #{canjiren,jdbcType=INTEGER},
-      dibaohu = #{dibaohu,jdbcType=INTEGER},
-      laoren = #{laoren,jdbcType=INTEGER},
+      year = #{year,jdbcType=INTEGER},
+      jiti_income = #{jitiIncome,jdbcType=INTEGER},
+      nonghu_income = #{nonghuIncome,jdbcType=INTEGER},
       village_id = #{villageId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>

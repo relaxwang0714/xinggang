@@ -1,36 +1,36 @@
 package com.example.xinggang.Mapper;
 
-import com.example.xinggang.Entity.fengmaoGuankong;
-import com.example.xinggang.Entity.fengmaoGuankongExample;
+import com.example.xinggang.Entity.FengmaoGuankong;
+import com.example.xinggang.Entity.FengmaoGuankongExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface FengmaoGuankongMapper {
-    long countByExample(fengmaoGuankongExample example);
+    long countByExample(FengmaoGuankongExample example);
 
-    int deleteByExample(fengmaoGuankongExample example);
+    int deleteByExample(FengmaoGuankongExample example);
 
     int deleteByPrimaryKey(Integer id);
 
-    int insert(fengmaoGuankong record);
+    int insert(FengmaoGuankong record);
 
-    int insertSelective(fengmaoGuankong record);
+    int insertSelective(FengmaoGuankong record);
 
-    List<fengmaoGuankong> selectByExampleWithBLOBs(fengmaoGuankongExample example);
+    List<FengmaoGuankong> selectByExampleWithBLOBs(FengmaoGuankongExample example);
 
-    List<fengmaoGuankong> selectByExample(fengmaoGuankongExample example);
+    List<FengmaoGuankong> selectByExample(FengmaoGuankongExample example);
 
-    fengmaoGuankong selectByPrimaryKey(Integer id);
+    FengmaoGuankong selectByPrimaryKey(Integer id);
 
-    int updateByExampleSelective(@Param("record") fengmaoGuankong record, @Param("example") fengmaoGuankongExample example);
+    int updateByExampleSelective(@Param("record") FengmaoGuankong record, @Param("example") FengmaoGuankongExample example);
 
-    int updateByExampleWithBLOBs(@Param("record") fengmaoGuankong record, @Param("example") fengmaoGuankongExample example);
+    int updateByExampleWithBLOBs(@Param("record") FengmaoGuankong record, @Param("example") FengmaoGuankongExample example);
 
-    int updateByExample(@Param("record") fengmaoGuankong record, @Param("example") fengmaoGuankongExample example);
+    int updateByExample(@Param("record") FengmaoGuankong record, @Param("example") FengmaoGuankongExample example);
 
-    int updateByPrimaryKeySelective(fengmaoGuankong record);
+    int updateByPrimaryKeySelective(FengmaoGuankong record);
 
-    int updateByPrimaryKeyWithBLOBs(fengmaoGuankong record);
+    int updateByPrimaryKeyWithBLOBs(FengmaoGuankong record);
 
-    int updateByPrimaryKey(fengmaoGuankong record);
+    int updateByPrimaryKey(FengmaoGuankong record);
 }

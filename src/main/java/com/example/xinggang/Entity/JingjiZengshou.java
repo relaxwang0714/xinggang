@@ -2,20 +2,18 @@ package com.example.xinggang.Entity;
 
 import java.util.Date;
 
-public class JitiFangchan {
+public class JingjiZengshou {
     private Integer id;
 
     private Date createTime;
 
     private Date updateTime;
 
-    private String name;
+    private Integer year;
 
-    private String address;
+    private Integer jitiIncome;
 
-    private Integer area;
-
-    private Integer status;
+    private Integer nonghuIncome;
 
     private Integer villageId;
 
@@ -43,36 +41,28 @@ public class JitiFangchan {
         this.updateTime = updateTime;
     }
 
-    public String getName() {
-        return name;
+    public Integer getYear() {
+        return year;
     }
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+    public void setYear(Integer year) {
+        this.year = year;
     }
 
-    public String getAddress() {
-        return address;
+    public Integer getJitiIncome() {
+        return jitiIncome;
     }
 
-    public void setAddress(String address) {
-        this.address = address == null ? null : address.trim();
+    public void setJitiIncome(Integer jitiIncome) {
+        this.jitiIncome = jitiIncome;
     }
 
-    public Integer getArea() {
-        return area;
+    public Integer getNonghuIncome() {
+        return nonghuIncome;
     }
 
-    public void setArea(Integer area) {
-        this.area = area;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
+    public void setNonghuIncome(Integer nonghuIncome) {
+        this.nonghuIncome = nonghuIncome;
     }
 
     public Integer getVillageId() {
