@@ -1,12 +1,15 @@
 package com.example.xinggang.Entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class CaomaoFengcai {
     private Integer id;
-
+    @JSONField(format="yyyy-MM-dd HH:mm:ss")
     private Date createTime;
-
+    @JSONField(format="yyyy-MM-dd HH:mm:ss")
     private Date updateTime;
 
     private String mp4Url;

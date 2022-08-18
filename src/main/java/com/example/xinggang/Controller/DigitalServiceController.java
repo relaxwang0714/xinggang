@@ -13,7 +13,7 @@ public class DigitalServiceController {
     @Autowired
     DigitalServiceServices digitalServiceServicess;
     @RequestMapping("puhuiJinrong")
-    public String gongyiZuzhi(HttpServletRequest request){
+    public String puhuiJinrong(HttpServletRequest request){
         return digitalServiceServicess.selectPuhuiJinrongByVillageId(1);
     }
 

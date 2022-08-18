@@ -1,5 +1,8 @@
 package com.example.xinggang.utils.Aspect;
 
+import com.example.xinggang.utils.Annotation.DataSource;
+import com.example.xinggang.utils.DataSourcesNames;
+import com.example.xinggang.utils.DynamicDataSource;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Around;
@@ -24,7 +27,7 @@ public class DataSourceAspect implements Ordered {
 
     protected Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Pointcut("@annotation(com.gpdi.operatingunit.datasources.annotation.DataSource)")
+    @Pointcut("@annotation(com.example.xinggang.utils.Annotation.DataSource)")
     public void dataSourcePointCut() {
 
     }
