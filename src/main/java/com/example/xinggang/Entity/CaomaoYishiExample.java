@@ -355,6 +355,76 @@ public class CaomaoYishiExample {
             return (Criteria) this;
         }
 
+        public Criteria andShijianNameIsNull() {
+            addCriterion("shijian_name is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andShijianNameIsNotNull() {
+            addCriterion("shijian_name is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andShijianNameEqualTo(String value) {
+            addCriterion("shijian_name =", value, "shijianName");
+            return (Criteria) this;
+        }
+
+        public Criteria andShijianNameNotEqualTo(String value) {
+            addCriterion("shijian_name <>", value, "shijianName");
+            return (Criteria) this;
+        }
+
+        public Criteria andShijianNameGreaterThan(String value) {
+            addCriterion("shijian_name >", value, "shijianName");
+            return (Criteria) this;
+        }
+
+        public Criteria andShijianNameGreaterThanOrEqualTo(String value) {
+            addCriterion("shijian_name >=", value, "shijianName");
+            return (Criteria) this;
+        }
+
+        public Criteria andShijianNameLessThan(String value) {
+            addCriterion("shijian_name <", value, "shijianName");
+            return (Criteria) this;
+        }
+
+        public Criteria andShijianNameLessThanOrEqualTo(String value) {
+            addCriterion("shijian_name <=", value, "shijianName");
+            return (Criteria) this;
+        }
+
+        public Criteria andShijianNameLike(String value) {
+            addCriterion("shijian_name like", value, "shijianName");
+            return (Criteria) this;
+        }
+
+        public Criteria andShijianNameNotLike(String value) {
+            addCriterion("shijian_name not like", value, "shijianName");
+            return (Criteria) this;
+        }
+
+        public Criteria andShijianNameIn(List<String> values) {
+            addCriterion("shijian_name in", values, "shijianName");
+            return (Criteria) this;
+        }
+
+        public Criteria andShijianNameNotIn(List<String> values) {
+            addCriterion("shijian_name not in", values, "shijianName");
+            return (Criteria) this;
+        }
+
+        public Criteria andShijianNameBetween(String value1, String value2) {
+            addCriterion("shijian_name between", value1, value2, "shijianName");
+            return (Criteria) this;
+        }
+
+        public Criteria andShijianNameNotBetween(String value1, String value2) {
+            addCriterion("shijian_name not between", value1, value2, "shijianName");
+            return (Criteria) this;
+        }
+
         public Criteria andAddressIsNull() {
             addCriterion("address is null");
             return (Criteria) this;

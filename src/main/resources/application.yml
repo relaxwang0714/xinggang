@@ -43,6 +43,6 @@ spring:
       max-request-size: 1000MB
 server:
   port: 8086
-  mybatis:
-    mapper-locations=classpath:mapper/*Mapper:
-      xml: classpath:mapper/*Mapper.xml
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  config-location: classpath:mybatis-config.xml

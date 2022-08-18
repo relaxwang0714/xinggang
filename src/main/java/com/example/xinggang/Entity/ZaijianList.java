@@ -1,6 +1,7 @@
 package com.example.xinggang.Entity;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import com.example.xinggang.Enum.zaijianEnum;
 
 import java.util.Date;
 
@@ -21,7 +22,8 @@ public class ZaijianList {
 
     private String phone;
 
-    private Integer isType;
+//    private Integer isType;
+    private zaijianEnum isType;
 
     private Integer villageId;
 
@@ -89,11 +91,19 @@ public class ZaijianList {
         this.phone = phone == null ? null : phone.trim();
     }
 
-    public Integer getIsType() {
+//    public Integer getIsType() {
+//        return isType;
+//    }
+//
+//    public void setIsType(Integer isType) {
+//        this.isType = isType;
+//    }
+
+    public zaijianEnum getIsType() {
         return isType;
     }
 
-    public void setIsType(Integer isType) {
+    public void setIsType(zaijianEnum isType) {
         this.isType = isType;
     }
 

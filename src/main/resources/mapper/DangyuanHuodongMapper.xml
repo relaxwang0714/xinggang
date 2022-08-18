@@ -7,6 +7,7 @@
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="dangyuan_activity_name" jdbcType="VARCHAR" property="dangyuanActivityName" />
     <result column="mp4_url" jdbcType="VARCHAR" property="mp4Url" />
+    <result column="series_id" jdbcType="INTEGER" property="seriesId" />
     <result column="village_id" jdbcType="INTEGER" property="villageId" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -68,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, create_time, update_time, dangyuan_activity_name, mp4_url, village_id
+    id, create_time, update_time, dangyuan_activity_name, mp4_url, series_id, village_id
   </sql>
   <select id="selectByExample" parameterType="com.example.xinggang.Entity.DangyuanHuodongExample" resultMap="BaseResultMap">
     select
@@ -102,11 +103,11 @@
   </delete>
   <insert id="insert" parameterType="com.example.xinggang.Entity.DangyuanHuodong">
     insert into dangyuan_activity (id, create_time, update_time, 
-      dangyuan_activity_name, mp4_url, village_id
-      )
+      dangyuan_activity_name, mp4_url, series_id, 
+      village_id)
     values (#{id,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{dangyuanActivityName,jdbcType=VARCHAR}, #{mp4Url,jdbcType=VARCHAR}, #{villageId,jdbcType=INTEGER}
-      )
+      #{dangyuanActivityName,jdbcType=VARCHAR}, #{mp4Url,jdbcType=VARCHAR}, #{seriesId,jdbcType=INTEGER}, 
+      #{villageId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.example.xinggang.Entity.DangyuanHuodong">
     insert into dangyuan_activity
@@ -125,6 +126,9 @@
       </if>
       <if test="mp4Url != null">
         mp4_url,
+      </if>
+      <if test="seriesId != null">
+        series_id,
       </if>
       <if test="villageId != null">
         village_id,
@@ -145,6 +149,9 @@
       </if>
       <if test="mp4Url != null">
         #{mp4Url,jdbcType=VARCHAR},
+      </if>
+      <if test="seriesId != null">
+        #{seriesId,jdbcType=INTEGER},
       </if>
       <if test="villageId != null">
         #{villageId,jdbcType=INTEGER},
@@ -175,6 +182,9 @@
       <if test="record.mp4Url != null">
         mp4_url = #{record.mp4Url,jdbcType=VARCHAR},
       </if>
+      <if test="record.seriesId != null">
+        series_id = #{record.seriesId,jdbcType=INTEGER},
+      </if>
       <if test="record.villageId != null">
         village_id = #{record.villageId,jdbcType=INTEGER},
       </if>
@@ -190,6 +200,7 @@
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       dangyuan_activity_name = #{record.dangyuanActivityName,jdbcType=VARCHAR},
       mp4_url = #{record.mp4Url,jdbcType=VARCHAR},
+      series_id = #{record.seriesId,jdbcType=INTEGER},
       village_id = #{record.villageId,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -210,6 +221,9 @@
       <if test="mp4Url != null">
         mp4_url = #{mp4Url,jdbcType=VARCHAR},
       </if>
+      <if test="seriesId != null">
+        series_id = #{seriesId,jdbcType=INTEGER},
+      </if>
       <if test="villageId != null">
         village_id = #{villageId,jdbcType=INTEGER},
       </if>
@@ -222,6 +236,7 @@
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       dangyuan_activity_name = #{dangyuanActivityName,jdbcType=VARCHAR},
       mp4_url = #{mp4Url,jdbcType=VARCHAR},
+      series_id = #{seriesId,jdbcType=INTEGER},
       village_id = #{villageId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>

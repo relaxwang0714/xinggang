@@ -6,6 +6,7 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="time" jdbcType="VARCHAR" property="time" />
+    <result column="shijian_name" jdbcType="VARCHAR" property="shijianName" />
     <result column="address" jdbcType="VARCHAR" property="address" />
     <result column="people" jdbcType="VARCHAR" property="people" />
     <result column="status" jdbcType="INTEGER" property="status" />
@@ -70,7 +71,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, create_time, update_time, time, address, people, status, village_id
+    id, create_time, update_time, time, shijian_name, address, people, status, village_id
   </sql>
   <select id="selectByExample" parameterType="com.example.xinggang.Entity.CaomaoYishiExample" resultMap="BaseResultMap">
     select
@@ -104,11 +105,13 @@
   </delete>
   <insert id="insert" parameterType="com.example.xinggang.Entity.CaomaoYishi">
     insert into caomao_yishi (id, create_time, update_time, 
-      time, address, people, 
-      status, village_id)
+      time, shijian_name, address, 
+      people, status, village_id
+      )
     values (#{id,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{time,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{people,jdbcType=VARCHAR}, 
-      #{status,jdbcType=INTEGER}, #{villageId,jdbcType=INTEGER})
+      #{time,jdbcType=VARCHAR}, #{shijianName,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{people,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{villageId,jdbcType=INTEGER}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.example.xinggang.Entity.CaomaoYishi">
     insert into caomao_yishi
@@ -124,6 +127,9 @@
       </if>
       <if test="time != null">
         time,
+      </if>
+      <if test="shijianName != null">
+        shijian_name,
       </if>
       <if test="address != null">
         address,
@@ -150,6 +156,9 @@
       </if>
       <if test="time != null">
         #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="shijianName != null">
+        #{shijianName,jdbcType=VARCHAR},
       </if>
       <if test="address != null">
         #{address,jdbcType=VARCHAR},
@@ -186,6 +195,9 @@
       <if test="record.time != null">
         time = #{record.time,jdbcType=VARCHAR},
       </if>
+      <if test="record.shijianName != null">
+        shijian_name = #{record.shijianName,jdbcType=VARCHAR},
+      </if>
       <if test="record.address != null">
         address = #{record.address,jdbcType=VARCHAR},
       </if>
@@ -209,6 +221,7 @@
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       time = #{record.time,jdbcType=VARCHAR},
+      shijian_name = #{record.shijianName,jdbcType=VARCHAR},
       address = #{record.address,jdbcType=VARCHAR},
       people = #{record.people,jdbcType=VARCHAR},
       status = #{record.status,jdbcType=INTEGER},
@@ -228,6 +241,9 @@
       </if>
       <if test="time != null">
         time = #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="shijianName != null">
+        shijian_name = #{shijianName,jdbcType=VARCHAR},
       </if>
       <if test="address != null">
         address = #{address,jdbcType=VARCHAR},
@@ -249,6 +265,7 @@
     set create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       time = #{time,jdbcType=VARCHAR},
+      shijian_name = #{shijianName,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
       people = #{people,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER},

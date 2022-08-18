@@ -6,6 +6,11 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="college_name" jdbcType="VARCHAR" property="collegeName" />
+    <result column="faren" jdbcType="VARCHAR" property="faren" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="zhigong_renshu" jdbcType="INTEGER" property="zhigongRenshu" />
     <result column="liudong_people" jdbcType="INTEGER" property="liudongPeople" />
     <result column="village_id" jdbcType="INTEGER" property="villageId" />
   </resultMap>
@@ -68,7 +73,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, create_time, update_time, college_name, liudong_people, village_id
+    id, create_time, update_time, college_name, faren, phone, type, address, zhigong_renshu, 
+    liudong_people, village_id
   </sql>
   <select id="selectByExample" parameterType="com.example.xinggang.Entity.CollegeExample" resultMap="BaseResultMap">
     select
@@ -102,11 +108,13 @@
   </delete>
   <insert id="insert" parameterType="com.example.xinggang.Entity.College">
     insert into college (id, create_time, update_time, 
-      college_name, liudong_people, village_id
-      )
+      college_name, faren, phone, 
+      type, address, zhigong_renshu, 
+      liudong_people, village_id)
     values (#{id,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{collegeName,jdbcType=VARCHAR}, #{liudongPeople,jdbcType=INTEGER}, #{villageId,jdbcType=INTEGER}
-      )
+      #{collegeName,jdbcType=VARCHAR}, #{faren,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
+      #{type,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, #{zhigongRenshu,jdbcType=INTEGER}, 
+      #{liudongPeople,jdbcType=INTEGER}, #{villageId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.example.xinggang.Entity.College">
     insert into college
@@ -122,6 +130,21 @@
       </if>
       <if test="collegeName != null">
         college_name,
+      </if>
+      <if test="faren != null">
+        faren,
+      </if>
+      <if test="phone != null">
+        phone,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="zhigongRenshu != null">
+        zhigong_renshu,
       </if>
       <if test="liudongPeople != null">
         liudong_people,
@@ -142,6 +165,21 @@
       </if>
       <if test="collegeName != null">
         #{collegeName,jdbcType=VARCHAR},
+      </if>
+      <if test="faren != null">
+        #{faren,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="zhigongRenshu != null">
+        #{zhigongRenshu,jdbcType=INTEGER},
       </if>
       <if test="liudongPeople != null">
         #{liudongPeople,jdbcType=INTEGER},
@@ -172,6 +210,21 @@
       <if test="record.collegeName != null">
         college_name = #{record.collegeName,jdbcType=VARCHAR},
       </if>
+      <if test="record.faren != null">
+        faren = #{record.faren,jdbcType=VARCHAR},
+      </if>
+      <if test="record.phone != null">
+        phone = #{record.phone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.type != null">
+        type = #{record.type,jdbcType=INTEGER},
+      </if>
+      <if test="record.address != null">
+        address = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.zhigongRenshu != null">
+        zhigong_renshu = #{record.zhigongRenshu,jdbcType=INTEGER},
+      </if>
       <if test="record.liudongPeople != null">
         liudong_people = #{record.liudongPeople,jdbcType=INTEGER},
       </if>
@@ -189,6 +242,11 @@
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       college_name = #{record.collegeName,jdbcType=VARCHAR},
+      faren = #{record.faren,jdbcType=VARCHAR},
+      phone = #{record.phone,jdbcType=VARCHAR},
+      type = #{record.type,jdbcType=INTEGER},
+      address = #{record.address,jdbcType=VARCHAR},
+      zhigong_renshu = #{record.zhigongRenshu,jdbcType=INTEGER},
       liudong_people = #{record.liudongPeople,jdbcType=INTEGER},
       village_id = #{record.villageId,jdbcType=INTEGER}
     <if test="_parameter != null">
@@ -207,6 +265,21 @@
       <if test="collegeName != null">
         college_name = #{collegeName,jdbcType=VARCHAR},
       </if>
+      <if test="faren != null">
+        faren = #{faren,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="zhigongRenshu != null">
+        zhigong_renshu = #{zhigongRenshu,jdbcType=INTEGER},
+      </if>
       <if test="liudongPeople != null">
         liudong_people = #{liudongPeople,jdbcType=INTEGER},
       </if>
@@ -221,6 +294,11 @@
     set create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       college_name = #{collegeName,jdbcType=VARCHAR},
+      faren = #{faren,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      type = #{type,jdbcType=INTEGER},
+      address = #{address,jdbcType=VARCHAR},
+      zhigong_renshu = #{zhigongRenshu,jdbcType=INTEGER},
       liudong_people = #{liudongPeople,jdbcType=INTEGER},
       village_id = #{villageId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}

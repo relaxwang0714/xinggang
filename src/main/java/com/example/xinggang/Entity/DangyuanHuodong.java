@@ -1,19 +1,19 @@
 package com.example.xinggang.Entity;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import java.util.Date;
 
 public class DangyuanHuodong {
     private Integer id;
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+
     private Date createTime;
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+
     private Date updateTime;
 
     private String dangyuanActivityName;
 
     private String mp4Url;
+
+    private Integer seriesId;
 
     private Integer villageId;
 
@@ -55,6 +55,14 @@ public class DangyuanHuodong {
 
     public void setMp4Url(String mp4Url) {
         this.mp4Url = mp4Url == null ? null : mp4Url.trim();
+    }
+
+    public Integer getSeriesId() {
+        return seriesId;
+    }
+
+    public void setSeriesId(Integer seriesId) {
+        this.seriesId = seriesId;
     }
 
     public Integer getVillageId() {

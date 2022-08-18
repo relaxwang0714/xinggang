@@ -1,17 +1,17 @@
 package com.example.xinggang.Entity;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import java.util.Date;
 
 public class YetaiFenbu {
     private Integer id;
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+
     private Date createTime;
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+
     private Date updateTime;
 
     private Integer chanyeLeixing;
+
+    private Integer amount;
 
     private Integer villageId;
 
@@ -45,6 +45,14 @@ public class YetaiFenbu {
 
     public void setChanyeLeixing(Integer chanyeLeixing) {
         this.chanyeLeixing = chanyeLeixing;
+    }
+
+    public Integer getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Integer amount) {
+        this.amount = amount;
     }
 
     public Integer getVillageId() {

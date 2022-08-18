@@ -8,13 +8,13 @@ public class YetaiFenbuExample {
     protected String orderByClause;
 
     protected boolean distinct;
-    //一个Criteria集合，包装了各种条件
+
     protected List<Criteria> oredCriteria;
-    //构造方法
+
     public YetaiFenbuExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
-    //插入或者的子句，我到时候看看管不管用
+
     public void setOrderByClause(String orderByClause) {
         this.orderByClause = orderByClause;
     }
@@ -38,7 +38,7 @@ public class YetaiFenbuExample {
     public void or(Criteria criteria) {
         oredCriteria.add(criteria);
     }
-    //创建Criteria
+
     public Criteria or() {
         Criteria criteria = createCriteriaInternal();
         oredCriteria.add(criteria);
@@ -63,9 +63,8 @@ public class YetaiFenbuExample {
         orderByClause = null;
         distinct = false;
     }
-    //静态抽象类
+
     protected abstract static class GeneratedCriteria {
-        //就是添加各种条件，我大概懂了
         protected List<Criterion> criteria;
 
         protected GeneratedCriteria() {
@@ -343,6 +342,66 @@ public class YetaiFenbuExample {
 
         public Criteria andChanyeLeixingNotBetween(Integer value1, Integer value2) {
             addCriterion("chanye_leixing not between", value1, value2, "chanyeLeixing");
+            return (Criteria) this;
+        }
+
+        public Criteria andAmountIsNull() {
+            addCriterion("amount is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAmountIsNotNull() {
+            addCriterion("amount is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAmountEqualTo(Integer value) {
+            addCriterion("amount =", value, "amount");
+            return (Criteria) this;
+        }
+
+        public Criteria andAmountNotEqualTo(Integer value) {
+            addCriterion("amount <>", value, "amount");
+            return (Criteria) this;
+        }
+
+        public Criteria andAmountGreaterThan(Integer value) {
+            addCriterion("amount >", value, "amount");
+            return (Criteria) this;
+        }
+
+        public Criteria andAmountGreaterThanOrEqualTo(Integer value) {
+            addCriterion("amount >=", value, "amount");
+            return (Criteria) this;
+        }
+
+        public Criteria andAmountLessThan(Integer value) {
+            addCriterion("amount <", value, "amount");
+            return (Criteria) this;
+        }
+
+        public Criteria andAmountLessThanOrEqualTo(Integer value) {
+            addCriterion("amount <=", value, "amount");
+            return (Criteria) this;
+        }
+
+        public Criteria andAmountIn(List<Integer> values) {
+            addCriterion("amount in", values, "amount");
+            return (Criteria) this;
+        }
+
+        public Criteria andAmountNotIn(List<Integer> values) {
+            addCriterion("amount not in", values, "amount");
+            return (Criteria) this;
+        }
+
+        public Criteria andAmountBetween(Integer value1, Integer value2) {
+            addCriterion("amount between", value1, value2, "amount");
+            return (Criteria) this;
+        }
+
+        public Criteria andAmountNotBetween(Integer value1, Integer value2) {
+            addCriterion("amount not between", value1, value2, "amount");
             return (Criteria) this;
         }
 

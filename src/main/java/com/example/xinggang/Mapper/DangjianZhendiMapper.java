@@ -16,15 +16,21 @@ public interface DangjianZhendiMapper {
 
     int insertSelective(DangjianZhendi record);
 
+    List<DangjianZhendi> selectByExampleWithBLOBs(DangjianZhendiExample example);
+
     List<DangjianZhendi> selectByExample(DangjianZhendiExample example);
 
     DangjianZhendi selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") DangjianZhendi record, @Param("example") DangjianZhendiExample example);
 
+    int updateByExampleWithBLOBs(@Param("record") DangjianZhendi record, @Param("example") DangjianZhendiExample example);
+
     int updateByExample(@Param("record") DangjianZhendi record, @Param("example") DangjianZhendiExample example);
 
     int updateByPrimaryKeySelective(DangjianZhendi record);
+
+    int updateByPrimaryKeyWithBLOBs(DangjianZhendi record);
 
     int updateByPrimaryKey(DangjianZhendi record);
 }

@@ -9,8 +9,10 @@
     <result column="response_people" jdbcType="VARCHAR" property="responsePeople" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
     <result column="village_id" jdbcType="INTEGER" property="villageId" />
-    <result column="shp" jdbcType="VARCHAR" property="shp" />
     <result column="pic_url" jdbcType="VARCHAR" property="picUrl" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.example.xinggang.Entity.DangjianZhendi">
+    <result column="shp" jdbcType="LONGVARCHAR" property="shp" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -72,8 +74,27 @@
   </sql>
   <sql id="Base_Column_List">
     id, create_time, update_time, dangjian_facility, response_people, phone, village_id, 
-    shp, pic_url
+    pic_url
   </sql>
+  <sql id="Blob_Column_List">
+    shp
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.example.xinggang.Entity.DangjianZhendiExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from dangjian_zhendi
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
   <select id="selectByExample" parameterType="com.example.xinggang.Entity.DangjianZhendiExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
@@ -88,9 +109,11 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
     select 
     <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
     from dangjian_zhendi
     where id = #{id,jdbcType=INTEGER}
   </select>
@@ -107,11 +130,11 @@
   <insert id="insert" parameterType="com.example.xinggang.Entity.DangjianZhendi">
     insert into dangjian_zhendi (id, create_time, update_time, 
       dangjian_facility, response_people, phone, 
-      village_id, shp, pic_url
+      village_id, pic_url, shp
       )
     values (#{id,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{dangjianFacility,jdbcType=VARCHAR}, #{responsePeople,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, 
-      #{villageId,jdbcType=INTEGER}, #{shp,jdbcType=VARCHAR}, #{picUrl,jdbcType=VARCHAR}
+      #{villageId,jdbcType=INTEGER}, #{picUrl,jdbcType=VARCHAR}, #{shp,jdbcType=LONGVARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.example.xinggang.Entity.DangjianZhendi">
@@ -138,11 +161,11 @@
       <if test="villageId != null">
         village_id,
       </if>
-      <if test="shp != null">
-        shp,
-      </if>
       <if test="picUrl != null">
         pic_url,
+      </if>
+      <if test="shp != null">
+        shp,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -167,11 +190,11 @@
       <if test="villageId != null">
         #{villageId,jdbcType=INTEGER},
       </if>
-      <if test="shp != null">
-        #{shp,jdbcType=VARCHAR},
-      </if>
       <if test="picUrl != null">
         #{picUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="shp != null">
+        #{shp,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
@@ -205,13 +228,28 @@
       <if test="record.villageId != null">
         village_id = #{record.villageId,jdbcType=INTEGER},
       </if>
-      <if test="record.shp != null">
-        shp = #{record.shp,jdbcType=VARCHAR},
-      </if>
       <if test="record.picUrl != null">
         pic_url = #{record.picUrl,jdbcType=VARCHAR},
       </if>
+      <if test="record.shp != null">
+        shp = #{record.shp,jdbcType=LONGVARCHAR},
+      </if>
     </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update dangjian_zhendi
+    set id = #{record.id,jdbcType=INTEGER},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
+      dangjian_facility = #{record.dangjianFacility,jdbcType=VARCHAR},
+      response_people = #{record.responsePeople,jdbcType=VARCHAR},
+      phone = #{record.phone,jdbcType=VARCHAR},
+      village_id = #{record.villageId,jdbcType=INTEGER},
+      pic_url = #{record.picUrl,jdbcType=VARCHAR},
+      shp = #{record.shp,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -225,7 +263,6 @@
       response_people = #{record.responsePeople,jdbcType=VARCHAR},
       phone = #{record.phone,jdbcType=VARCHAR},
       village_id = #{record.villageId,jdbcType=INTEGER},
-      shp = #{record.shp,jdbcType=VARCHAR},
       pic_url = #{record.picUrl,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -252,13 +289,25 @@
       <if test="villageId != null">
         village_id = #{villageId,jdbcType=INTEGER},
       </if>
-      <if test="shp != null">
-        shp = #{shp,jdbcType=VARCHAR},
-      </if>
       <if test="picUrl != null">
         pic_url = #{picUrl,jdbcType=VARCHAR},
       </if>
+      <if test="shp != null">
+        shp = #{shp,jdbcType=LONGVARCHAR},
+      </if>
     </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.example.xinggang.Entity.DangjianZhendi">
+    update dangjian_zhendi
+    set create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      dangjian_facility = #{dangjianFacility,jdbcType=VARCHAR},
+      response_people = #{responsePeople,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      village_id = #{villageId,jdbcType=INTEGER},
+      pic_url = #{picUrl,jdbcType=VARCHAR},
+      shp = #{shp,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.example.xinggang.Entity.DangjianZhendi">
@@ -269,7 +318,6 @@
       response_people = #{responsePeople,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
       village_id = #{villageId,jdbcType=INTEGER},
-      shp = #{shp,jdbcType=VARCHAR},
       pic_url = #{picUrl,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>

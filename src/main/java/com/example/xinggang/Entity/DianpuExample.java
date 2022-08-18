@@ -484,6 +484,216 @@ public class DianpuExample {
             addCriterion("village_id not between", value1, value2, "villageId");
             return (Criteria) this;
         }
+
+        public Criteria andDianpuNameIsNull() {
+            addCriterion("dianpu_name is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuNameIsNotNull() {
+            addCriterion("dianpu_name is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuNameEqualTo(String value) {
+            addCriterion("dianpu_name =", value, "dianpuName");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuNameNotEqualTo(String value) {
+            addCriterion("dianpu_name <>", value, "dianpuName");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuNameGreaterThan(String value) {
+            addCriterion("dianpu_name >", value, "dianpuName");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuNameGreaterThanOrEqualTo(String value) {
+            addCriterion("dianpu_name >=", value, "dianpuName");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuNameLessThan(String value) {
+            addCriterion("dianpu_name <", value, "dianpuName");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuNameLessThanOrEqualTo(String value) {
+            addCriterion("dianpu_name <=", value, "dianpuName");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuNameLike(String value) {
+            addCriterion("dianpu_name like", value, "dianpuName");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuNameNotLike(String value) {
+            addCriterion("dianpu_name not like", value, "dianpuName");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuNameIn(List<String> values) {
+            addCriterion("dianpu_name in", values, "dianpuName");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuNameNotIn(List<String> values) {
+            addCriterion("dianpu_name not in", values, "dianpuName");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuNameBetween(String value1, String value2) {
+            addCriterion("dianpu_name between", value1, value2, "dianpuName");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuNameNotBetween(String value1, String value2) {
+            addCriterion("dianpu_name not between", value1, value2, "dianpuName");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuTypeIsNull() {
+            addCriterion("dianpu_type is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuTypeIsNotNull() {
+            addCriterion("dianpu_type is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuTypeEqualTo(String value) {
+            addCriterion("dianpu_type =", value, "dianpuType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuTypeNotEqualTo(String value) {
+            addCriterion("dianpu_type <>", value, "dianpuType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuTypeGreaterThan(String value) {
+            addCriterion("dianpu_type >", value, "dianpuType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuTypeGreaterThanOrEqualTo(String value) {
+            addCriterion("dianpu_type >=", value, "dianpuType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuTypeLessThan(String value) {
+            addCriterion("dianpu_type <", value, "dianpuType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuTypeLessThanOrEqualTo(String value) {
+            addCriterion("dianpu_type <=", value, "dianpuType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuTypeLike(String value) {
+            addCriterion("dianpu_type like", value, "dianpuType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuTypeNotLike(String value) {
+            addCriterion("dianpu_type not like", value, "dianpuType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuTypeIn(List<String> values) {
+            addCriterion("dianpu_type in", values, "dianpuType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuTypeNotIn(List<String> values) {
+            addCriterion("dianpu_type not in", values, "dianpuType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuTypeBetween(String value1, String value2) {
+            addCriterion("dianpu_type between", value1, value2, "dianpuType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuTypeNotBetween(String value1, String value2) {
+            addCriterion("dianpu_type not between", value1, value2, "dianpuType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuAddressIsNull() {
+            addCriterion("dianpu_address is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuAddressIsNotNull() {
+            addCriterion("dianpu_address is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuAddressEqualTo(String value) {
+            addCriterion("dianpu_address =", value, "dianpuAddress");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuAddressNotEqualTo(String value) {
+            addCriterion("dianpu_address <>", value, "dianpuAddress");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuAddressGreaterThan(String value) {
+            addCriterion("dianpu_address >", value, "dianpuAddress");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuAddressGreaterThanOrEqualTo(String value) {
+            addCriterion("dianpu_address >=", value, "dianpuAddress");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuAddressLessThan(String value) {
+            addCriterion("dianpu_address <", value, "dianpuAddress");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuAddressLessThanOrEqualTo(String value) {
+            addCriterion("dianpu_address <=", value, "dianpuAddress");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuAddressLike(String value) {
+            addCriterion("dianpu_address like", value, "dianpuAddress");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuAddressNotLike(String value) {
+            addCriterion("dianpu_address not like", value, "dianpuAddress");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuAddressIn(List<String> values) {
+            addCriterion("dianpu_address in", values, "dianpuAddress");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuAddressNotIn(List<String> values) {
+            addCriterion("dianpu_address not in", values, "dianpuAddress");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuAddressBetween(String value1, String value2) {
+            addCriterion("dianpu_address between", value1, value2, "dianpuAddress");
+            return (Criteria) this;
+        }
+
+        public Criteria andDianpuAddressNotBetween(String value1, String value2) {
+            addCriterion("dianpu_address not between", value1, value2, "dianpuAddress");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

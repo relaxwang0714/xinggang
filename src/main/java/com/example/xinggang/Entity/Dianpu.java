@@ -1,14 +1,12 @@
 package com.example.xinggang.Entity;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import java.util.Date;
 
 public class Dianpu {
     private Integer id;
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+
     private Date createTime;
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+
     private Date updateTime;
 
     private String faren;
@@ -16,6 +14,12 @@ public class Dianpu {
     private String phone;
 
     private Integer villageId;
+
+    private String dianpuName;
+
+    private String dianpuType;
+
+    private String dianpuAddress;
 
     private String shp;
 
@@ -65,6 +69,30 @@ public class Dianpu {
 
     public void setVillageId(Integer villageId) {
         this.villageId = villageId;
+    }
+
+    public String getDianpuName() {
+        return dianpuName;
+    }
+
+    public void setDianpuName(String dianpuName) {
+        this.dianpuName = dianpuName == null ? null : dianpuName.trim();
+    }
+
+    public String getDianpuType() {
+        return dianpuType;
+    }
+
+    public void setDianpuType(String dianpuType) {
+        this.dianpuType = dianpuType == null ? null : dianpuType.trim();
+    }
+
+    public String getDianpuAddress() {
+        return dianpuAddress;
+    }
+
+    public void setDianpuAddress(String dianpuAddress) {
+        this.dianpuAddress = dianpuAddress == null ? null : dianpuAddress.trim();
     }
 
     public String getShp() {

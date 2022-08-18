@@ -8,6 +8,9 @@
     <result column="faren" jdbcType="VARCHAR" property="faren" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
     <result column="village_id" jdbcType="INTEGER" property="villageId" />
+    <result column="dianpu_name" jdbcType="VARCHAR" property="dianpuName" />
+    <result column="dianpu_type" jdbcType="VARCHAR" property="dianpuType" />
+    <result column="dianpu_address" jdbcType="VARCHAR" property="dianpuAddress" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.example.xinggang.Entity.Dianpu">
     <result column="shp" jdbcType="LONGVARCHAR" property="shp" />
@@ -71,7 +74,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, create_time, update_time, faren, phone, village_id
+    id, create_time, update_time, faren, phone, village_id, dianpu_name, dianpu_type, 
+    dianpu_address
   </sql>
   <sql id="Blob_Column_List">
     shp
@@ -127,9 +131,11 @@
   <insert id="insert" parameterType="com.example.xinggang.Entity.Dianpu">
     insert into dianpu (id, create_time, update_time, 
       faren, phone, village_id, 
+      dianpu_name, dianpu_type, dianpu_address, 
       shp)
     values (#{id,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{faren,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{villageId,jdbcType=INTEGER}, 
+      #{dianpuName,jdbcType=VARCHAR}, #{dianpuType,jdbcType=VARCHAR}, #{dianpuAddress,jdbcType=VARCHAR}, 
       #{shp,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.example.xinggang.Entity.Dianpu">
@@ -153,6 +159,15 @@
       <if test="villageId != null">
         village_id,
       </if>
+      <if test="dianpuName != null">
+        dianpu_name,
+      </if>
+      <if test="dianpuType != null">
+        dianpu_type,
+      </if>
+      <if test="dianpuAddress != null">
+        dianpu_address,
+      </if>
       <if test="shp != null">
         shp,
       </if>
@@ -175,6 +190,15 @@
       </if>
       <if test="villageId != null">
         #{villageId,jdbcType=INTEGER},
+      </if>
+      <if test="dianpuName != null">
+        #{dianpuName,jdbcType=VARCHAR},
+      </if>
+      <if test="dianpuType != null">
+        #{dianpuType,jdbcType=VARCHAR},
+      </if>
+      <if test="dianpuAddress != null">
+        #{dianpuAddress,jdbcType=VARCHAR},
       </if>
       <if test="shp != null">
         #{shp,jdbcType=LONGVARCHAR},
@@ -208,6 +232,15 @@
       <if test="record.villageId != null">
         village_id = #{record.villageId,jdbcType=INTEGER},
       </if>
+      <if test="record.dianpuName != null">
+        dianpu_name = #{record.dianpuName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dianpuType != null">
+        dianpu_type = #{record.dianpuType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dianpuAddress != null">
+        dianpu_address = #{record.dianpuAddress,jdbcType=VARCHAR},
+      </if>
       <if test="record.shp != null">
         shp = #{record.shp,jdbcType=LONGVARCHAR},
       </if>
@@ -224,6 +257,9 @@
       faren = #{record.faren,jdbcType=VARCHAR},
       phone = #{record.phone,jdbcType=VARCHAR},
       village_id = #{record.villageId,jdbcType=INTEGER},
+      dianpu_name = #{record.dianpuName,jdbcType=VARCHAR},
+      dianpu_type = #{record.dianpuType,jdbcType=VARCHAR},
+      dianpu_address = #{record.dianpuAddress,jdbcType=VARCHAR},
       shp = #{record.shp,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -236,7 +272,10 @@
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       faren = #{record.faren,jdbcType=VARCHAR},
       phone = #{record.phone,jdbcType=VARCHAR},
-      village_id = #{record.villageId,jdbcType=INTEGER}
+      village_id = #{record.villageId,jdbcType=INTEGER},
+      dianpu_name = #{record.dianpuName,jdbcType=VARCHAR},
+      dianpu_type = #{record.dianpuType,jdbcType=VARCHAR},
+      dianpu_address = #{record.dianpuAddress,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -259,6 +298,15 @@
       <if test="villageId != null">
         village_id = #{villageId,jdbcType=INTEGER},
       </if>
+      <if test="dianpuName != null">
+        dianpu_name = #{dianpuName,jdbcType=VARCHAR},
+      </if>
+      <if test="dianpuType != null">
+        dianpu_type = #{dianpuType,jdbcType=VARCHAR},
+      </if>
+      <if test="dianpuAddress != null">
+        dianpu_address = #{dianpuAddress,jdbcType=VARCHAR},
+      </if>
       <if test="shp != null">
         shp = #{shp,jdbcType=LONGVARCHAR},
       </if>
@@ -272,6 +320,9 @@
       faren = #{faren,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
       village_id = #{villageId,jdbcType=INTEGER},
+      dianpu_name = #{dianpuName,jdbcType=VARCHAR},
+      dianpu_type = #{dianpuType,jdbcType=VARCHAR},
+      dianpu_address = #{dianpuAddress,jdbcType=VARCHAR},
       shp = #{shp,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -281,7 +332,10 @@
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       faren = #{faren,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
-      village_id = #{villageId,jdbcType=INTEGER}
+      village_id = #{villageId,jdbcType=INTEGER},
+      dianpu_name = #{dianpuName,jdbcType=VARCHAR},
+      dianpu_type = #{dianpuType,jdbcType=VARCHAR},
+      dianpu_address = #{dianpuAddress,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

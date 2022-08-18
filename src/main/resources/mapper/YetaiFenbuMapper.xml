@@ -6,9 +6,9 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="chanye_leixing" jdbcType="INTEGER" property="chanyeLeixing" />
+    <result column="amount" jdbcType="INTEGER" property="amount" />
     <result column="village_id" jdbcType="INTEGER" property="villageId" />
   </resultMap>
-<!--  where子句，遍历-->
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -68,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, create_time, update_time, chanye_leixing, village_id
+    id, create_time, update_time, chanye_leixing, amount, village_id
   </sql>
   <select id="selectByExample" parameterType="com.example.xinggang.Entity.YetaiFenbuExample" resultMap="BaseResultMap">
     select
@@ -102,9 +102,11 @@
   </delete>
   <insert id="insert" parameterType="com.example.xinggang.Entity.YetaiFenbu">
     insert into yetai_fenbu (id, create_time, update_time, 
-      chanye_leixing, village_id)
+      chanye_leixing, amount, village_id
+      )
     values (#{id,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{chanyeLeixing,jdbcType=INTEGER}, #{villageId,jdbcType=INTEGER})
+      #{chanyeLeixing,jdbcType=INTEGER}, #{amount,jdbcType=INTEGER}, #{villageId,jdbcType=INTEGER}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.example.xinggang.Entity.YetaiFenbu">
     insert into yetai_fenbu
@@ -120,6 +122,9 @@
       </if>
       <if test="chanyeLeixing != null">
         chanye_leixing,
+      </if>
+      <if test="amount != null">
+        amount,
       </if>
       <if test="villageId != null">
         village_id,
@@ -137,6 +142,9 @@
       </if>
       <if test="chanyeLeixing != null">
         #{chanyeLeixing,jdbcType=INTEGER},
+      </if>
+      <if test="amount != null">
+        #{amount,jdbcType=INTEGER},
       </if>
       <if test="villageId != null">
         #{villageId,jdbcType=INTEGER},
@@ -164,6 +172,9 @@
       <if test="record.chanyeLeixing != null">
         chanye_leixing = #{record.chanyeLeixing,jdbcType=INTEGER},
       </if>
+      <if test="record.amount != null">
+        amount = #{record.amount,jdbcType=INTEGER},
+      </if>
       <if test="record.villageId != null">
         village_id = #{record.villageId,jdbcType=INTEGER},
       </if>
@@ -178,6 +189,7 @@
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       chanye_leixing = #{record.chanyeLeixing,jdbcType=INTEGER},
+      amount = #{record.amount,jdbcType=INTEGER},
       village_id = #{record.villageId,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -195,6 +207,9 @@
       <if test="chanyeLeixing != null">
         chanye_leixing = #{chanyeLeixing,jdbcType=INTEGER},
       </if>
+      <if test="amount != null">
+        amount = #{amount,jdbcType=INTEGER},
+      </if>
       <if test="villageId != null">
         village_id = #{villageId,jdbcType=INTEGER},
       </if>
@@ -206,6 +221,7 @@
     set create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       chanye_leixing = #{chanyeLeixing,jdbcType=INTEGER},
+      amount = #{amount,jdbcType=INTEGER},
       village_id = #{villageId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>

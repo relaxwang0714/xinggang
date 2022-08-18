@@ -1,14 +1,12 @@
 package com.example.xinggang.Entity;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import java.util.Date;
 
 public class XiangtuMinsu {
     private Integer id;
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+
     private Date createTime;
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+
     private Date updateTime;
 
     private String picUrl;
@@ -16,6 +14,8 @@ public class XiangtuMinsu {
     private String picName;
 
     private String picProfile;
+
+    private Integer type;
 
     private Integer villageId;
 
@@ -65,6 +65,14 @@ public class XiangtuMinsu {
 
     public void setPicProfile(String picProfile) {
         this.picProfile = picProfile == null ? null : picProfile.trim();
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
     }
 
     public Integer getVillageId() {
