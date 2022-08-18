@@ -32,4 +32,8 @@ public class CountryController {
     public String Xiangtuminsu(HttpServletRequest request){
         return countryService.selectXiangtuminsuByVillageId(1);
     }
+    @RequestMapping("Peoplestructure")
+    public String Peoplestructure(HttpServletRequest request){
+        return countryService.selectPeoplestructureByVillageId(1);
+    }
 }

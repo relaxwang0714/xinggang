@@ -3,6 +3,8 @@ package com.example.xinggang.Service;
 import com.alibaba.fastjson.JSONObject;
 import com.example.xinggang.Entity.*;
 import com.example.xinggang.Mapper.*;
+import com.example.xinggang.utils.Annotation.DataSource;
+import com.example.xinggang.utils.DataSourcesNames;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +23,12 @@ public class CountryService {
     @Autowired
     XingangFengcaiMapper xingangFengcaiMapper;
     @Autowired
+    OverviewMapper overviewMapper;
+    @Autowired
+    PeopleStructureMapper peopleStructureMapper;
+    @Autowired
     ReturnMsg returnMsg;
+
     public String selectYetaiFenbuByVillageId(Integer id){
         YetaiFenbuExample yetaiFenbuExample = new YetaiFenbuExample();
         YetaiFenbuExample.Criteria criteria = yetaiFenbuExample.createCriteria();
@@ -36,11 +43,11 @@ public class CountryService {
         return returnMsg.toString();
     }
     public String selectOverviewByVillageId(Integer id){
-        YetaiFenbuExample yetaiFenbuExample = new YetaiFenbuExample();
-        YetaiFenbuExample.Criteria criteria = yetaiFenbuExample.createCriteria();
+        OverviewExample overviewExample = new OverviewExample();
+        OverviewExample.Criteria criteria = overviewExample.createCriteria();
         criteria.andVillageIdEqualTo(id);
-        List<YetaiFenbu> yetaiFenbuList = yetaiFenbuMapper.selectByExample(yetaiFenbuExample);
-        returnMsg.setData(yetaiFenbuList);
+        List<Overview> overviewList = overviewMapper.selectByExample(overviewExample);
+        returnMsg.setData(overviewList);
         returnMsg.setCode("0");
         returnMsg.setMsg("成功");
         return returnMsg.toString();
@@ -71,6 +78,18 @@ public class CountryService {
         criteria.andVillageIdEqualTo(id);
         List<XingangFengcai> xingangFengcaiList = xingangFengcaiMapper.selectByExample(xingangFengcaiExample);
         returnMsg.setData(xingangFengcaiList);
+        returnMsg.setCode("0");
+        returnMsg.setMsg("成功");
+        return returnMsg.toString();
+    }
+
+    @DataSource(name = DataSourcesNames.SECOND)
+    public String selectPeoplestructureByVillageId(Integer id){
+        PeopleStructureExample peopleStructureExample = new PeopleStructureExample();
+        PeopleStructureExample.Criteria criteria = peopleStructureExample.createCriteria();
+        criteria.andVillageIdEqualTo(id);
+        List<PeopleStructure> peopleStructureList = peopleStructureMapper.selectByExample(peopleStructureExample);
+        returnMsg.setData(peopleStructureList);
         returnMsg.setCode("0");
         returnMsg.setMsg("成功");
         return returnMsg.toString();

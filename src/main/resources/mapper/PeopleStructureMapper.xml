@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.xinggang.Mapper.XingangFengcaiMapper">
-  <resultMap id="BaseResultMap" type="com.example.xinggang.Entity.XingangFengcai">
-    <id column="id" jdbcType="INTEGER" property="id" />
+<mapper namespace="com.example.xinggang.Mapper.PeopleStructureMapper">
+  <resultMap id="BaseResultMap" type="com.example.xinggang.Entity.PeopleStructure">
+    <id column="id" jdbcType="BIGINT" property="id" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-    <result column="mp4_url" jdbcType="VARCHAR" property="mp4Url" />
-    <result column="mp4_name" jdbcType="VARCHAR" property="mp4Name" />
-    <result column="series_id" jdbcType="INTEGER" property="seriesId" />
+    <result column="zero_eighteen" jdbcType="INTEGER" property="zeroEighteen" />
+    <result column="nighteen_thirtyfive" jdbcType="INTEGER" property="nighteenThirtyfive" />
+    <result column="thirtyfive_sixtyfive" jdbcType="INTEGER" property="thirtyfiveSixtyfive" />
+    <result column="sixtyfive_eightyfive" jdbcType="INTEGER" property="sixtyfiveEightyfive" />
+    <result column="over_eightfive" jdbcType="INTEGER" property="overEightfive" />
     <result column="village_id" jdbcType="INTEGER" property="villageId" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -69,15 +71,16 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, create_time, update_time, mp4_url, mp4_name, series_id, village_id
+    id, create_time, update_time, zero_eighteen, nighteen_thirtyfive, thirtyfive_sixtyfive, 
+    sixtyfive_eightyfive, over_eightfive, village_id
   </sql>
-  <select id="selectByExample" parameterType="com.example.xinggang.Entity.XingangFengcaiExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.example.xinggang.Entity.PeopleStructureExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from xingang_fengcai
+    from people_structure
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
@@ -85,32 +88,34 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from xingang_fengcai
-    where id = #{id,jdbcType=INTEGER}
+    from people_structure
+    where id = #{id,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from xingang_fengcai
-    where id = #{id,jdbcType=INTEGER}
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from people_structure
+    where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.example.xinggang.Entity.XingangFengcaiExample">
-    delete from xingang_fengcai
+  <delete id="deleteByExample" parameterType="com.example.xinggang.Entity.PeopleStructureExample">
+    delete from people_structure
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.example.xinggang.Entity.XingangFengcai">
-    insert into xingang_fengcai (id, create_time, update_time, 
-      mp4_url, mp4_name, series_id, 
-      village_id)
-    values (#{id,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{mp4Url,jdbcType=VARCHAR}, #{mp4Name,jdbcType=VARCHAR}, #{seriesId,jdbcType=INTEGER}, 
-      #{villageId,jdbcType=INTEGER})
+  <insert id="insert" parameterType="com.example.xinggang.Entity.PeopleStructure">
+    insert into people_structure (id, create_time, update_time, 
+      zero_eighteen, nighteen_thirtyfive, thirtyfive_sixtyfive, 
+      sixtyfive_eightyfive, over_eightfive, village_id
+      )
+    values (#{id,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
+      #{zeroEighteen,jdbcType=INTEGER}, #{nighteenThirtyfive,jdbcType=INTEGER}, #{thirtyfiveSixtyfive,jdbcType=INTEGER}, 
+      #{sixtyfiveEightyfive,jdbcType=INTEGER}, #{overEightfive,jdbcType=INTEGER}, #{villageId,jdbcType=INTEGER}
+      )
   </insert>
-  <insert id="insertSelective" parameterType="com.example.xinggang.Entity.XingangFengcai">
-    insert into xingang_fengcai
+  <insert id="insertSelective" parameterType="com.example.xinggang.Entity.PeopleStructure">
+    insert into people_structure
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
         id,
@@ -121,14 +126,20 @@
       <if test="updateTime != null">
         update_time,
       </if>
-      <if test="mp4Url != null">
-        mp4_url,
+      <if test="zeroEighteen != null">
+        zero_eighteen,
       </if>
-      <if test="mp4Name != null">
-        mp4_name,
+      <if test="nighteenThirtyfive != null">
+        nighteen_thirtyfive,
       </if>
-      <if test="seriesId != null">
-        series_id,
+      <if test="thirtyfiveSixtyfive != null">
+        thirtyfive_sixtyfive,
+      </if>
+      <if test="sixtyfiveEightyfive != null">
+        sixtyfive_eightyfive,
+      </if>
+      <if test="overEightfive != null">
+        over_eightfive,
       </if>
       <if test="villageId != null">
         village_id,
@@ -136,7 +147,7 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
-        #{id,jdbcType=INTEGER},
+        #{id,jdbcType=BIGINT},
       </if>
       <if test="createTime != null">
         #{createTime,jdbcType=TIMESTAMP},
@@ -144,31 +155,37 @@
       <if test="updateTime != null">
         #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="mp4Url != null">
-        #{mp4Url,jdbcType=VARCHAR},
+      <if test="zeroEighteen != null">
+        #{zeroEighteen,jdbcType=INTEGER},
       </if>
-      <if test="mp4Name != null">
-        #{mp4Name,jdbcType=VARCHAR},
+      <if test="nighteenThirtyfive != null">
+        #{nighteenThirtyfive,jdbcType=INTEGER},
       </if>
-      <if test="seriesId != null">
-        #{seriesId,jdbcType=INTEGER},
+      <if test="thirtyfiveSixtyfive != null">
+        #{thirtyfiveSixtyfive,jdbcType=INTEGER},
+      </if>
+      <if test="sixtyfiveEightyfive != null">
+        #{sixtyfiveEightyfive,jdbcType=INTEGER},
+      </if>
+      <if test="overEightfive != null">
+        #{overEightfive,jdbcType=INTEGER},
       </if>
       <if test="villageId != null">
         #{villageId,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.example.xinggang.Entity.XingangFengcaiExample" resultType="java.lang.Long">
-    select count(*) from xingang_fengcai
+  <select id="countByExample" parameterType="com.example.xinggang.Entity.PeopleStructureExample" resultType="java.lang.Long">
+    select count(*) from people_structure
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map">
-    update xingang_fengcai
+    update people_structure
     <set>
       <if test="record.id != null">
-        id = #{record.id,jdbcType=INTEGER},
+        id = #{record.id,jdbcType=BIGINT},
       </if>
       <if test="record.createTime != null">
         create_time = #{record.createTime,jdbcType=TIMESTAMP},
@@ -176,14 +193,20 @@
       <if test="record.updateTime != null">
         update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.mp4Url != null">
-        mp4_url = #{record.mp4Url,jdbcType=VARCHAR},
+      <if test="record.zeroEighteen != null">
+        zero_eighteen = #{record.zeroEighteen,jdbcType=INTEGER},
       </if>
-      <if test="record.mp4Name != null">
-        mp4_name = #{record.mp4Name,jdbcType=VARCHAR},
+      <if test="record.nighteenThirtyfive != null">
+        nighteen_thirtyfive = #{record.nighteenThirtyfive,jdbcType=INTEGER},
       </if>
-      <if test="record.seriesId != null">
-        series_id = #{record.seriesId,jdbcType=INTEGER},
+      <if test="record.thirtyfiveSixtyfive != null">
+        thirtyfive_sixtyfive = #{record.thirtyfiveSixtyfive,jdbcType=INTEGER},
+      </if>
+      <if test="record.sixtyfiveEightyfive != null">
+        sixtyfive_eightyfive = #{record.sixtyfiveEightyfive,jdbcType=INTEGER},
+      </if>
+      <if test="record.overEightfive != null">
+        over_eightfive = #{record.overEightfive,jdbcType=INTEGER},
       </if>
       <if test="record.villageId != null">
         village_id = #{record.villageId,jdbcType=INTEGER},
@@ -194,20 +217,22 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map">
-    update xingang_fengcai
-    set id = #{record.id,jdbcType=INTEGER},
+    update people_structure
+    set id = #{record.id,jdbcType=BIGINT},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
-      mp4_url = #{record.mp4Url,jdbcType=VARCHAR},
-      mp4_name = #{record.mp4Name,jdbcType=VARCHAR},
-      series_id = #{record.seriesId,jdbcType=INTEGER},
+      zero_eighteen = #{record.zeroEighteen,jdbcType=INTEGER},
+      nighteen_thirtyfive = #{record.nighteenThirtyfive,jdbcType=INTEGER},
+      thirtyfive_sixtyfive = #{record.thirtyfiveSixtyfive,jdbcType=INTEGER},
+      sixtyfive_eightyfive = #{record.sixtyfiveEightyfive,jdbcType=INTEGER},
+      over_eightfive = #{record.overEightfive,jdbcType=INTEGER},
       village_id = #{record.villageId,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.xinggang.Entity.XingangFengcai">
-    update xingang_fengcai
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.xinggang.Entity.PeopleStructure">
+    update people_structure
     <set>
       <if test="createTime != null">
         create_time = #{createTime,jdbcType=TIMESTAMP},
@@ -215,29 +240,37 @@
       <if test="updateTime != null">
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="mp4Url != null">
-        mp4_url = #{mp4Url,jdbcType=VARCHAR},
+      <if test="zeroEighteen != null">
+        zero_eighteen = #{zeroEighteen,jdbcType=INTEGER},
       </if>
-      <if test="mp4Name != null">
-        mp4_name = #{mp4Name,jdbcType=VARCHAR},
+      <if test="nighteenThirtyfive != null">
+        nighteen_thirtyfive = #{nighteenThirtyfive,jdbcType=INTEGER},
       </if>
-      <if test="seriesId != null">
-        series_id = #{seriesId,jdbcType=INTEGER},
+      <if test="thirtyfiveSixtyfive != null">
+        thirtyfive_sixtyfive = #{thirtyfiveSixtyfive,jdbcType=INTEGER},
+      </if>
+      <if test="sixtyfiveEightyfive != null">
+        sixtyfive_eightyfive = #{sixtyfiveEightyfive,jdbcType=INTEGER},
+      </if>
+      <if test="overEightfive != null">
+        over_eightfive = #{overEightfive,jdbcType=INTEGER},
       </if>
       <if test="villageId != null">
         village_id = #{villageId,jdbcType=INTEGER},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.xinggang.Entity.XingangFengcai">
-    update xingang_fengcai
+  <update id="updateByPrimaryKey" parameterType="com.example.xinggang.Entity.PeopleStructure">
+    update people_structure
     set create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
-      mp4_url = #{mp4Url,jdbcType=VARCHAR},
-      mp4_name = #{mp4Name,jdbcType=VARCHAR},
-      series_id = #{seriesId,jdbcType=INTEGER},
+      zero_eighteen = #{zeroEighteen,jdbcType=INTEGER},
+      nighteen_thirtyfive = #{nighteenThirtyfive,jdbcType=INTEGER},
+      thirtyfive_sixtyfive = #{thirtyfiveSixtyfive,jdbcType=INTEGER},
+      sixtyfive_eightyfive = #{sixtyfiveEightyfive,jdbcType=INTEGER},
+      over_eightfive = #{overEightfive,jdbcType=INTEGER},
       village_id = #{villageId,jdbcType=INTEGER}
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

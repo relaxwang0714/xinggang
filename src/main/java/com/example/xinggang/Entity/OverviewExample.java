@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class XingangFengcaiExample {
+public class OverviewExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public XingangFengcaiExample() {
+    public OverviewExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -285,203 +285,73 @@ public class XingangFengcaiExample {
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlIsNull() {
-            addCriterion("mp4_url is null");
+        public Criteria andProfileIsNull() {
+            addCriterion("profile is null");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlIsNotNull() {
-            addCriterion("mp4_url is not null");
+        public Criteria andProfileIsNotNull() {
+            addCriterion("profile is not null");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlEqualTo(String value) {
-            addCriterion("mp4_url =", value, "mp4Url");
+        public Criteria andProfileEqualTo(String value) {
+            addCriterion("profile =", value, "profile");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlNotEqualTo(String value) {
-            addCriterion("mp4_url <>", value, "mp4Url");
+        public Criteria andProfileNotEqualTo(String value) {
+            addCriterion("profile <>", value, "profile");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlGreaterThan(String value) {
-            addCriterion("mp4_url >", value, "mp4Url");
+        public Criteria andProfileGreaterThan(String value) {
+            addCriterion("profile >", value, "profile");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlGreaterThanOrEqualTo(String value) {
-            addCriterion("mp4_url >=", value, "mp4Url");
+        public Criteria andProfileGreaterThanOrEqualTo(String value) {
+            addCriterion("profile >=", value, "profile");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlLessThan(String value) {
-            addCriterion("mp4_url <", value, "mp4Url");
+        public Criteria andProfileLessThan(String value) {
+            addCriterion("profile <", value, "profile");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlLessThanOrEqualTo(String value) {
-            addCriterion("mp4_url <=", value, "mp4Url");
+        public Criteria andProfileLessThanOrEqualTo(String value) {
+            addCriterion("profile <=", value, "profile");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlLike(String value) {
-            addCriterion("mp4_url like", value, "mp4Url");
+        public Criteria andProfileLike(String value) {
+            addCriterion("profile like", value, "profile");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlNotLike(String value) {
-            addCriterion("mp4_url not like", value, "mp4Url");
+        public Criteria andProfileNotLike(String value) {
+            addCriterion("profile not like", value, "profile");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlIn(List<String> values) {
-            addCriterion("mp4_url in", values, "mp4Url");
+        public Criteria andProfileIn(List<String> values) {
+            addCriterion("profile in", values, "profile");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlNotIn(List<String> values) {
-            addCriterion("mp4_url not in", values, "mp4Url");
+        public Criteria andProfileNotIn(List<String> values) {
+            addCriterion("profile not in", values, "profile");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlBetween(String value1, String value2) {
-            addCriterion("mp4_url between", value1, value2, "mp4Url");
+        public Criteria andProfileBetween(String value1, String value2) {
+            addCriterion("profile between", value1, value2, "profile");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlNotBetween(String value1, String value2) {
-            addCriterion("mp4_url not between", value1, value2, "mp4Url");
-            return (Criteria) this;
-        }
-
-        public Criteria andMp4NameIsNull() {
-            addCriterion("mp4_name is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andMp4NameIsNotNull() {
-            addCriterion("mp4_name is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andMp4NameEqualTo(String value) {
-            addCriterion("mp4_name =", value, "mp4Name");
-            return (Criteria) this;
-        }
-
-        public Criteria andMp4NameNotEqualTo(String value) {
-            addCriterion("mp4_name <>", value, "mp4Name");
-            return (Criteria) this;
-        }
-
-        public Criteria andMp4NameGreaterThan(String value) {
-            addCriterion("mp4_name >", value, "mp4Name");
-            return (Criteria) this;
-        }
-
-        public Criteria andMp4NameGreaterThanOrEqualTo(String value) {
-            addCriterion("mp4_name >=", value, "mp4Name");
-            return (Criteria) this;
-        }
-
-        public Criteria andMp4NameLessThan(String value) {
-            addCriterion("mp4_name <", value, "mp4Name");
-            return (Criteria) this;
-        }
-
-        public Criteria andMp4NameLessThanOrEqualTo(String value) {
-            addCriterion("mp4_name <=", value, "mp4Name");
-            return (Criteria) this;
-        }
-
-        public Criteria andMp4NameLike(String value) {
-            addCriterion("mp4_name like", value, "mp4Name");
-            return (Criteria) this;
-        }
-
-        public Criteria andMp4NameNotLike(String value) {
-            addCriterion("mp4_name not like", value, "mp4Name");
-            return (Criteria) this;
-        }
-
-        public Criteria andMp4NameIn(List<String> values) {
-            addCriterion("mp4_name in", values, "mp4Name");
-            return (Criteria) this;
-        }
-
-        public Criteria andMp4NameNotIn(List<String> values) {
-            addCriterion("mp4_name not in", values, "mp4Name");
-            return (Criteria) this;
-        }
-
-        public Criteria andMp4NameBetween(String value1, String value2) {
-            addCriterion("mp4_name between", value1, value2, "mp4Name");
-            return (Criteria) this;
-        }
-
-        public Criteria andMp4NameNotBetween(String value1, String value2) {
-            addCriterion("mp4_name not between", value1, value2, "mp4Name");
-            return (Criteria) this;
-        }
-
-        public Criteria andSeriesIdIsNull() {
-            addCriterion("series_id is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSeriesIdIsNotNull() {
-            addCriterion("series_id is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andSeriesIdEqualTo(Integer value) {
-            addCriterion("series_id =", value, "seriesId");
-            return (Criteria) this;
-        }
-
-        public Criteria andSeriesIdNotEqualTo(Integer value) {
-            addCriterion("series_id <>", value, "seriesId");
-            return (Criteria) this;
-        }
-
-        public Criteria andSeriesIdGreaterThan(Integer value) {
-            addCriterion("series_id >", value, "seriesId");
-            return (Criteria) this;
-        }
-
-        public Criteria andSeriesIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("series_id >=", value, "seriesId");
-            return (Criteria) this;
-        }
-
-        public Criteria andSeriesIdLessThan(Integer value) {
-            addCriterion("series_id <", value, "seriesId");
-            return (Criteria) this;
-        }
-
-        public Criteria andSeriesIdLessThanOrEqualTo(Integer value) {
-            addCriterion("series_id <=", value, "seriesId");
-            return (Criteria) this;
-        }
-
-        public Criteria andSeriesIdIn(List<Integer> values) {
-            addCriterion("series_id in", values, "seriesId");
-            return (Criteria) this;
-        }
-
-        public Criteria andSeriesIdNotIn(List<Integer> values) {
-            addCriterion("series_id not in", values, "seriesId");
-            return (Criteria) this;
-        }
-
-        public Criteria andSeriesIdBetween(Integer value1, Integer value2) {
-            addCriterion("series_id between", value1, value2, "seriesId");
-            return (Criteria) this;
-        }
-
-        public Criteria andSeriesIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("series_id not between", value1, value2, "seriesId");
+        public Criteria andProfileNotBetween(String value1, String value2) {
+            addCriterion("profile not between", value1, value2, "profile");
             return (Criteria) this;
         }
 

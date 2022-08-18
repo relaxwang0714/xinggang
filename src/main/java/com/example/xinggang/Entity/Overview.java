@@ -2,18 +2,14 @@ package com.example.xinggang.Entity;
 
 import java.util.Date;
 
-public class XingangFengcai {
+public class Overview {
     private Integer id;
 
     private Date createTime;
 
     private Date updateTime;
 
-    private String mp4Url;
-
-    private String mp4Name;
-
-    private Integer seriesId;
+    private String profile;
 
     private Integer villageId;
 
@@ -41,28 +37,12 @@ public class XingangFengcai {
         this.updateTime = updateTime;
     }
 
-    public String getMp4Url() {
-        return mp4Url;
+    public String getProfile() {
+        return profile;
     }
 
-    public void setMp4Url(String mp4Url) {
-        this.mp4Url = mp4Url == null ? null : mp4Url.trim();
-    }
-
-    public String getMp4Name() {
-        return mp4Name;
-    }
-
-    public void setMp4Name(String mp4Name) {
-        this.mp4Name = mp4Name == null ? null : mp4Name.trim();
-    }
-
-    public Integer getSeriesId() {
-        return seriesId;
-    }
-
-    public void setSeriesId(Integer seriesId) {
-        this.seriesId = seriesId;
+    public void setProfile(String profile) {
+        this.profile = profile == null ? null : profile.trim();
     }
 
     public Integer getVillageId() {

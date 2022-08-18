@@ -16,10 +16,15 @@ import java.util.Map;
  * @Author: Lxq
  * @Date: 2019/10/18 11:37
  */
+/*Config类上标注一个Configuration，向spring声明了这是一个Java配置类,
+ 表示一个类声明了一个或多个@Bean 方法
+*/
 @Configuration
 public class DynamicDataSourceConfig {
     //Bean 表示注册bean，@Configuration表示在application中找到对应的数据字段
+    //Bean表示注册，ConfigurationProperties表示装配
     @Bean
+    //绑定注解
     @ConfigurationProperties("spring.datasource.druid.first")
     public DataSource firstDataSource(){
         return DruidDataSourceBuilder.create().build();

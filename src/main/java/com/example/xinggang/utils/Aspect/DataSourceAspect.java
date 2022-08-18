@@ -26,18 +26,20 @@ import java.lang.reflect.Method;
 public class DataSourceAspect implements Ordered {
 
     protected Logger logger = LoggerFactory.getLogger(getClass());
-
+    //对自定义的注解定义切面
     @Pointcut("@annotation(com.example.xinggang.utils.Annotation.DataSource)")
     public void dataSourcePointCut() {
 
     }
-
+    //表示围绕这个方法周围
     @Around("dataSourcePointCut()")
     public Object around(ProceedingJoinPoint point) throws Throwable {
         MethodSignature signature = (MethodSignature) point.getSignature();
         Method method = signature.getMethod();
+        //反射的方式获取到注解
         DataSource ds = method.getAnnotation(DataSource.class);
         if (ds == null) {
+            //设置数据源
             DynamicDataSource.setDataSource(DataSourcesNames.FIRST);
             logger.debug("set datasource is " + DataSourcesNames.FIRST);
         } else {

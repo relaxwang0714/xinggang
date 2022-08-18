@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class XingangFengcaiExample {
+public class PeopleStructureExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public XingangFengcaiExample() {
+    public PeopleStructureExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -115,52 +115,52 @@ public class XingangFengcaiExample {
             return (Criteria) this;
         }
 
-        public Criteria andIdEqualTo(Integer value) {
+        public Criteria andIdEqualTo(Long value) {
             addCriterion("id =", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdNotEqualTo(Integer value) {
+        public Criteria andIdNotEqualTo(Long value) {
             addCriterion("id <>", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdGreaterThan(Integer value) {
+        public Criteria andIdGreaterThan(Long value) {
             addCriterion("id >", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdGreaterThanOrEqualTo(Integer value) {
+        public Criteria andIdGreaterThanOrEqualTo(Long value) {
             addCriterion("id >=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdLessThan(Integer value) {
+        public Criteria andIdLessThan(Long value) {
             addCriterion("id <", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdLessThanOrEqualTo(Integer value) {
+        public Criteria andIdLessThanOrEqualTo(Long value) {
             addCriterion("id <=", value, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdIn(List<Integer> values) {
+        public Criteria andIdIn(List<Long> values) {
             addCriterion("id in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdNotIn(List<Integer> values) {
+        public Criteria andIdNotIn(List<Long> values) {
             addCriterion("id not in", values, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdBetween(Integer value1, Integer value2) {
+        public Criteria andIdBetween(Long value1, Long value2) {
             addCriterion("id between", value1, value2, "id");
             return (Criteria) this;
         }
 
-        public Criteria andIdNotBetween(Integer value1, Integer value2) {
+        public Criteria andIdNotBetween(Long value1, Long value2) {
             addCriterion("id not between", value1, value2, "id");
             return (Criteria) this;
         }
@@ -285,203 +285,303 @@ public class XingangFengcaiExample {
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlIsNull() {
-            addCriterion("mp4_url is null");
+        public Criteria andZeroEighteenIsNull() {
+            addCriterion("zero_eighteen is null");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlIsNotNull() {
-            addCriterion("mp4_url is not null");
+        public Criteria andZeroEighteenIsNotNull() {
+            addCriterion("zero_eighteen is not null");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlEqualTo(String value) {
-            addCriterion("mp4_url =", value, "mp4Url");
+        public Criteria andZeroEighteenEqualTo(Integer value) {
+            addCriterion("zero_eighteen =", value, "zeroEighteen");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlNotEqualTo(String value) {
-            addCriterion("mp4_url <>", value, "mp4Url");
+        public Criteria andZeroEighteenNotEqualTo(Integer value) {
+            addCriterion("zero_eighteen <>", value, "zeroEighteen");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlGreaterThan(String value) {
-            addCriterion("mp4_url >", value, "mp4Url");
+        public Criteria andZeroEighteenGreaterThan(Integer value) {
+            addCriterion("zero_eighteen >", value, "zeroEighteen");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlGreaterThanOrEqualTo(String value) {
-            addCriterion("mp4_url >=", value, "mp4Url");
+        public Criteria andZeroEighteenGreaterThanOrEqualTo(Integer value) {
+            addCriterion("zero_eighteen >=", value, "zeroEighteen");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlLessThan(String value) {
-            addCriterion("mp4_url <", value, "mp4Url");
+        public Criteria andZeroEighteenLessThan(Integer value) {
+            addCriterion("zero_eighteen <", value, "zeroEighteen");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlLessThanOrEqualTo(String value) {
-            addCriterion("mp4_url <=", value, "mp4Url");
+        public Criteria andZeroEighteenLessThanOrEqualTo(Integer value) {
+            addCriterion("zero_eighteen <=", value, "zeroEighteen");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlLike(String value) {
-            addCriterion("mp4_url like", value, "mp4Url");
+        public Criteria andZeroEighteenIn(List<Integer> values) {
+            addCriterion("zero_eighteen in", values, "zeroEighteen");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlNotLike(String value) {
-            addCriterion("mp4_url not like", value, "mp4Url");
+        public Criteria andZeroEighteenNotIn(List<Integer> values) {
+            addCriterion("zero_eighteen not in", values, "zeroEighteen");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlIn(List<String> values) {
-            addCriterion("mp4_url in", values, "mp4Url");
+        public Criteria andZeroEighteenBetween(Integer value1, Integer value2) {
+            addCriterion("zero_eighteen between", value1, value2, "zeroEighteen");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlNotIn(List<String> values) {
-            addCriterion("mp4_url not in", values, "mp4Url");
+        public Criteria andZeroEighteenNotBetween(Integer value1, Integer value2) {
+            addCriterion("zero_eighteen not between", value1, value2, "zeroEighteen");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlBetween(String value1, String value2) {
-            addCriterion("mp4_url between", value1, value2, "mp4Url");
+        public Criteria andNighteenThirtyfiveIsNull() {
+            addCriterion("nighteen_thirtyfive is null");
             return (Criteria) this;
         }
 
-        public Criteria andMp4UrlNotBetween(String value1, String value2) {
-            addCriterion("mp4_url not between", value1, value2, "mp4Url");
+        public Criteria andNighteenThirtyfiveIsNotNull() {
+            addCriterion("nighteen_thirtyfive is not null");
             return (Criteria) this;
         }
 
-        public Criteria andMp4NameIsNull() {
-            addCriterion("mp4_name is null");
+        public Criteria andNighteenThirtyfiveEqualTo(Integer value) {
+            addCriterion("nighteen_thirtyfive =", value, "nighteenThirtyfive");
             return (Criteria) this;
         }
 
-        public Criteria andMp4NameIsNotNull() {
-            addCriterion("mp4_name is not null");
+        public Criteria andNighteenThirtyfiveNotEqualTo(Integer value) {
+            addCriterion("nighteen_thirtyfive <>", value, "nighteenThirtyfive");
             return (Criteria) this;
         }
 
-        public Criteria andMp4NameEqualTo(String value) {
-            addCriterion("mp4_name =", value, "mp4Name");
+        public Criteria andNighteenThirtyfiveGreaterThan(Integer value) {
+            addCriterion("nighteen_thirtyfive >", value, "nighteenThirtyfive");
             return (Criteria) this;
         }
 
-        public Criteria andMp4NameNotEqualTo(String value) {
-            addCriterion("mp4_name <>", value, "mp4Name");
+        public Criteria andNighteenThirtyfiveGreaterThanOrEqualTo(Integer value) {
+            addCriterion("nighteen_thirtyfive >=", value, "nighteenThirtyfive");
             return (Criteria) this;
         }
 
-        public Criteria andMp4NameGreaterThan(String value) {
-            addCriterion("mp4_name >", value, "mp4Name");
+        public Criteria andNighteenThirtyfiveLessThan(Integer value) {
+            addCriterion("nighteen_thirtyfive <", value, "nighteenThirtyfive");
             return (Criteria) this;
         }
 
-        public Criteria andMp4NameGreaterThanOrEqualTo(String value) {
-            addCriterion("mp4_name >=", value, "mp4Name");
+        public Criteria andNighteenThirtyfiveLessThanOrEqualTo(Integer value) {
+            addCriterion("nighteen_thirtyfive <=", value, "nighteenThirtyfive");
             return (Criteria) this;
         }
 
-        public Criteria andMp4NameLessThan(String value) {
-            addCriterion("mp4_name <", value, "mp4Name");
+        public Criteria andNighteenThirtyfiveIn(List<Integer> values) {
+            addCriterion("nighteen_thirtyfive in", values, "nighteenThirtyfive");
             return (Criteria) this;
         }
 
-        public Criteria andMp4NameLessThanOrEqualTo(String value) {
-            addCriterion("mp4_name <=", value, "mp4Name");
+        public Criteria andNighteenThirtyfiveNotIn(List<Integer> values) {
+            addCriterion("nighteen_thirtyfive not in", values, "nighteenThirtyfive");
             return (Criteria) this;
         }
 
-        public Criteria andMp4NameLike(String value) {
-            addCriterion("mp4_name like", value, "mp4Name");
+        public Criteria andNighteenThirtyfiveBetween(Integer value1, Integer value2) {
+            addCriterion("nighteen_thirtyfive between", value1, value2, "nighteenThirtyfive");
             return (Criteria) this;
         }
 
-        public Criteria andMp4NameNotLike(String value) {
-            addCriterion("mp4_name not like", value, "mp4Name");
+        public Criteria andNighteenThirtyfiveNotBetween(Integer value1, Integer value2) {
+            addCriterion("nighteen_thirtyfive not between", value1, value2, "nighteenThirtyfive");
             return (Criteria) this;
         }
 
-        public Criteria andMp4NameIn(List<String> values) {
-            addCriterion("mp4_name in", values, "mp4Name");
+        public Criteria andThirtyfiveSixtyfiveIsNull() {
+            addCriterion("thirtyfive_sixtyfive is null");
             return (Criteria) this;
         }
 
-        public Criteria andMp4NameNotIn(List<String> values) {
-            addCriterion("mp4_name not in", values, "mp4Name");
+        public Criteria andThirtyfiveSixtyfiveIsNotNull() {
+            addCriterion("thirtyfive_sixtyfive is not null");
             return (Criteria) this;
         }
 
-        public Criteria andMp4NameBetween(String value1, String value2) {
-            addCriterion("mp4_name between", value1, value2, "mp4Name");
+        public Criteria andThirtyfiveSixtyfiveEqualTo(Integer value) {
+            addCriterion("thirtyfive_sixtyfive =", value, "thirtyfiveSixtyfive");
             return (Criteria) this;
         }
 
-        public Criteria andMp4NameNotBetween(String value1, String value2) {
-            addCriterion("mp4_name not between", value1, value2, "mp4Name");
+        public Criteria andThirtyfiveSixtyfiveNotEqualTo(Integer value) {
+            addCriterion("thirtyfive_sixtyfive <>", value, "thirtyfiveSixtyfive");
             return (Criteria) this;
         }
 
-        public Criteria andSeriesIdIsNull() {
-            addCriterion("series_id is null");
+        public Criteria andThirtyfiveSixtyfiveGreaterThan(Integer value) {
+            addCriterion("thirtyfive_sixtyfive >", value, "thirtyfiveSixtyfive");
             return (Criteria) this;
         }
 
-        public Criteria andSeriesIdIsNotNull() {
-            addCriterion("series_id is not null");
+        public Criteria andThirtyfiveSixtyfiveGreaterThanOrEqualTo(Integer value) {
+            addCriterion("thirtyfive_sixtyfive >=", value, "thirtyfiveSixtyfive");
             return (Criteria) this;
         }
 
-        public Criteria andSeriesIdEqualTo(Integer value) {
-            addCriterion("series_id =", value, "seriesId");
+        public Criteria andThirtyfiveSixtyfiveLessThan(Integer value) {
+            addCriterion("thirtyfive_sixtyfive <", value, "thirtyfiveSixtyfive");
             return (Criteria) this;
         }
 
-        public Criteria andSeriesIdNotEqualTo(Integer value) {
-            addCriterion("series_id <>", value, "seriesId");
+        public Criteria andThirtyfiveSixtyfiveLessThanOrEqualTo(Integer value) {
+            addCriterion("thirtyfive_sixtyfive <=", value, "thirtyfiveSixtyfive");
             return (Criteria) this;
         }
 
-        public Criteria andSeriesIdGreaterThan(Integer value) {
-            addCriterion("series_id >", value, "seriesId");
+        public Criteria andThirtyfiveSixtyfiveIn(List<Integer> values) {
+            addCriterion("thirtyfive_sixtyfive in", values, "thirtyfiveSixtyfive");
             return (Criteria) this;
         }
 
-        public Criteria andSeriesIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("series_id >=", value, "seriesId");
+        public Criteria andThirtyfiveSixtyfiveNotIn(List<Integer> values) {
+            addCriterion("thirtyfive_sixtyfive not in", values, "thirtyfiveSixtyfive");
             return (Criteria) this;
         }
 
-        public Criteria andSeriesIdLessThan(Integer value) {
-            addCriterion("series_id <", value, "seriesId");
+        public Criteria andThirtyfiveSixtyfiveBetween(Integer value1, Integer value2) {
+            addCriterion("thirtyfive_sixtyfive between", value1, value2, "thirtyfiveSixtyfive");
             return (Criteria) this;
         }
 
-        public Criteria andSeriesIdLessThanOrEqualTo(Integer value) {
-            addCriterion("series_id <=", value, "seriesId");
+        public Criteria andThirtyfiveSixtyfiveNotBetween(Integer value1, Integer value2) {
+            addCriterion("thirtyfive_sixtyfive not between", value1, value2, "thirtyfiveSixtyfive");
             return (Criteria) this;
         }
 
-        public Criteria andSeriesIdIn(List<Integer> values) {
-            addCriterion("series_id in", values, "seriesId");
+        public Criteria andSixtyfiveEightyfiveIsNull() {
+            addCriterion("sixtyfive_eightyfive is null");
             return (Criteria) this;
         }
 
-        public Criteria andSeriesIdNotIn(List<Integer> values) {
-            addCriterion("series_id not in", values, "seriesId");
+        public Criteria andSixtyfiveEightyfiveIsNotNull() {
+            addCriterion("sixtyfive_eightyfive is not null");
             return (Criteria) this;
         }
 
-        public Criteria andSeriesIdBetween(Integer value1, Integer value2) {
-            addCriterion("series_id between", value1, value2, "seriesId");
+        public Criteria andSixtyfiveEightyfiveEqualTo(Integer value) {
+            addCriterion("sixtyfive_eightyfive =", value, "sixtyfiveEightyfive");
             return (Criteria) this;
         }
 
-        public Criteria andSeriesIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("series_id not between", value1, value2, "seriesId");
+        public Criteria andSixtyfiveEightyfiveNotEqualTo(Integer value) {
+            addCriterion("sixtyfive_eightyfive <>", value, "sixtyfiveEightyfive");
+            return (Criteria) this;
+        }
+
+        public Criteria andSixtyfiveEightyfiveGreaterThan(Integer value) {
+            addCriterion("sixtyfive_eightyfive >", value, "sixtyfiveEightyfive");
+            return (Criteria) this;
+        }
+
+        public Criteria andSixtyfiveEightyfiveGreaterThanOrEqualTo(Integer value) {
+            addCriterion("sixtyfive_eightyfive >=", value, "sixtyfiveEightyfive");
+            return (Criteria) this;
+        }
+
+        public Criteria andSixtyfiveEightyfiveLessThan(Integer value) {
+            addCriterion("sixtyfive_eightyfive <", value, "sixtyfiveEightyfive");
+            return (Criteria) this;
+        }
+
+        public Criteria andSixtyfiveEightyfiveLessThanOrEqualTo(Integer value) {
+            addCriterion("sixtyfive_eightyfive <=", value, "sixtyfiveEightyfive");
+            return (Criteria) this;
+        }
+
+        public Criteria andSixtyfiveEightyfiveIn(List<Integer> values) {
+            addCriterion("sixtyfive_eightyfive in", values, "sixtyfiveEightyfive");
+            return (Criteria) this;
+        }
+
+        public Criteria andSixtyfiveEightyfiveNotIn(List<Integer> values) {
+            addCriterion("sixtyfive_eightyfive not in", values, "sixtyfiveEightyfive");
+            return (Criteria) this;
+        }
+
+        public Criteria andSixtyfiveEightyfiveBetween(Integer value1, Integer value2) {
+            addCriterion("sixtyfive_eightyfive between", value1, value2, "sixtyfiveEightyfive");
+            return (Criteria) this;
+        }
+
+        public Criteria andSixtyfiveEightyfiveNotBetween(Integer value1, Integer value2) {
+            addCriterion("sixtyfive_eightyfive not between", value1, value2, "sixtyfiveEightyfive");
+            return (Criteria) this;
+        }
+
+        public Criteria andOverEightfiveIsNull() {
+            addCriterion("over_eightfive is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOverEightfiveIsNotNull() {
+            addCriterion("over_eightfive is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOverEightfiveEqualTo(Integer value) {
+            addCriterion("over_eightfive =", value, "overEightfive");
+            return (Criteria) this;
+        }
+
+        public Criteria andOverEightfiveNotEqualTo(Integer value) {
+            addCriterion("over_eightfive <>", value, "overEightfive");
+            return (Criteria) this;
+        }
+
+        public Criteria andOverEightfiveGreaterThan(Integer value) {
+            addCriterion("over_eightfive >", value, "overEightfive");
+            return (Criteria) this;
+        }
+
+        public Criteria andOverEightfiveGreaterThanOrEqualTo(Integer value) {
+            addCriterion("over_eightfive >=", value, "overEightfive");
+            return (Criteria) this;
+        }
+
+        public Criteria andOverEightfiveLessThan(Integer value) {
+            addCriterion("over_eightfive <", value, "overEightfive");
+            return (Criteria) this;
+        }
+
+        public Criteria andOverEightfiveLessThanOrEqualTo(Integer value) {
+            addCriterion("over_eightfive <=", value, "overEightfive");
+            return (Criteria) this;
+        }
+
+        public Criteria andOverEightfiveIn(List<Integer> values) {
+            addCriterion("over_eightfive in", values, "overEightfive");
+            return (Criteria) this;
+        }
+
+        public Criteria andOverEightfiveNotIn(List<Integer> values) {
+            addCriterion("over_eightfive not in", values, "overEightfive");
+            return (Criteria) this;
+        }
+
+        public Criteria andOverEightfiveBetween(Integer value1, Integer value2) {
+            addCriterion("over_eightfive between", value1, value2, "overEightfive");
+            return (Criteria) this;
+        }
+
+        public Criteria andOverEightfiveNotBetween(Integer value1, Integer value2) {
+            addCriterion("over_eightfive not between", value1, value2, "overEightfive");
             return (Criteria) this;
         }
 

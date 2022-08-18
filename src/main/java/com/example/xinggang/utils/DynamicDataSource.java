@@ -24,6 +24,7 @@ public class DynamicDataSource extends AbstractRoutingDataSource {
      * @param dataSource        默认的数据源
      * @param targetDataSources 目标数据源
      */
+    //构造函数
     public DynamicDataSource(DataSource dataSource, Map<String, DataSource> targetDataSources) {
         super.setDefaultTargetDataSource(dataSource);
         super.setTargetDataSources(new HashMap<>(targetDataSources));
