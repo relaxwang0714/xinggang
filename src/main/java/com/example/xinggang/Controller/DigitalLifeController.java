@@ -19,7 +19,19 @@ public class DigitalLifeController {
     }
     @RequestMapping("ruoshiQunti")
     public String ruoshiQunti(HttpServletRequest request){
-        return digitalLifeService.selecRuoshiQuntiByVillageId(1);
+        return digitalLifeService.selectRuoshiQuntiByVillageId(1);
+    }
+    @RequestMapping("canji")
+    public String canjiList(HttpServletRequest request){
+        return digitalLifeService.selectCanjirenByVillageId(1);
+    }
+    @RequestMapping("dibao")
+    public String dibaoList(HttpServletRequest request){
+        return digitalLifeService.selectdibaohuByVillageId(1);
+    }
+    @RequestMapping("oldPeople")
+    public String oldPeopleList(HttpServletRequest request){
+        return digitalLifeService.selectOldPeopleByVillageId(1);
     }
     @RequestMapping("lingliYouyue")
     public String lingliYouyue(HttpServletRequest request){
@@ -29,9 +41,13 @@ public class DigitalLifeController {
     public String gongyiGuanggao(HttpServletRequest request){
         return digitalLifeService.selectGongyiGuanggaoByVillageId(1);
     }
-    @RequestMapping("gongyiZuzhi")
-    public String gongyiZuzhi(HttpServletRequest request){
-        return digitalLifeService.selectGongyiZuzhiByVillageId(1);
+    @RequestMapping("laonianxiehui")
+    public String laonianxiehui(HttpServletRequest request){
+        return digitalLifeService.selectLaonianXiehuiByVillageId(1);
+    }
+    @RequestMapping("funvxiehui")
+    public String funvxiehui(HttpServletRequest request){
+        return digitalLifeService.selectFunvXiehuiByVillageId(1);
     }
     @RequestMapping("gongyiHuodong")
     public String gongyiHuodong(HttpServletRequest request){

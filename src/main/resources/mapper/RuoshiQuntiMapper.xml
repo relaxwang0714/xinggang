@@ -5,9 +5,12 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
-    <result column="canjiren" jdbcType="INTEGER" property="canjiren" />
-    <result column="dibaohu" jdbcType="INTEGER" property="dibaohu" />
-    <result column="laoren" jdbcType="INTEGER" property="laoren" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="dibao_type" jdbcType="VARCHAR" property="dibaoType" />
+    <result column="canji_type" jdbcType="VARCHAR" property="canjiType" />
+    <result column="is_dibao" jdbcType="INTEGER" property="isDibao" />
+    <result column="is_canji" jdbcType="INTEGER" property="isCanji" />
     <result column="village_id" jdbcType="INTEGER" property="villageId" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -69,7 +72,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, create_time, update_time, canjiren, dibaohu, laoren, village_id
+    id, create_time, update_time, name, age, dibao_type, canji_type, is_dibao, is_canji, 
+    village_id
   </sql>
   <select id="selectByExample" parameterType="com.example.xinggang.Entity.RuoshiQuntiExample" resultMap="BaseResultMap">
     select
@@ -103,10 +107,12 @@
   </delete>
   <insert id="insert" parameterType="com.example.xinggang.Entity.RuoshiQunti">
     insert into ruoshi_qunti (id, create_time, update_time, 
-      canjiren, dibaohu, laoren, 
+      name, age, dibao_type, 
+      canji_type, is_dibao, is_canji, 
       village_id)
     values (#{id,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{canjiren,jdbcType=INTEGER}, #{dibaohu,jdbcType=INTEGER}, #{laoren,jdbcType=INTEGER}, 
+      #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{dibaoType,jdbcType=VARCHAR}, 
+      #{canjiType,jdbcType=VARCHAR}, #{isDibao,jdbcType=INTEGER}, #{isCanji,jdbcType=INTEGER}, 
       #{villageId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.example.xinggang.Entity.RuoshiQunti">
@@ -121,14 +127,23 @@
       <if test="updateTime != null">
         update_time,
       </if>
-      <if test="canjiren != null">
-        canjiren,
+      <if test="name != null">
+        name,
       </if>
-      <if test="dibaohu != null">
-        dibaohu,
+      <if test="age != null">
+        age,
       </if>
-      <if test="laoren != null">
-        laoren,
+      <if test="dibaoType != null">
+        dibao_type,
+      </if>
+      <if test="canjiType != null">
+        canji_type,
+      </if>
+      <if test="isDibao != null">
+        is_dibao,
+      </if>
+      <if test="isCanji != null">
+        is_canji,
       </if>
       <if test="villageId != null">
         village_id,
@@ -144,14 +159,23 @@
       <if test="updateTime != null">
         #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="canjiren != null">
-        #{canjiren,jdbcType=INTEGER},
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
       </if>
-      <if test="dibaohu != null">
-        #{dibaohu,jdbcType=INTEGER},
+      <if test="age != null">
+        #{age,jdbcType=INTEGER},
       </if>
-      <if test="laoren != null">
-        #{laoren,jdbcType=INTEGER},
+      <if test="dibaoType != null">
+        #{dibaoType,jdbcType=VARCHAR},
+      </if>
+      <if test="canjiType != null">
+        #{canjiType,jdbcType=VARCHAR},
+      </if>
+      <if test="isDibao != null">
+        #{isDibao,jdbcType=INTEGER},
+      </if>
+      <if test="isCanji != null">
+        #{isCanji,jdbcType=INTEGER},
       </if>
       <if test="villageId != null">
         #{villageId,jdbcType=INTEGER},
@@ -176,14 +200,23 @@
       <if test="record.updateTime != null">
         update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.canjiren != null">
-        canjiren = #{record.canjiren,jdbcType=INTEGER},
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
       </if>
-      <if test="record.dibaohu != null">
-        dibaohu = #{record.dibaohu,jdbcType=INTEGER},
+      <if test="record.age != null">
+        age = #{record.age,jdbcType=INTEGER},
       </if>
-      <if test="record.laoren != null">
-        laoren = #{record.laoren,jdbcType=INTEGER},
+      <if test="record.dibaoType != null">
+        dibao_type = #{record.dibaoType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.canjiType != null">
+        canji_type = #{record.canjiType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isDibao != null">
+        is_dibao = #{record.isDibao,jdbcType=INTEGER},
+      </if>
+      <if test="record.isCanji != null">
+        is_canji = #{record.isCanji,jdbcType=INTEGER},
       </if>
       <if test="record.villageId != null">
         village_id = #{record.villageId,jdbcType=INTEGER},
@@ -198,9 +231,12 @@
     set id = #{record.id,jdbcType=INTEGER},
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
-      canjiren = #{record.canjiren,jdbcType=INTEGER},
-      dibaohu = #{record.dibaohu,jdbcType=INTEGER},
-      laoren = #{record.laoren,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      age = #{record.age,jdbcType=INTEGER},
+      dibao_type = #{record.dibaoType,jdbcType=VARCHAR},
+      canji_type = #{record.canjiType,jdbcType=VARCHAR},
+      is_dibao = #{record.isDibao,jdbcType=INTEGER},
+      is_canji = #{record.isCanji,jdbcType=INTEGER},
       village_id = #{record.villageId,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -215,14 +251,23 @@
       <if test="updateTime != null">
         update_time = #{updateTime,jdbcType=TIMESTAMP},
       </if>
-      <if test="canjiren != null">
-        canjiren = #{canjiren,jdbcType=INTEGER},
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="dibaohu != null">
-        dibaohu = #{dibaohu,jdbcType=INTEGER},
+      <if test="age != null">
+        age = #{age,jdbcType=INTEGER},
       </if>
-      <if test="laoren != null">
-        laoren = #{laoren,jdbcType=INTEGER},
+      <if test="dibaoType != null">
+        dibao_type = #{dibaoType,jdbcType=VARCHAR},
+      </if>
+      <if test="canjiType != null">
+        canji_type = #{canjiType,jdbcType=VARCHAR},
+      </if>
+      <if test="isDibao != null">
+        is_dibao = #{isDibao,jdbcType=INTEGER},
+      </if>
+      <if test="isCanji != null">
+        is_canji = #{isCanji,jdbcType=INTEGER},
       </if>
       <if test="villageId != null">
         village_id = #{villageId,jdbcType=INTEGER},
@@ -234,10 +279,14 @@
     update ruoshi_qunti
     set create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
-      canjiren = #{canjiren,jdbcType=INTEGER},
-      dibaohu = #{dibaohu,jdbcType=INTEGER},
-      laoren = #{laoren,jdbcType=INTEGER},
+      name = #{name,jdbcType=VARCHAR},
+      age = #{age,jdbcType=INTEGER},
+      dibao_type = #{dibaoType,jdbcType=VARCHAR},
+      canji_type = #{canjiType,jdbcType=VARCHAR},
+      is_dibao = #{isDibao,jdbcType=INTEGER},
+      is_canji = #{isCanji,jdbcType=INTEGER},
       village_id = #{villageId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
 </mapper>

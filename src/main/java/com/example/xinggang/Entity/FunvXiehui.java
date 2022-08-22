@@ -2,7 +2,7 @@ package com.example.xinggang.Entity;
 
 import java.util.Date;
 
-public class RuoshiQunti {
+public class FunvXiehui {
     private Integer id;
 
     private Date createTime;
@@ -11,15 +11,11 @@ public class RuoshiQunti {
 
     private String name;
 
-    private Integer age;
+    private Integer sex;
 
-    private String dibaoType;
+    private String phone;
 
-    private String canjiType;
-
-    private Integer isDibao;
-
-    private Integer isCanji;
+    private String zhengzhiMianmao;
 
     private Integer villageId;
 
@@ -55,44 +51,28 @@ public class RuoshiQunti {
         this.name = name == null ? null : name.trim();
     }
 
-    public Integer getAge() {
-        return age;
+    public Integer getSex() {
+        return sex;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setSex(Integer sex) {
+        this.sex = sex;
     }
 
-    public String getDibaoType() {
-        return dibaoType;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setDibaoType(String dibaoType) {
-        this.dibaoType = dibaoType == null ? null : dibaoType.trim();
+    public void setPhone(String phone) {
+        this.phone = phone == null ? null : phone.trim();
     }
 
-    public String getCanjiType() {
-        return canjiType;
+    public String getZhengzhiMianmao() {
+        return zhengzhiMianmao;
     }
 
-    public void setCanjiType(String canjiType) {
-        this.canjiType = canjiType == null ? null : canjiType.trim();
-    }
-
-    public Integer getIsDibao() {
-        return isDibao;
-    }
-
-    public void setIsDibao(Integer isDibao) {
-        this.isDibao = isDibao;
-    }
-
-    public Integer getIsCanji() {
-        return isCanji;
-    }
-
-    public void setIsCanji(Integer isCanji) {
-        this.isCanji = isCanji;
+    public void setZhengzhiMianmao(String zhengzhiMianmao) {
+        this.zhengzhiMianmao = zhengzhiMianmao == null ? null : zhengzhiMianmao.trim();
     }
 
     public Integer getVillageId() {

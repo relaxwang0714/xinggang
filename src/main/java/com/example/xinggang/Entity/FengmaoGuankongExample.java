@@ -625,6 +625,76 @@ public class FengmaoGuankongExample {
             return (Criteria) this;
         }
 
+        public Criteria andCarmeraUrlIsNull() {
+            addCriterion("carmera_url is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCarmeraUrlIsNotNull() {
+            addCriterion("carmera_url is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCarmeraUrlEqualTo(String value) {
+            addCriterion("carmera_url =", value, "carmeraUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andCarmeraUrlNotEqualTo(String value) {
+            addCriterion("carmera_url <>", value, "carmeraUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andCarmeraUrlGreaterThan(String value) {
+            addCriterion("carmera_url >", value, "carmeraUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andCarmeraUrlGreaterThanOrEqualTo(String value) {
+            addCriterion("carmera_url >=", value, "carmeraUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andCarmeraUrlLessThan(String value) {
+            addCriterion("carmera_url <", value, "carmeraUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andCarmeraUrlLessThanOrEqualTo(String value) {
+            addCriterion("carmera_url <=", value, "carmeraUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andCarmeraUrlLike(String value) {
+            addCriterion("carmera_url like", value, "carmeraUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andCarmeraUrlNotLike(String value) {
+            addCriterion("carmera_url not like", value, "carmeraUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andCarmeraUrlIn(List<String> values) {
+            addCriterion("carmera_url in", values, "carmeraUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andCarmeraUrlNotIn(List<String> values) {
+            addCriterion("carmera_url not in", values, "carmeraUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andCarmeraUrlBetween(String value1, String value2) {
+            addCriterion("carmera_url between", value1, value2, "carmeraUrl");
+            return (Criteria) this;
+        }
+
+        public Criteria andCarmeraUrlNotBetween(String value1, String value2) {
+            addCriterion("carmera_url not between", value1, value2, "carmeraUrl");
+            return (Criteria) this;
+        }
+
         public Criteria andVillageIdIsNull() {
             addCriterion("village_id is null");
             return (Criteria) this;

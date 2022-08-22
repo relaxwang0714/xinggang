@@ -285,183 +285,393 @@ public class RuoshiQuntiExample {
             return (Criteria) this;
         }
 
-        public Criteria andCanjirenIsNull() {
-            addCriterion("canjiren is null");
+        public Criteria andNameIsNull() {
+            addCriterion("name is null");
             return (Criteria) this;
         }
 
-        public Criteria andCanjirenIsNotNull() {
-            addCriterion("canjiren is not null");
+        public Criteria andNameIsNotNull() {
+            addCriterion("name is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCanjirenEqualTo(Integer value) {
-            addCriterion("canjiren =", value, "canjiren");
+        public Criteria andNameEqualTo(String value) {
+            addCriterion("name =", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andCanjirenNotEqualTo(Integer value) {
-            addCriterion("canjiren <>", value, "canjiren");
+        public Criteria andNameNotEqualTo(String value) {
+            addCriterion("name <>", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andCanjirenGreaterThan(Integer value) {
-            addCriterion("canjiren >", value, "canjiren");
+        public Criteria andNameGreaterThan(String value) {
+            addCriterion("name >", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andCanjirenGreaterThanOrEqualTo(Integer value) {
-            addCriterion("canjiren >=", value, "canjiren");
+        public Criteria andNameGreaterThanOrEqualTo(String value) {
+            addCriterion("name >=", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andCanjirenLessThan(Integer value) {
-            addCriterion("canjiren <", value, "canjiren");
+        public Criteria andNameLessThan(String value) {
+            addCriterion("name <", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andCanjirenLessThanOrEqualTo(Integer value) {
-            addCriterion("canjiren <=", value, "canjiren");
+        public Criteria andNameLessThanOrEqualTo(String value) {
+            addCriterion("name <=", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andCanjirenIn(List<Integer> values) {
-            addCriterion("canjiren in", values, "canjiren");
+        public Criteria andNameLike(String value) {
+            addCriterion("name like", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andCanjirenNotIn(List<Integer> values) {
-            addCriterion("canjiren not in", values, "canjiren");
+        public Criteria andNameNotLike(String value) {
+            addCriterion("name not like", value, "name");
             return (Criteria) this;
         }
 
-        public Criteria andCanjirenBetween(Integer value1, Integer value2) {
-            addCriterion("canjiren between", value1, value2, "canjiren");
+        public Criteria andNameIn(List<String> values) {
+            addCriterion("name in", values, "name");
             return (Criteria) this;
         }
 
-        public Criteria andCanjirenNotBetween(Integer value1, Integer value2) {
-            addCriterion("canjiren not between", value1, value2, "canjiren");
+        public Criteria andNameNotIn(List<String> values) {
+            addCriterion("name not in", values, "name");
             return (Criteria) this;
         }
 
-        public Criteria andDibaohuIsNull() {
-            addCriterion("dibaohu is null");
+        public Criteria andNameBetween(String value1, String value2) {
+            addCriterion("name between", value1, value2, "name");
             return (Criteria) this;
         }
 
-        public Criteria andDibaohuIsNotNull() {
-            addCriterion("dibaohu is not null");
+        public Criteria andNameNotBetween(String value1, String value2) {
+            addCriterion("name not between", value1, value2, "name");
             return (Criteria) this;
         }
 
-        public Criteria andDibaohuEqualTo(Integer value) {
-            addCriterion("dibaohu =", value, "dibaohu");
+        public Criteria andAgeIsNull() {
+            addCriterion("age is null");
             return (Criteria) this;
         }
 
-        public Criteria andDibaohuNotEqualTo(Integer value) {
-            addCriterion("dibaohu <>", value, "dibaohu");
+        public Criteria andAgeIsNotNull() {
+            addCriterion("age is not null");
             return (Criteria) this;
         }
 
-        public Criteria andDibaohuGreaterThan(Integer value) {
-            addCriterion("dibaohu >", value, "dibaohu");
+        public Criteria andAgeEqualTo(Integer value) {
+            addCriterion("age =", value, "age");
             return (Criteria) this;
         }
 
-        public Criteria andDibaohuGreaterThanOrEqualTo(Integer value) {
-            addCriterion("dibaohu >=", value, "dibaohu");
+        public Criteria andAgeNotEqualTo(Integer value) {
+            addCriterion("age <>", value, "age");
             return (Criteria) this;
         }
 
-        public Criteria andDibaohuLessThan(Integer value) {
-            addCriterion("dibaohu <", value, "dibaohu");
+        public Criteria andAgeGreaterThan(Integer value) {
+            addCriterion("age >", value, "age");
             return (Criteria) this;
         }
 
-        public Criteria andDibaohuLessThanOrEqualTo(Integer value) {
-            addCriterion("dibaohu <=", value, "dibaohu");
+        public Criteria andAgeGreaterThanOrEqualTo(Integer value) {
+            addCriterion("age >=", value, "age");
             return (Criteria) this;
         }
 
-        public Criteria andDibaohuIn(List<Integer> values) {
-            addCriterion("dibaohu in", values, "dibaohu");
+        public Criteria andAgeLessThan(Integer value) {
+            addCriterion("age <", value, "age");
             return (Criteria) this;
         }
 
-        public Criteria andDibaohuNotIn(List<Integer> values) {
-            addCriterion("dibaohu not in", values, "dibaohu");
+        public Criteria andAgeLessThanOrEqualTo(Integer value) {
+            addCriterion("age <=", value, "age");
             return (Criteria) this;
         }
 
-        public Criteria andDibaohuBetween(Integer value1, Integer value2) {
-            addCriterion("dibaohu between", value1, value2, "dibaohu");
+        public Criteria andAgeIn(List<Integer> values) {
+            addCriterion("age in", values, "age");
             return (Criteria) this;
         }
 
-        public Criteria andDibaohuNotBetween(Integer value1, Integer value2) {
-            addCriterion("dibaohu not between", value1, value2, "dibaohu");
+        public Criteria andAgeNotIn(List<Integer> values) {
+            addCriterion("age not in", values, "age");
             return (Criteria) this;
         }
 
-        public Criteria andLaorenIsNull() {
-            addCriterion("laoren is null");
+        public Criteria andAgeBetween(Integer value1, Integer value2) {
+            addCriterion("age between", value1, value2, "age");
             return (Criteria) this;
         }
 
-        public Criteria andLaorenIsNotNull() {
-            addCriterion("laoren is not null");
+        public Criteria andAgeNotBetween(Integer value1, Integer value2) {
+            addCriterion("age not between", value1, value2, "age");
             return (Criteria) this;
         }
 
-        public Criteria andLaorenEqualTo(Integer value) {
-            addCriterion("laoren =", value, "laoren");
+        public Criteria andDibaoTypeIsNull() {
+            addCriterion("dibao_type is null");
             return (Criteria) this;
         }
 
-        public Criteria andLaorenNotEqualTo(Integer value) {
-            addCriterion("laoren <>", value, "laoren");
+        public Criteria andDibaoTypeIsNotNull() {
+            addCriterion("dibao_type is not null");
             return (Criteria) this;
         }
 
-        public Criteria andLaorenGreaterThan(Integer value) {
-            addCriterion("laoren >", value, "laoren");
+        public Criteria andDibaoTypeEqualTo(String value) {
+            addCriterion("dibao_type =", value, "dibaoType");
             return (Criteria) this;
         }
 
-        public Criteria andLaorenGreaterThanOrEqualTo(Integer value) {
-            addCriterion("laoren >=", value, "laoren");
+        public Criteria andDibaoTypeNotEqualTo(String value) {
+            addCriterion("dibao_type <>", value, "dibaoType");
             return (Criteria) this;
         }
 
-        public Criteria andLaorenLessThan(Integer value) {
-            addCriterion("laoren <", value, "laoren");
+        public Criteria andDibaoTypeGreaterThan(String value) {
+            addCriterion("dibao_type >", value, "dibaoType");
             return (Criteria) this;
         }
 
-        public Criteria andLaorenLessThanOrEqualTo(Integer value) {
-            addCriterion("laoren <=", value, "laoren");
+        public Criteria andDibaoTypeGreaterThanOrEqualTo(String value) {
+            addCriterion("dibao_type >=", value, "dibaoType");
             return (Criteria) this;
         }
 
-        public Criteria andLaorenIn(List<Integer> values) {
-            addCriterion("laoren in", values, "laoren");
+        public Criteria andDibaoTypeLessThan(String value) {
+            addCriterion("dibao_type <", value, "dibaoType");
             return (Criteria) this;
         }
 
-        public Criteria andLaorenNotIn(List<Integer> values) {
-            addCriterion("laoren not in", values, "laoren");
+        public Criteria andDibaoTypeLessThanOrEqualTo(String value) {
+            addCriterion("dibao_type <=", value, "dibaoType");
             return (Criteria) this;
         }
 
-        public Criteria andLaorenBetween(Integer value1, Integer value2) {
-            addCriterion("laoren between", value1, value2, "laoren");
+        public Criteria andDibaoTypeLike(String value) {
+            addCriterion("dibao_type like", value, "dibaoType");
             return (Criteria) this;
         }
 
-        public Criteria andLaorenNotBetween(Integer value1, Integer value2) {
-            addCriterion("laoren not between", value1, value2, "laoren");
+        public Criteria andDibaoTypeNotLike(String value) {
+            addCriterion("dibao_type not like", value, "dibaoType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDibaoTypeIn(List<String> values) {
+            addCriterion("dibao_type in", values, "dibaoType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDibaoTypeNotIn(List<String> values) {
+            addCriterion("dibao_type not in", values, "dibaoType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDibaoTypeBetween(String value1, String value2) {
+            addCriterion("dibao_type between", value1, value2, "dibaoType");
+            return (Criteria) this;
+        }
+
+        public Criteria andDibaoTypeNotBetween(String value1, String value2) {
+            addCriterion("dibao_type not between", value1, value2, "dibaoType");
+            return (Criteria) this;
+        }
+
+        public Criteria andCanjiTypeIsNull() {
+            addCriterion("canji_type is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCanjiTypeIsNotNull() {
+            addCriterion("canji_type is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andCanjiTypeEqualTo(String value) {
+            addCriterion("canji_type =", value, "canjiType");
+            return (Criteria) this;
+        }
+
+        public Criteria andCanjiTypeNotEqualTo(String value) {
+            addCriterion("canji_type <>", value, "canjiType");
+            return (Criteria) this;
+        }
+
+        public Criteria andCanjiTypeGreaterThan(String value) {
+            addCriterion("canji_type >", value, "canjiType");
+            return (Criteria) this;
+        }
+
+        public Criteria andCanjiTypeGreaterThanOrEqualTo(String value) {
+            addCriterion("canji_type >=", value, "canjiType");
+            return (Criteria) this;
+        }
+
+        public Criteria andCanjiTypeLessThan(String value) {
+            addCriterion("canji_type <", value, "canjiType");
+            return (Criteria) this;
+        }
+
+        public Criteria andCanjiTypeLessThanOrEqualTo(String value) {
+            addCriterion("canji_type <=", value, "canjiType");
+            return (Criteria) this;
+        }
+
+        public Criteria andCanjiTypeLike(String value) {
+            addCriterion("canji_type like", value, "canjiType");
+            return (Criteria) this;
+        }
+
+        public Criteria andCanjiTypeNotLike(String value) {
+            addCriterion("canji_type not like", value, "canjiType");
+            return (Criteria) this;
+        }
+
+        public Criteria andCanjiTypeIn(List<String> values) {
+            addCriterion("canji_type in", values, "canjiType");
+            return (Criteria) this;
+        }
+
+        public Criteria andCanjiTypeNotIn(List<String> values) {
+            addCriterion("canji_type not in", values, "canjiType");
+            return (Criteria) this;
+        }
+
+        public Criteria andCanjiTypeBetween(String value1, String value2) {
+            addCriterion("canji_type between", value1, value2, "canjiType");
+            return (Criteria) this;
+        }
+
+        public Criteria andCanjiTypeNotBetween(String value1, String value2) {
+            addCriterion("canji_type not between", value1, value2, "canjiType");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDibaoIsNull() {
+            addCriterion("is_dibao is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDibaoIsNotNull() {
+            addCriterion("is_dibao is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDibaoEqualTo(Integer value) {
+            addCriterion("is_dibao =", value, "isDibao");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDibaoNotEqualTo(Integer value) {
+            addCriterion("is_dibao <>", value, "isDibao");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDibaoGreaterThan(Integer value) {
+            addCriterion("is_dibao >", value, "isDibao");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDibaoGreaterThanOrEqualTo(Integer value) {
+            addCriterion("is_dibao >=", value, "isDibao");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDibaoLessThan(Integer value) {
+            addCriterion("is_dibao <", value, "isDibao");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDibaoLessThanOrEqualTo(Integer value) {
+            addCriterion("is_dibao <=", value, "isDibao");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDibaoIn(List<Integer> values) {
+            addCriterion("is_dibao in", values, "isDibao");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDibaoNotIn(List<Integer> values) {
+            addCriterion("is_dibao not in", values, "isDibao");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDibaoBetween(Integer value1, Integer value2) {
+            addCriterion("is_dibao between", value1, value2, "isDibao");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsDibaoNotBetween(Integer value1, Integer value2) {
+            addCriterion("is_dibao not between", value1, value2, "isDibao");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsCanjiIsNull() {
+            addCriterion("is_canji is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsCanjiIsNotNull() {
+            addCriterion("is_canji is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsCanjiEqualTo(Integer value) {
+            addCriterion("is_canji =", value, "isCanji");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsCanjiNotEqualTo(Integer value) {
+            addCriterion("is_canji <>", value, "isCanji");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsCanjiGreaterThan(Integer value) {
+            addCriterion("is_canji >", value, "isCanji");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsCanjiGreaterThanOrEqualTo(Integer value) {
+            addCriterion("is_canji >=", value, "isCanji");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsCanjiLessThan(Integer value) {
+            addCriterion("is_canji <", value, "isCanji");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsCanjiLessThanOrEqualTo(Integer value) {
+            addCriterion("is_canji <=", value, "isCanji");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsCanjiIn(List<Integer> values) {
+            addCriterion("is_canji in", values, "isCanji");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsCanjiNotIn(List<Integer> values) {
+            addCriterion("is_canji not in", values, "isCanji");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsCanjiBetween(Integer value1, Integer value2) {
+            addCriterion("is_canji between", value1, value2, "isCanji");
+            return (Criteria) this;
+        }
+
+        public Criteria andIsCanjiNotBetween(Integer value1, Integer value2) {
+            addCriterion("is_canji not between", value1, value2, "isCanji");
             return (Criteria) this;
         }
 

@@ -1,19 +1,19 @@
 package com.example.xinggang.Entity;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import java.util.Date;
 
 public class LingliZhongxin {
     private Integer id;
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+
     private Date createTime;
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+
     private Date updateTime;
 
     private String name;
 
     private String picUrl;
+
+    private Integer orderd;
 
     private Integer villageId;
 
@@ -55,6 +55,14 @@ public class LingliZhongxin {
 
     public void setPicUrl(String picUrl) {
         this.picUrl = picUrl == null ? null : picUrl.trim();
+    }
+
+    public Integer getOrderd() {
+        return orderd;
+    }
+
+    public void setOrderd(Integer orderd) {
+        this.orderd = orderd;
     }
 
     public Integer getVillageId() {

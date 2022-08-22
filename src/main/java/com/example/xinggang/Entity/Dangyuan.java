@@ -2,7 +2,7 @@ package com.example.xinggang.Entity;
 
 import java.util.Date;
 
-public class RuoshiQunti {
+public class Dangyuan {
     private Integer id;
 
     private Date createTime;
@@ -13,13 +13,11 @@ public class RuoshiQunti {
 
     private Integer age;
 
-    private String dibaoType;
+    private String phone;
 
-    private String canjiType;
+    private String address;
 
-    private Integer isDibao;
-
-    private Integer isCanji;
+    private Integer wanggeId;
 
     private Integer villageId;
 
@@ -63,36 +61,28 @@ public class RuoshiQunti {
         this.age = age;
     }
 
-    public String getDibaoType() {
-        return dibaoType;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setDibaoType(String dibaoType) {
-        this.dibaoType = dibaoType == null ? null : dibaoType.trim();
+    public void setPhone(String phone) {
+        this.phone = phone == null ? null : phone.trim();
     }
 
-    public String getCanjiType() {
-        return canjiType;
+    public String getAddress() {
+        return address;
     }
 
-    public void setCanjiType(String canjiType) {
-        this.canjiType = canjiType == null ? null : canjiType.trim();
+    public void setAddress(String address) {
+        this.address = address == null ? null : address.trim();
     }
 
-    public Integer getIsDibao() {
-        return isDibao;
+    public Integer getWanggeId() {
+        return wanggeId;
     }
 
-    public void setIsDibao(Integer isDibao) {
-        this.isDibao = isDibao;
-    }
-
-    public Integer getIsCanji() {
-        return isCanji;
-    }
-
-    public void setIsCanji(Integer isCanji) {
-        this.isCanji = isCanji;
+    public void setWanggeId(Integer wanggeId) {
+        this.wanggeId = wanggeId;
     }
 
     public Integer getVillageId() {

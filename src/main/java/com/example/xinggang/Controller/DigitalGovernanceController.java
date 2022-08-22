@@ -2,6 +2,7 @@ package com.example.xinggang.Controller;
 
 import com.example.xinggang.Service.DigitalGovernanceService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -48,6 +49,15 @@ public class DigitalGovernanceController {
     public String dangyuanAcitivity(HttpServletRequest request){
         return digitalGovernanceService.selectDangyuanAcitivityByVillageId(1);
     }
+    @RequestMapping("dangyuan/{wanggeId}")
+    public String dangyuanAcitivity(HttpServletRequest request, @PathVariable("wanggeId") Integer wanggeId){
+        return digitalGovernanceService.selectDangyuanByWangGeId(1,wanggeId);
+    }
+    @RequestMapping("lianxihu/{wanggeId}/{dangyuanId}")
+    public String dangyuanAcitivity(HttpServletRequest request,@PathVariable("wanggeId")Integer wanggeId ,@PathVariable("dangyuanId") Integer dangyuanId){
+        return digitalGovernanceService.selectLianxihuByWangGeId(1,wanggeId,dangyuanId);
+    }
+
     @RequestMapping("ShijianTongban")
     public String shijianTongban(HttpServletRequest request){
         return digitalGovernanceService.selectShijianTongbanByVillageId(1);

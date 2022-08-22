@@ -6,6 +6,7 @@
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="amount" jdbcType="INTEGER" property="amount" />
     <result column="village_id" jdbcType="INTEGER" property="villageId" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -67,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, create_time, update_time, type, village_id
+    id, create_time, update_time, type, amount, village_id
   </sql>
   <select id="selectByExample" parameterType="com.example.xinggang.Entity.TudiLiuzhuanExample" resultMap="BaseResultMap">
     select
@@ -101,9 +102,11 @@
   </delete>
   <insert id="insert" parameterType="com.example.xinggang.Entity.TudiLiuzhuan">
     insert into tudi_liuzhuan (id, create_time, update_time, 
-      type, village_id)
+      type, amount, village_id
+      )
     values (#{id,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{type,jdbcType=VARCHAR}, #{villageId,jdbcType=INTEGER})
+      #{type,jdbcType=VARCHAR}, #{amount,jdbcType=INTEGER}, #{villageId,jdbcType=INTEGER}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.example.xinggang.Entity.TudiLiuzhuan">
     insert into tudi_liuzhuan
@@ -119,6 +122,9 @@
       </if>
       <if test="type != null">
         type,
+      </if>
+      <if test="amount != null">
+        amount,
       </if>
       <if test="villageId != null">
         village_id,
@@ -136,6 +142,9 @@
       </if>
       <if test="type != null">
         #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="amount != null">
+        #{amount,jdbcType=INTEGER},
       </if>
       <if test="villageId != null">
         #{villageId,jdbcType=INTEGER},
@@ -163,6 +172,9 @@
       <if test="record.type != null">
         type = #{record.type,jdbcType=VARCHAR},
       </if>
+      <if test="record.amount != null">
+        amount = #{record.amount,jdbcType=INTEGER},
+      </if>
       <if test="record.villageId != null">
         village_id = #{record.villageId,jdbcType=INTEGER},
       </if>
@@ -177,6 +189,7 @@
       create_time = #{record.createTime,jdbcType=TIMESTAMP},
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       type = #{record.type,jdbcType=VARCHAR},
+      amount = #{record.amount,jdbcType=INTEGER},
       village_id = #{record.villageId,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -194,6 +207,9 @@
       <if test="type != null">
         type = #{type,jdbcType=VARCHAR},
       </if>
+      <if test="amount != null">
+        amount = #{amount,jdbcType=INTEGER},
+      </if>
       <if test="villageId != null">
         village_id = #{villageId,jdbcType=INTEGER},
       </if>
@@ -205,6 +221,7 @@
     set create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       type = #{type,jdbcType=VARCHAR},
+      amount = #{amount,jdbcType=INTEGER},
       village_id = #{villageId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>

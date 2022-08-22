@@ -1,14 +1,12 @@
 package com.example.xinggang.Entity;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import java.util.Date;
 
 public class FengmaoGuankong {
     private Integer id;
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+
     private Date createTime;
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+
     private Date updateTime;
 
     private Integer programId;
@@ -21,9 +19,9 @@ public class FengmaoGuankong {
 
     private String phone;
 
-    private Integer villageId;
+    private String carmeraUrl;
 
-    private String shp;
+    private Integer villageId;
 
     public Integer getId() {
         return id;
@@ -89,19 +87,19 @@ public class FengmaoGuankong {
         this.phone = phone == null ? null : phone.trim();
     }
 
+    public String getCarmeraUrl() {
+        return carmeraUrl;
+    }
+
+    public void setCarmeraUrl(String carmeraUrl) {
+        this.carmeraUrl = carmeraUrl == null ? null : carmeraUrl.trim();
+    }
+
     public Integer getVillageId() {
         return villageId;
     }
 
     public void setVillageId(Integer villageId) {
         this.villageId = villageId;
-    }
-
-    public String getShp() {
-        return shp;
-    }
-
-    public void setShp(String shp) {
-        this.shp = shp == null ? null : shp.trim();
     }
 }

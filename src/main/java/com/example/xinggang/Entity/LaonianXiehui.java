@@ -2,7 +2,7 @@ package com.example.xinggang.Entity;
 
 import java.util.Date;
 
-public class RuoshiQunti {
+public class LaonianXiehui {
     private Integer id;
 
     private Date createTime;
@@ -11,15 +11,11 @@ public class RuoshiQunti {
 
     private String name;
 
-    private Integer age;
+    private Integer sex;
 
-    private String dibaoType;
+    private String zhiwu;
 
-    private String canjiType;
-
-    private Integer isDibao;
-
-    private Integer isCanji;
+    private String phone;
 
     private Integer villageId;
 
@@ -55,44 +51,28 @@ public class RuoshiQunti {
         this.name = name == null ? null : name.trim();
     }
 
-    public Integer getAge() {
-        return age;
+    public Integer getSex() {
+        return sex;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setSex(Integer sex) {
+        this.sex = sex;
     }
 
-    public String getDibaoType() {
-        return dibaoType;
+    public String getZhiwu() {
+        return zhiwu;
     }
 
-    public void setDibaoType(String dibaoType) {
-        this.dibaoType = dibaoType == null ? null : dibaoType.trim();
+    public void setZhiwu(String zhiwu) {
+        this.zhiwu = zhiwu == null ? null : zhiwu.trim();
     }
 
-    public String getCanjiType() {
-        return canjiType;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setCanjiType(String canjiType) {
-        this.canjiType = canjiType == null ? null : canjiType.trim();
-    }
-
-    public Integer getIsDibao() {
-        return isDibao;
-    }
-
-    public void setIsDibao(Integer isDibao) {
-        this.isDibao = isDibao;
-    }
-
-    public Integer getIsCanji() {
-        return isCanji;
-    }
-
-    public void setIsCanji(Integer isCanji) {
-        this.isCanji = isCanji;
+    public void setPhone(String phone) {
+        this.phone = phone == null ? null : phone.trim();
     }
 
     public Integer getVillageId() {

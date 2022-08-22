@@ -7,6 +7,7 @@
     <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="pic_url" jdbcType="VARCHAR" property="picUrl" />
+    <result column="orderd" jdbcType="INTEGER" property="orderd" />
     <result column="village_id" jdbcType="INTEGER" property="villageId" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -68,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    id, create_time, update_time, name, pic_url, village_id
+    id, create_time, update_time, name, pic_url, orderd, village_id
   </sql>
   <select id="selectByExample" parameterType="com.example.xinggang.Entity.LingliZhongxinExample" resultMap="BaseResultMap">
     select
@@ -102,11 +103,11 @@
   </delete>
   <insert id="insert" parameterType="com.example.xinggang.Entity.LingliZhongxin">
     insert into lingli_zhongxin (id, create_time, update_time, 
-      name, pic_url, village_id
-      )
+      name, pic_url, orderd, 
+      village_id)
     values (#{id,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
-      #{name,jdbcType=VARCHAR}, #{picUrl,jdbcType=VARCHAR}, #{villageId,jdbcType=INTEGER}
-      )
+      #{name,jdbcType=VARCHAR}, #{picUrl,jdbcType=VARCHAR}, #{orderd,jdbcType=INTEGER}, 
+      #{villageId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.example.xinggang.Entity.LingliZhongxin">
     insert into lingli_zhongxin
@@ -125,6 +126,9 @@
       </if>
       <if test="picUrl != null">
         pic_url,
+      </if>
+      <if test="orderd != null">
+        orderd,
       </if>
       <if test="villageId != null">
         village_id,
@@ -145,6 +149,9 @@
       </if>
       <if test="picUrl != null">
         #{picUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="orderd != null">
+        #{orderd,jdbcType=INTEGER},
       </if>
       <if test="villageId != null">
         #{villageId,jdbcType=INTEGER},
@@ -175,6 +182,9 @@
       <if test="record.picUrl != null">
         pic_url = #{record.picUrl,jdbcType=VARCHAR},
       </if>
+      <if test="record.orderd != null">
+        orderd = #{record.orderd,jdbcType=INTEGER},
+      </if>
       <if test="record.villageId != null">
         village_id = #{record.villageId,jdbcType=INTEGER},
       </if>
@@ -190,6 +200,7 @@
       update_time = #{record.updateTime,jdbcType=TIMESTAMP},
       name = #{record.name,jdbcType=VARCHAR},
       pic_url = #{record.picUrl,jdbcType=VARCHAR},
+      orderd = #{record.orderd,jdbcType=INTEGER},
       village_id = #{record.villageId,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -210,6 +221,9 @@
       <if test="picUrl != null">
         pic_url = #{picUrl,jdbcType=VARCHAR},
       </if>
+      <if test="orderd != null">
+        orderd = #{orderd,jdbcType=INTEGER},
+      </if>
       <if test="villageId != null">
         village_id = #{villageId,jdbcType=INTEGER},
       </if>
@@ -222,6 +236,7 @@
       update_time = #{updateTime,jdbcType=TIMESTAMP},
       name = #{name,jdbcType=VARCHAR},
       pic_url = #{picUrl,jdbcType=VARCHAR},
+      orderd = #{orderd,jdbcType=INTEGER},
       village_id = #{villageId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>

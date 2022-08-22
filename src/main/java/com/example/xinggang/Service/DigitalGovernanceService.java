@@ -16,6 +16,10 @@ public class DigitalGovernanceService {
     @Autowired
     DangyuanHuodongMapper dangyuanHuodongMapper;
     @Autowired
+    DangyuanMapper dangyuanMapper;
+    @Autowired
+    LianxihuMapper lianxihuMapper;
+    @Autowired
     DangjianZhendiMapper dangjianZhendiMapper;
     @Autowired
     CaomaoYishiMapper caomaoYishiMapper;
@@ -66,6 +70,31 @@ public class DigitalGovernanceService {
         criteria.andVillageIdEqualTo(id);
         List<DangyuanHuodong> dangyuanHuodongList = dangyuanHuodongMapper.selectByExample(dangyuanHuodongExample);
         returnMsg.setData(dangyuanHuodongList);
+        returnMsg.setCode("0");
+        returnMsg.setMsg("成功");
+        return returnMsg.toString();
+    }
+    public String selectDangyuanByWangGeId(Integer id,Integer wanggeId){
+        DangyuanExample dangyuanExample = new DangyuanExample();
+        //是所有类的方法，不是实例的方法
+        DangyuanExample.Criteria criteria = dangyuanExample.createCriteria();
+        criteria.andVillageIdEqualTo(id);
+        criteria.andWanggeIdEqualTo(wanggeId);
+        List<Dangyuan> dangyuanList = dangyuanMapper.selectByExample(dangyuanExample);
+        returnMsg.setData(dangyuanList);
+        returnMsg.setCode("0");
+        returnMsg.setMsg("成功");
+        return returnMsg.toString();
+    }
+    public String selectLianxihuByWangGeId(Integer id,Integer wanggeId,Integer dangyuanId){
+        LianxihuExample lianxihuExample = new LianxihuExample();
+        //是所有类的方法，不是实例的方法
+        LianxihuExample.Criteria criteria = lianxihuExample.createCriteria();
+        criteria.andDangyuanIdEqualTo(dangyuanId);
+        criteria.andWanggeIdEqualTo(wanggeId);
+        criteria.andVillageIdEqualTo(id);
+        List<Lianxihu> lianxihuList = lianxihuMapper.selectByExample(lianxihuExample);
+        returnMsg.setData(lianxihuList);
         returnMsg.setCode("0");
         returnMsg.setMsg("成功");
         return returnMsg.toString();

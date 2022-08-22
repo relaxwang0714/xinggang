@@ -16,21 +16,15 @@ public interface FengmaoGuankongMapper {
 
     int insertSelective(FengmaoGuankong record);
 
-    List<FengmaoGuankong> selectByExampleWithBLOBs(FengmaoGuankongExample example);
-
     List<FengmaoGuankong> selectByExample(FengmaoGuankongExample example);
 
     FengmaoGuankong selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") FengmaoGuankong record, @Param("example") FengmaoGuankongExample example);
 
-    int updateByExampleWithBLOBs(@Param("record") FengmaoGuankong record, @Param("example") FengmaoGuankongExample example);
-
     int updateByExample(@Param("record") FengmaoGuankong record, @Param("example") FengmaoGuankongExample example);
 
     int updateByPrimaryKeySelective(FengmaoGuankong record);
-
-    int updateByPrimaryKeyWithBLOBs(FengmaoGuankong record);
 
     int updateByPrimaryKey(FengmaoGuankong record);
 }

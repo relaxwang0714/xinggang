@@ -425,6 +425,66 @@ public class LingliZhongxinExample {
             return (Criteria) this;
         }
 
+        public Criteria andOrderdIsNull() {
+            addCriterion("orderd is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOrderdIsNotNull() {
+            addCriterion("orderd is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOrderdEqualTo(Integer value) {
+            addCriterion("orderd =", value, "orderd");
+            return (Criteria) this;
+        }
+
+        public Criteria andOrderdNotEqualTo(Integer value) {
+            addCriterion("orderd <>", value, "orderd");
+            return (Criteria) this;
+        }
+
+        public Criteria andOrderdGreaterThan(Integer value) {
+            addCriterion("orderd >", value, "orderd");
+            return (Criteria) this;
+        }
+
+        public Criteria andOrderdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("orderd >=", value, "orderd");
+            return (Criteria) this;
+        }
+
+        public Criteria andOrderdLessThan(Integer value) {
+            addCriterion("orderd <", value, "orderd");
+            return (Criteria) this;
+        }
+
+        public Criteria andOrderdLessThanOrEqualTo(Integer value) {
+            addCriterion("orderd <=", value, "orderd");
+            return (Criteria) this;
+        }
+
+        public Criteria andOrderdIn(List<Integer> values) {
+            addCriterion("orderd in", values, "orderd");
+            return (Criteria) this;
+        }
+
+        public Criteria andOrderdNotIn(List<Integer> values) {
+            addCriterion("orderd not in", values, "orderd");
+            return (Criteria) this;
+        }
+
+        public Criteria andOrderdBetween(Integer value1, Integer value2) {
+            addCriterion("orderd between", value1, value2, "orderd");
+            return (Criteria) this;
+        }
+
+        public Criteria andOrderdNotBetween(Integer value1, Integer value2) {
+            addCriterion("orderd not between", value1, value2, "orderd");
+            return (Criteria) this;
+        }
+
         public Criteria andVillageIdIsNull() {
             addCriterion("village_id is null");
             return (Criteria) this;

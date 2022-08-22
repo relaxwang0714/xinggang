@@ -10,10 +10,8 @@
     <result column="program_ara" jdbcType="VARCHAR" property="programAra" />
     <result column="response_people" jdbcType="VARCHAR" property="responsePeople" />
     <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="carmera_url" jdbcType="VARCHAR" property="carmeraUrl" />
     <result column="village_id" jdbcType="INTEGER" property="villageId" />
-  </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.example.xinggang.Entity.FengmaoGuankong">
-    <result column="shp" jdbcType="LONGVARCHAR" property="shp" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -75,27 +73,8 @@
   </sql>
   <sql id="Base_Column_List">
     id, create_time, update_time, program_id, program_name, program_ara, response_people, 
-    phone, village_id
+    phone, carmera_url, village_id
   </sql>
-  <sql id="Blob_Column_List">
-    shp
-  </sql>
-  <select id="selectByExampleWithBLOBs" parameterType="com.example.xinggang.Entity.FengmaoGuankongExample" resultMap="ResultMapWithBLOBs">
-    select
-    <if test="distinct">
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
-    from fengmao_guankong
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
-  </select>
   <select id="selectByExample" parameterType="com.example.xinggang.Entity.FengmaoGuankongExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
@@ -110,11 +89,9 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
     from fengmao_guankong
     where id = #{id,jdbcType=INTEGER}
   </select>
@@ -131,12 +108,12 @@
   <insert id="insert" parameterType="com.example.xinggang.Entity.FengmaoGuankong">
     insert into fengmao_guankong (id, create_time, update_time, 
       program_id, program_name, program_ara, 
-      response_people, phone, village_id, 
-      shp)
+      response_people, phone, carmera_url, 
+      village_id)
     values (#{id,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{programId,jdbcType=INTEGER}, #{programName,jdbcType=VARCHAR}, #{programAra,jdbcType=VARCHAR}, 
-      #{responsePeople,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{villageId,jdbcType=INTEGER}, 
-      #{shp,jdbcType=LONGVARCHAR})
+      #{responsePeople,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{carmeraUrl,jdbcType=VARCHAR}, 
+      #{villageId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.example.xinggang.Entity.FengmaoGuankong">
     insert into fengmao_guankong
@@ -165,11 +142,11 @@
       <if test="phone != null">
         phone,
       </if>
+      <if test="carmeraUrl != null">
+        carmera_url,
+      </if>
       <if test="villageId != null">
         village_id,
-      </if>
-      <if test="shp != null">
-        shp,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -197,11 +174,11 @@
       <if test="phone != null">
         #{phone,jdbcType=VARCHAR},
       </if>
+      <if test="carmeraUrl != null">
+        #{carmeraUrl,jdbcType=VARCHAR},
+      </if>
       <if test="villageId != null">
         #{villageId,jdbcType=INTEGER},
-      </if>
-      <if test="shp != null">
-        #{shp,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
@@ -238,29 +215,13 @@
       <if test="record.phone != null">
         phone = #{record.phone,jdbcType=VARCHAR},
       </if>
+      <if test="record.carmeraUrl != null">
+        carmera_url = #{record.carmeraUrl,jdbcType=VARCHAR},
+      </if>
       <if test="record.villageId != null">
         village_id = #{record.villageId,jdbcType=INTEGER},
       </if>
-      <if test="record.shp != null">
-        shp = #{record.shp,jdbcType=LONGVARCHAR},
-      </if>
     </set>
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExampleWithBLOBs" parameterType="map">
-    update fengmao_guankong
-    set id = #{record.id,jdbcType=INTEGER},
-      create_time = #{record.createTime,jdbcType=TIMESTAMP},
-      update_time = #{record.updateTime,jdbcType=TIMESTAMP},
-      program_id = #{record.programId,jdbcType=INTEGER},
-      program_name = #{record.programName,jdbcType=VARCHAR},
-      program_ara = #{record.programAra,jdbcType=VARCHAR},
-      response_people = #{record.responsePeople,jdbcType=VARCHAR},
-      phone = #{record.phone,jdbcType=VARCHAR},
-      village_id = #{record.villageId,jdbcType=INTEGER},
-      shp = #{record.shp,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -275,6 +236,7 @@
       program_ara = #{record.programAra,jdbcType=VARCHAR},
       response_people = #{record.responsePeople,jdbcType=VARCHAR},
       phone = #{record.phone,jdbcType=VARCHAR},
+      carmera_url = #{record.carmeraUrl,jdbcType=VARCHAR},
       village_id = #{record.villageId,jdbcType=INTEGER}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -304,26 +266,13 @@
       <if test="phone != null">
         phone = #{phone,jdbcType=VARCHAR},
       </if>
+      <if test="carmeraUrl != null">
+        carmera_url = #{carmeraUrl,jdbcType=VARCHAR},
+      </if>
       <if test="villageId != null">
         village_id = #{villageId,jdbcType=INTEGER},
       </if>
-      <if test="shp != null">
-        shp = #{shp,jdbcType=LONGVARCHAR},
-      </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.example.xinggang.Entity.FengmaoGuankong">
-    update fengmao_guankong
-    set create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP},
-      program_id = #{programId,jdbcType=INTEGER},
-      program_name = #{programName,jdbcType=VARCHAR},
-      program_ara = #{programAra,jdbcType=VARCHAR},
-      response_people = #{responsePeople,jdbcType=VARCHAR},
-      phone = #{phone,jdbcType=VARCHAR},
-      village_id = #{villageId,jdbcType=INTEGER},
-      shp = #{shp,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.example.xinggang.Entity.FengmaoGuankong">
@@ -335,6 +284,7 @@
       program_ara = #{programAra,jdbcType=VARCHAR},
       response_people = #{responsePeople,jdbcType=VARCHAR},
       phone = #{phone,jdbcType=VARCHAR},
+      carmera_url = #{carmeraUrl,jdbcType=VARCHAR},
       village_id = #{villageId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>

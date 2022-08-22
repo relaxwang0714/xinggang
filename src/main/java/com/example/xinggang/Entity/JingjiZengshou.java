@@ -1,21 +1,19 @@
 package com.example.xinggang.Entity;
 
-import com.alibaba.fastjson.annotation.JSONField;
-
 import java.util.Date;
 
 public class JingjiZengshou {
     private Integer id;
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+
     private Date createTime;
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+
     private Date updateTime;
 
     private Integer year;
 
-    private Integer jitiIncome;
+    private Long jitiIncome;
 
-    private Integer nonghuIncome;
+    private Long nonghuIncome;
 
     private Integer villageId;
 
@@ -51,19 +49,19 @@ public class JingjiZengshou {
         this.year = year;
     }
 
-    public Integer getJitiIncome() {
+    public Long getJitiIncome() {
         return jitiIncome;
     }
 
-    public void setJitiIncome(Integer jitiIncome) {
+    public void setJitiIncome(Long jitiIncome) {
         this.jitiIncome = jitiIncome;
     }
 
-    public Integer getNonghuIncome() {
+    public Long getNonghuIncome() {
         return nonghuIncome;
     }
 
-    public void setNonghuIncome(Integer nonghuIncome) {
+    public void setNonghuIncome(Long nonghuIncome) {
         this.nonghuIncome = nonghuIncome;
     }
 
