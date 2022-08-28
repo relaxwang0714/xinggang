@@ -18,6 +18,8 @@ public interface RuoshiQuntiMapper {
 
     List<RuoshiQunti> selectByExample(RuoshiQuntiExample example);
 
+    List<RuoshiQunti> selectByExampleWithBLOBs(RuoshiQuntiExample example);
+
     RuoshiQunti selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") RuoshiQunti record, @Param("example") RuoshiQuntiExample example);

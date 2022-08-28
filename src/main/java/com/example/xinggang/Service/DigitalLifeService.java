@@ -96,7 +96,7 @@ public class DigitalLifeService {
         //是所有类的方法，不是实例的方法
         RuoshiQuntiExample.Criteria criteria = ruoshiQuntiExample.createCriteria();
         criteria.andVillageIdEqualTo(id);
-        List<RuoshiQunti> ruoshiQuntiList = ruoshiQuntiMapper.selectByExample(ruoshiQuntiExample);
+        List<RuoshiQunti> ruoshiQuntiList = ruoshiQuntiMapper.selectByExampleWithBLOBs(ruoshiQuntiExample);
         returnMsg.setData(ruoshiQuntiList);
         returnMsg.setCode("0");
         returnMsg.setMsg("成功");

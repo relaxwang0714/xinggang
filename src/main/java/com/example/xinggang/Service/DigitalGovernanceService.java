@@ -105,7 +105,7 @@ public class DigitalGovernanceService {
         //是所有类的方法，不是实例的方法
         DangjianZhendiExample.Criteria criteria = dangjianZhendiExample.createCriteria();
         criteria.andVillageIdEqualTo(id);
-        List<DangjianZhendi> dangjianZhendiList = dangjianZhendiMapper.selectByExample(dangjianZhendiExample);
+        List<DangjianZhendi> dangjianZhendiList = dangjianZhendiMapper.selectByExampleWithBLOBs(dangjianZhendiExample);
         returnMsg.setData(dangjianZhendiList);
         returnMsg.setCode("0");
         returnMsg.setMsg("成功");
@@ -207,7 +207,7 @@ public class DigitalGovernanceService {
         //是所有类的方法，不是实例的方法
         DianpuExample.Criteria criteria = dianpuExample.createCriteria();
         criteria.andVillageIdEqualTo(id);
-        List<Dianpu> dianpuList = dianpuMapper.selectByExample(dianpuExample);
+        List<Dianpu> dianpuList = dianpuMapper.selectByExampleWithBLOBs(dianpuExample);
         returnMsg.setData(dianpuList);
         returnMsg.setCode("0");
         returnMsg.setMsg("成功");

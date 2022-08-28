@@ -13,6 +13,9 @@
     <result column="is_canji" jdbcType="INTEGER" property="isCanji" />
     <result column="village_id" jdbcType="INTEGER" property="villageId" />
   </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.example.xinggang.Entity.RuoshiQunti">
+    <result column="shp" jdbcType="LONGVARCHAR" property="shp" />
+  </resultMap>
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -75,6 +78,25 @@
     id, create_time, update_time, name, age, dibao_type, canji_type, is_dibao, is_canji, 
     village_id
   </sql>
+  <sql id="Blob_Column_List">
+    shp
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.example.xinggang.Entity.RuoshiQuntiExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from ruoshi_qunti
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
   <select id="selectByExample" parameterType="com.example.xinggang.Entity.RuoshiQuntiExample" resultMap="BaseResultMap">
     select
     <if test="distinct">

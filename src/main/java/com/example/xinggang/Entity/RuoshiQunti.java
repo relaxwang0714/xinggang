@@ -21,6 +21,8 @@ public class RuoshiQunti {
 
     private Integer isCanji;
 
+    private String shp;
+
     private Integer villageId;
 
     public Integer getId() {
@@ -101,5 +103,13 @@ public class RuoshiQunti {
 
     public void setVillageId(Integer villageId) {
         this.villageId = villageId;
+    }
+
+    public String getShp() {
+        return shp;
+    }
+
+    public void setShp(String shp) {
+        this.shp = shp;
     }
 }
