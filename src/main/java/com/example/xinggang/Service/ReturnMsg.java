@@ -52,7 +52,7 @@ public class ReturnMsg {
         jsonObject.put("code",code);
         jsonObject.put("msg",msg);
         //简直在乱写把
-        if(data.size()>0){
+        if(data!=null){
             jsonObject.put("data",data);
         }
         return jsonObject.toJSONString();

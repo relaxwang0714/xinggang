@@ -5,6 +5,9 @@ import com.example.xinggang.Mapper.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -52,6 +55,33 @@ public class DigitalGovernanceService {
         returnMsg.setMsg("成功");
         return returnMsg.toString();
     }
+    public String updateWanggeXinxiById(WanggeXinxi wanggeXinxi){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone( ZoneId.systemDefault()).toInstant());
+        wanggeXinxi.setUpdateTime(date);
+        WanggeXinxiExample wanggeXinxiExample = new WanggeXinxiExample();
+        WanggeXinxiExample.Criteria criteria = wanggeXinxiExample.createCriteria();
+        criteria.andIdEqualTo(wanggeXinxi.getId());
+        int res = wanggeXinxiMapper.updateByExampleSelective(wanggeXinxi,wanggeXinxiExample);
+//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
+//        returnMsg.setData(yetaiFenbuList);
+//        returnMsg.setData();
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("更新成功");
+        return returnMsg.toString();
+    }
+    public String insertWanggeXinxiById(WanggeXinxi wanggeXinxi){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone( ZoneId.systemDefault()).toInstant());
+        wanggeXinxi.setCreateTime(date);
+        wanggeXinxi.setUpdateTime(date);
+        int res = wanggeXinxiMapper.insertSelective(wanggeXinxi);
+//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
+//        returnMsg.setData(yetaiFenbuList);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("添加成功");
+        return returnMsg.toString();
+    }
     public String selectZhihuiDangjianByVillageId(Integer id){
         ZhihuiDangjianExample zhihuiDangjianExample = new ZhihuiDangjianExample();
         //是所有类的方法，不是实例的方法
@@ -61,6 +91,33 @@ public class DigitalGovernanceService {
         returnMsg.setData(zhihuiDangjianList);
         returnMsg.setCode("0");
         returnMsg.setMsg("成功");
+        return returnMsg.toString();
+    }
+    public String updateZhihuiDangjianById(ZhihuiDangjian zhihuiDangjian){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone( ZoneId.systemDefault()).toInstant());
+        zhihuiDangjian.setUpdateTime(date);
+        ZhihuiDangjianExample zhihuiDangjianExample = new ZhihuiDangjianExample();
+        ZhihuiDangjianExample.Criteria criteria = zhihuiDangjianExample.createCriteria();
+        criteria.andIdEqualTo(zhihuiDangjian.getId());
+        int res = zhihuiDangjianMapper.updateByExampleSelective(zhihuiDangjian,zhihuiDangjianExample);
+//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
+//        returnMsg.setData(yetaiFenbuList);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("更新成功");
+//        jsonObject.toString();
+        return returnMsg.toString();
+    }
+    public String insertZhihuiDangjianById(ZhihuiDangjian zhihuiDangjian){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone( ZoneId.systemDefault()).toInstant());
+        zhihuiDangjian.setCreateTime(date);
+        zhihuiDangjian.setUpdateTime(date);
+        int res = zhihuiDangjianMapper.insertSelective(zhihuiDangjian);
+//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
+//        returnMsg.setData(yetaiFenbuList);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("添加成功");
         return returnMsg.toString();
     }
     public String selectDangyuanAcitivityByVillageId(Integer id){
@@ -74,6 +131,33 @@ public class DigitalGovernanceService {
         returnMsg.setMsg("成功");
         return returnMsg.toString();
     }
+    public String updateDangyuanActivityById(DangyuanHuodong dangyuanHuodong){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone( ZoneId.systemDefault()).toInstant());
+        dangyuanHuodong.setUpdateTime(date);
+        DangyuanHuodongExample dangyuanHuodongExample = new DangyuanHuodongExample();
+        DangyuanHuodongExample.Criteria criteria = dangyuanHuodongExample.createCriteria();
+        criteria.andIdEqualTo(dangyuanHuodong.getId());
+        int res = dangyuanHuodongMapper.updateByExampleSelective(dangyuanHuodong,dangyuanHuodongExample);
+//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
+//        returnMsg.setData(yetaiFenbuList);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("更新成功");
+//        jsonObject.toString();
+        return returnMsg.toString();
+    }
+    public String insertDangyuanActivityById(DangyuanHuodong dangyuanHuodong){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone( ZoneId.systemDefault()).toInstant());
+        dangyuanHuodong.setCreateTime(date);
+        dangyuanHuodong.setUpdateTime(date);
+        int res = dangyuanHuodongMapper.insertSelective(dangyuanHuodong);
+//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
+//        returnMsg.setData(yetaiFenbuList);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("添加成功");
+        return returnMsg.toString();
+    }
     public String selectDangyuanByWangGeId(Integer id,Integer wanggeId){
         DangyuanExample dangyuanExample = new DangyuanExample();
         //是所有类的方法，不是实例的方法
@@ -84,6 +168,33 @@ public class DigitalGovernanceService {
         returnMsg.setData(dangyuanList);
         returnMsg.setCode("0");
         returnMsg.setMsg("成功");
+        return returnMsg.toString();
+    }
+    public String updateDangyuanByWangGeId(Dangyuan dangyuan){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone(ZoneId.systemDefault()).toInstant());
+        dangyuan.setUpdateTime(date);
+        DangyuanExample dangyuanExample = new DangyuanExample();
+        DangyuanExample.Criteria criteria = dangyuanExample.createCriteria();
+        criteria.andIdEqualTo(dangyuan.getId());
+        int res = dangyuanMapper.updateByExampleSelective(dangyuan,dangyuanExample);
+//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
+//        returnMsg.setData(yetaiFenbuList);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("更新成功");
+//        jsonObject.toString();
+        return returnMsg.toString();
+    }
+    public String insertDangyuanByWangGeId(Dangyuan dangyuan){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone( ZoneId.systemDefault()).toInstant());
+        dangyuan.setCreateTime(date);
+        dangyuan.setUpdateTime(date);
+        int res = dangyuanMapper.insertSelective(dangyuan);
+//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
+//        returnMsg.setData(yetaiFenbuList);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("添加成功");
         return returnMsg.toString();
     }
     public String selectLianxihuByWangGeId(Integer id,Integer wanggeId,Integer dangyuanId){
@@ -99,7 +210,33 @@ public class DigitalGovernanceService {
         returnMsg.setMsg("成功");
         return returnMsg.toString();
     }
-
+    public String updateLianxihuById(Lianxihu lianxihu){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone( ZoneId.systemDefault()).toInstant());
+        lianxihu.setUpdateTime(date);
+        LianxihuExample lianxihuExample = new LianxihuExample();
+        LianxihuExample.Criteria criteria = lianxihuExample.createCriteria();
+        criteria.andIdEqualTo(lianxihu.getId());
+        int res = lianxihuMapper.updateByExampleSelective(lianxihu,lianxihuExample);
+//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
+//        returnMsg.setData(yetaiFenbuList);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("更新成功");
+//        jsonObject.toString();
+        return returnMsg.toString();
+    }
+    public String insertLianxihuById(Lianxihu lianxihu){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone(ZoneId.systemDefault()).toInstant());
+        lianxihu.setCreateTime(date);
+        lianxihu.setUpdateTime(date);
+        int res = lianxihuMapper.insertSelective(lianxihu);
+//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
+//        returnMsg.setData(yetaiFenbuList);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("添加成功");
+        return returnMsg.toString();
+    }
     public String selectDangjianZhendiByVillageId(Integer id){
         DangjianZhendiExample dangjianZhendiExample = new DangjianZhendiExample();
         //是所有类的方法，不是实例的方法
@@ -109,6 +246,28 @@ public class DigitalGovernanceService {
         returnMsg.setData(dangjianZhendiList);
         returnMsg.setCode("0");
         returnMsg.setMsg("成功");
+        return returnMsg.toString();
+    }
+    public String updateDangjianZhendiById(DangjianZhendi dangjianZhendi){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone( ZoneId.systemDefault()).toInstant());
+        dangjianZhendi.setUpdateTime(date);
+        DangjianZhendiExample dangjianZhendiExample = new DangjianZhendiExample();
+        DangjianZhendiExample.Criteria criteria = dangjianZhendiExample.createCriteria();
+        criteria.andIdEqualTo(dangjianZhendi.getId());
+        int res = dangjianZhendiMapper.updateByExampleSelective(dangjianZhendi,dangjianZhendiExample);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("更新成功");
+        return returnMsg.toString();
+    }
+    public String insertDangjianZhendiById(DangjianZhendi dangjianZhendi){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone(ZoneId.systemDefault()).toInstant());
+        dangjianZhendi.setCreateTime(date);
+        dangjianZhendi.setUpdateTime(date);
+        int res = dangjianZhendiMapper.insertSelective(dangjianZhendi);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("添加成功");
         return returnMsg.toString();
     }
     public String selectCaomaoyishiByVillageId(Integer id){
@@ -122,6 +281,28 @@ public class DigitalGovernanceService {
         returnMsg.setMsg("成功");
         return returnMsg.toString();
     }
+    public String updateCaomaoyishiById(CaomaoYishi caomaoYishi){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone( ZoneId.systemDefault()).toInstant());
+        caomaoYishi.setUpdateTime(date);
+        CaomaoYishiExample caomaoYishiExample = new CaomaoYishiExample();
+        CaomaoYishiExample.Criteria criteria = caomaoYishiExample.createCriteria();
+        criteria.andIdEqualTo(caomaoYishi.getId());
+        int res = caomaoYishiMapper.updateByExampleSelective(caomaoYishi,caomaoYishiExample);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("更新成功");
+        return returnMsg.toString();
+    }
+    public String insertCaomaoyishiById(CaomaoYishi caomaoYishi){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone(ZoneId.systemDefault()).toInstant());
+        caomaoYishi.setCreateTime(date);
+        caomaoYishi.setUpdateTime(date);
+        int res = caomaoYishiMapper.insertSelective(caomaoYishi);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("添加成功");
+        return returnMsg.toString();
+    }
     public String selectCaomaoFengcaiByVillageId(Integer id){
         CaomaoFengcaiExample caomaoFengcaiExample = new CaomaoFengcaiExample();
         //是所有类的方法，不是实例的方法
@@ -131,6 +312,28 @@ public class DigitalGovernanceService {
         returnMsg.setData(caomaoFengcaiList);
         returnMsg.setCode("0");
         returnMsg.setMsg("成功");
+        return returnMsg.toString();
+    }
+    public String updateCaomaoFengcaiById(CaomaoFengcai caomaoFengcai){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone( ZoneId.systemDefault()).toInstant());
+        caomaoFengcai.setUpdateTime(date);
+        CaomaoFengcaiExample caomaoFengcaiExample = new CaomaoFengcaiExample();
+        CaomaoFengcaiExample.Criteria criteria = caomaoFengcaiExample.createCriteria();
+        criteria.andIdEqualTo(caomaoFengcai.getId());
+        int res = caomaoFengcaiMapper.updateByExampleSelective(caomaoFengcai,caomaoFengcaiExample);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("更新成功");
+        return returnMsg.toString();
+    }
+    public String insertCaomaoFengcaiById(CaomaoFengcai caomaoFengcai){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone(ZoneId.systemDefault()).toInstant());
+        caomaoFengcai.setCreateTime(date);
+        caomaoFengcai.setUpdateTime(date);
+        int res = caomaoFengcaiMapper.insertSelective(caomaoFengcai);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("添加成功");
         return returnMsg.toString();
     }
     public String selectXiangmuGongkaiByVillageId(Integer id){
@@ -144,7 +347,28 @@ public class DigitalGovernanceService {
         returnMsg.setMsg("成功");
         return returnMsg.toString();
     }
-
+    public String updateXiangmuGongkaiById(XiangmuGongkai xiangmuGongkai){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone( ZoneId.systemDefault()).toInstant());
+        xiangmuGongkai.setUpdateTime(date);
+        XiangmuGongkaiExample xiangmuGongkaiExample = new XiangmuGongkaiExample();
+        XiangmuGongkaiExample.Criteria criteria = xiangmuGongkaiExample.createCriteria();
+        criteria.andIdEqualTo(xiangmuGongkai.getId());
+        int res = xiangmuGongkaiMapper.updateByExampleSelective(xiangmuGongkai,xiangmuGongkaiExample);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("更新成功");
+        return returnMsg.toString();
+    }
+    public String insertXiangmuGongkaiById(XiangmuGongkai xiangmuGongkai){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone(ZoneId.systemDefault()).toInstant());
+        xiangmuGongkai.setCreateTime(date);
+        xiangmuGongkai.setUpdateTime(date);
+        int res = xiangmuGongkaiMapper.insertSelective(xiangmuGongkai);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("添加成功");
+        return returnMsg.toString();
+    }
     public String selectJianchaLianluozhanByVillageId(Integer id){
         JianchaLianluozhanExample jianchaLianluozhanExample = new JianchaLianluozhanExample();
         //是所有类的方法，不是实例的方法
@@ -156,7 +380,28 @@ public class DigitalGovernanceService {
         returnMsg.setMsg("成功");
         return returnMsg.toString();
     }
-
+    public String updateJianchaLianluozhanById(JianchaLianluozhan jianchaLianluozhan){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone( ZoneId.systemDefault()).toInstant());
+        jianchaLianluozhan.setUpdateTime(date);
+        JianchaLianluozhanExample jianchaLianluozhanExample = new JianchaLianluozhanExample();
+        JianchaLianluozhanExample.Criteria criteria = jianchaLianluozhanExample.createCriteria();
+        criteria.andIdEqualTo(jianchaLianluozhan.getId());
+        int res = jianchaLianluozhanMapper.updateByExampleSelective(jianchaLianluozhan,jianchaLianluozhanExample);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("更新成功");
+        return returnMsg.toString();
+    }
+    public String insertJianchaLianluozhanById(JianchaLianluozhan jianchaLianluozhan){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone(ZoneId.systemDefault()).toInstant());
+        jianchaLianluozhan.setCreateTime(date);
+        jianchaLianluozhan.setUpdateTime(date);
+        int res = jianchaLianluozhanMapper.insertSelective(jianchaLianluozhan);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("添加成功");
+        return returnMsg.toString();
+    }
     public String selectCunminjifenByVillageId(Integer id){
         CunmingJifenExample cunmingJifenExample = new CunmingJifenExample();
         //是所有类的方法，不是实例的方法
@@ -168,7 +413,28 @@ public class DigitalGovernanceService {
         returnMsg.setMsg("成功");
         return returnMsg.toString();
     }
-
+    public String updateCunminjifenById(CunmingJifen cunmingJifen){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone( ZoneId.systemDefault()).toInstant());
+        cunmingJifen.setUpdateTime(date);
+        CunmingJifenExample cunmingJifenExample = new CunmingJifenExample();
+        CunmingJifenExample.Criteria criteria = cunmingJifenExample.createCriteria();
+        criteria.andIdEqualTo(cunmingJifen.getId());
+        int res = cunmingJifenMapper.updateByExampleSelective(cunmingJifen,cunmingJifenExample);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("更新成功");
+        return returnMsg.toString();
+    }
+    public String insertCunminjifenById(CunmingJifen cunmingJifen){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone(ZoneId.systemDefault()).toInstant());
+        cunmingJifen.setCreateTime(date);
+        cunmingJifen.setUpdateTime(date);
+        int res = cunmingJifenMapper.insertSelective(cunmingJifen);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("添加成功");
+        return returnMsg.toString();
+    }
     public String selectShijianTongbanByVillageId(Integer id){
         ShijianTongbanExample shijianTongbanExample = new ShijianTongbanExample();
         //是所有类的方法，不是实例的方法
@@ -178,6 +444,28 @@ public class DigitalGovernanceService {
         returnMsg.setData(shijiantongbanList);
         returnMsg.setCode("0");
         returnMsg.setMsg("成功");
+        return returnMsg.toString();
+    }
+    public String updateShijianTongbanById(ShijianTongban shijianTongban){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone( ZoneId.systemDefault()).toInstant());
+        shijianTongban.setUpdateTime(date);
+        ShijianTongbanExample shijianTongbanExample = new ShijianTongbanExample();
+        ShijianTongbanExample.Criteria criteria = shijianTongbanExample.createCriteria();
+        criteria.andIdEqualTo(shijianTongban.getId());
+        int res = shijianTongbanMapper.updateByExampleSelective(shijianTongban,shijianTongbanExample);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("更新成功");
+        return returnMsg.toString();
+    }
+    public String insertShijianTongbanById(ShijianTongban shijianTongban){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone(ZoneId.systemDefault()).toInstant());
+        shijianTongban.setCreateTime(date);
+        shijianTongban.setUpdateTime(date);
+        int res = shijianTongbanMapper.insertSelective(shijianTongban);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("添加成功");
         return returnMsg.toString();
     }
     public String selectChuzufangByVillageId(Integer id){
@@ -191,6 +479,28 @@ public class DigitalGovernanceService {
         returnMsg.setMsg("成功");
         return returnMsg.toString();
     }
+    public String updateChuzufangById(Chuzufang chuzufang){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone( ZoneId.systemDefault()).toInstant());
+        chuzufang.setUpdateTime(date);
+        ChuzufangExample chuzufangExample = new ChuzufangExample();
+        ChuzufangExample.Criteria criteria = chuzufangExample.createCriteria();
+        criteria.andIdEqualTo(chuzufang.getId());
+        int res = chuzufangMapper.updateByExampleSelective(chuzufang,chuzufangExample);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("更新成功");
+        return returnMsg.toString();
+    }
+    public String insertChuzufangById(Chuzufang chuzufang){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone(ZoneId.systemDefault()).toInstant());
+        chuzufang.setCreateTime(date);
+        chuzufang.setUpdateTime(date);
+        int res = chuzufangMapper.insertSelective(chuzufang);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("添加成功");
+        return returnMsg.toString();
+    }
     public String selectcollegeByVillageId(Integer id){
         CollegeExample collegeExample = new CollegeExample();
         //是所有类的方法，不是实例的方法
@@ -202,6 +512,28 @@ public class DigitalGovernanceService {
         returnMsg.setMsg("成功");
         return returnMsg.toString();
     }
+    public String updatecollegeById(College college){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone( ZoneId.systemDefault()).toInstant());
+        college.setUpdateTime(date);
+        CollegeExample collegeExample = new CollegeExample();
+        CollegeExample.Criteria criteria = collegeExample.createCriteria();
+        criteria.andIdEqualTo(college.getId());
+        int res = collegeMapper.updateByExampleSelective(college,collegeExample);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("更新成功");
+        return returnMsg.toString();
+    }
+    public String insertcollegeById(College college){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone(ZoneId.systemDefault()).toInstant());
+        college.setCreateTime(date);
+        college.setUpdateTime(date);
+        int res = collegeMapper.insertSelective(college);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("添加成功");
+        return returnMsg.toString();
+    }
     public String selectDianpuByVillageId(Integer id){
         DianpuExample dianpuExample = new DianpuExample();
         //是所有类的方法，不是实例的方法
@@ -211,6 +543,28 @@ public class DigitalGovernanceService {
         returnMsg.setData(dianpuList);
         returnMsg.setCode("0");
         returnMsg.setMsg("成功");
+        return returnMsg.toString();
+    }
+    public String updateDianpuById(Dianpu dianpu){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone( ZoneId.systemDefault()).toInstant());
+        dianpu.setUpdateTime(date);
+        DianpuExample dianpuExample = new DianpuExample();
+        DianpuExample.Criteria criteria = dianpuExample.createCriteria();
+        criteria.andIdEqualTo(dianpu.getId());
+        int res = dianpuMapper.updateByExampleSelective(dianpu,dianpuExample);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("更新成功");
+        return returnMsg.toString();
+    }
+    public String insertDianpuById(Dianpu dianpu){
+        LocalDateTime dt = LocalDateTime.now();
+        Date date = Date.from(dt.atZone(ZoneId.systemDefault()).toInstant());
+        dianpu.setCreateTime(date);
+        dianpu.setUpdateTime(date);
+        int res = dianpuMapper.insertSelective(dianpu);
+        returnMsg.setCode(String.valueOf(res));
+        returnMsg.setMsg("添加成功");
         return returnMsg.toString();
     }
 }
