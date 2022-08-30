@@ -63,9 +63,6 @@ public class DigitalGovernanceService {
         WanggeXinxiExample.Criteria criteria = wanggeXinxiExample.createCriteria();
         criteria.andIdEqualTo(wanggeXinxi.getId());
         int res = wanggeXinxiMapper.updateByExampleSelective(wanggeXinxi,wanggeXinxiExample);
-//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
-//        returnMsg.setData(yetaiFenbuList);
-//        returnMsg.setData();
         returnMsg.setCode(String.valueOf(res));
         returnMsg.setMsg("更新成功");
         return returnMsg.toString();
@@ -76,8 +73,6 @@ public class DigitalGovernanceService {
         wanggeXinxi.setCreateTime(date);
         wanggeXinxi.setUpdateTime(date);
         int res = wanggeXinxiMapper.insertSelective(wanggeXinxi);
-//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
-//        returnMsg.setData(yetaiFenbuList);
         returnMsg.setCode(String.valueOf(res));
         returnMsg.setMsg("添加成功");
         return returnMsg.toString();

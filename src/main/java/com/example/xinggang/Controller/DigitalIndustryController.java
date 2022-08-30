@@ -1,9 +1,11 @@
 package com.example.xinggang.Controller;
 
+import com.example.xinggang.Entity.JingjiZengshou;
+import com.example.xinggang.Entity.JitiFangchan;
+import com.example.xinggang.Entity.TudiLiuzhuan;
 import com.example.xinggang.Service.DigitalIndustryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -12,18 +14,41 @@ import javax.servlet.http.HttpServletRequest;
 public class DigitalIndustryController {
     @Autowired
     DigitalIndustryService digitalIndustryService;
-    @RequestMapping("jingjiZengshou")
+    @GetMapping("jingjiZengshou")
     public String jingjiZengshou(HttpServletRequest request){
         return digitalIndustryService.selectJingjiZengshouByVillageId(1);
     }
-    @RequestMapping("tudiLiuzhuan")
+    @PutMapping("jingjiZengshou")
+    public String jingjiZengshouUpdate(HttpServletRequest request, @RequestBody JingjiZengshou jingjiZengshou){
+        return digitalIndustryService.updateJingjiZengshouById(jingjiZengshou);
+    }
+    @PostMapping("jingjiZengshou")
+    public String jingjiZengshouInsert(HttpServletRequest request ,@RequestBody JingjiZengshou jingjiZengshou){
+        return digitalIndustryService.selectJingjiZengshouByVillageId(1);
+    }
+    @GetMapping("tudiLiuzhuan")
     public String tudiLiuzhuan(HttpServletRequest request){
         return digitalIndustryService.selectTudiLiuzhuanByVillageId(1);
+    }
+    @PutMapping("tudiLiuzhuan")
+    public String tudiLiuzhuanUpdate(HttpServletRequest request, @RequestBody TudiLiuzhuan tudiLiuzhuan){
+        return digitalIndustryService.updateTudiLiuzhuanById(tudiLiuzhuan);
+    }
+    @PostMapping("tudiLiuzhuan")
+    public String tudiLiuzhuanInsert(HttpServletRequest request ,@RequestBody TudiLiuzhuan tudiLiuzhuan){
+        return digitalIndustryService.insertTudiLiuzhuanById(tudiLiuzhuan);
     }
     @RequestMapping("jitiFangchan")
     public String jitiFangchan(HttpServletRequest request){
         return digitalIndustryService.selectJitiFangchanByVillageId(1);
     }
-
+    @PutMapping("tudiLiuzhuan")
+    public String jitiFangchanUpdate(HttpServletRequest request, @RequestBody JitiFangchan jitiFangchan){
+        return digitalIndustryService.updateJitiFangchanById(jitiFangchan);
+    }
+    @PostMapping("tudiLiuzhuan")
+    public String jitiFangchanInsert(HttpServletRequest request ,@RequestBody JitiFangchan jitiFangchan){
+        return digitalIndustryService.insertJitiFangchanById(jitiFangchan);
+    }
 
 }
