@@ -38,9 +38,11 @@ public class DigitalJianguanService {
         ZaijianListExample.Criteria criteria = zaijianListExample.createCriteria();
         criteria.andIdEqualTo(zaijianList.getId());
         int res = zaijianListMapper.updateByExampleSelective(zaijianList,zaijianListExample);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("更新成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "更新成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"更新失败");
+        }
     }
     public String insertZaijianById(ZaijianList zaijianList){
         LocalDateTime dt = LocalDateTime.now();
@@ -48,9 +50,11 @@ public class DigitalJianguanService {
         zaijianList.setCreateTime(date);
         zaijianList.setUpdateTime(date);
         int res = zaijianListMapper.insertSelective(zaijianList);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("添加成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "添加成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
     }
     public String selectFengmaoGuankongByVillageId(Integer id){
         FengmaoGuankongExample fengmaoGuankongExample = new FengmaoGuankongExample();
@@ -71,9 +75,11 @@ public class DigitalJianguanService {
         FengmaoGuankongExample.Criteria criteria = fengmaoGuankongExample.createCriteria();
         criteria.andIdEqualTo(fengmaoGuankong.getId());
         int res = fengmaoGuankongMapper.updateByExampleSelective(fengmaoGuankong,fengmaoGuankongExample);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("更新成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "更新成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"更新失败");
+        }
     }
     public String insertFengmaoGuankongById(FengmaoGuankong fengmaoGuankong){
         LocalDateTime dt = LocalDateTime.now();
@@ -81,9 +87,11 @@ public class DigitalJianguanService {
         fengmaoGuankong.setCreateTime(date);
         fengmaoGuankong.setUpdateTime(date);
         int res = fengmaoGuankongMapper.insertSelective(fengmaoGuankong);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("添加成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "添加成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
     }
 
 }

@@ -35,9 +35,11 @@ public class DigitalServiceServices {
         PuhuiJinrongExample.Criteria criteria = puhuiJinrongExample.createCriteria();
         criteria.andIdEqualTo(puhuiJinrong.getId());
         int res = puhuiJinrongMapper.updateByExampleSelective(puhuiJinrong,puhuiJinrongExample);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("更新成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "更新成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"更新失败");
+        }
     }
     public String insertPuhuiJinrongById(PuhuiJinrong puhuiJinrong){
         LocalDateTime dt = LocalDateTime.now();
@@ -45,8 +47,10 @@ public class DigitalServiceServices {
         puhuiJinrong.setCreateTime(date);
         puhuiJinrong.setUpdateTime(date);
         int res = puhuiJinrongMapper.insertSelective(puhuiJinrong);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("添加成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "添加成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
     }
 }

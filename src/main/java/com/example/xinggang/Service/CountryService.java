@@ -32,17 +32,15 @@ public class CountryService {
     @Autowired
     ReturnMsg returnMsg;
 
+
     public String selectYetaiFenbuByVillageId(Integer id){
         YetaiFenbuExample yetaiFenbuExample = new YetaiFenbuExample();
         YetaiFenbuExample.Criteria criteria = yetaiFenbuExample.createCriteria();
         criteria.andVillageIdEqualTo(1);
         List<YetaiFenbu> yetaiFenbuList = yetaiFenbuMapper.selectByExample(yetaiFenbuExample);
-//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
         returnMsg.setData(yetaiFenbuList);
         returnMsg.setCode("0");
         returnMsg.setMsg("成功");
-        returnMsg.toString();
-//        jsonObject.toString();
         return returnMsg.toString();
     }
     public String updateYetaiFenbuById(YetaiFenbu yetaiFenbu){
@@ -53,14 +51,11 @@ public class CountryService {
         YetaiFenbuExample.Criteria criteria = yetaiFenbuExample.createCriteria();
         criteria.andIdEqualTo(yetaiFenbu.getId());
         int res = yetaiFenbuMapper.updateByExampleSelective(yetaiFenbu,yetaiFenbuExample);
-//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
-//        returnMsg.setData(yetaiFenbuList);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("更新成功");
-        returnMsg.toString();
-
-//        jsonObject.toString();
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "更新成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"更新失败");
+        }
     }
     public String insertYetaiFenbuById(YetaiFenbu yetaiFenbu){
         LocalDateTime dt = LocalDateTime.now();
@@ -68,13 +63,11 @@ public class CountryService {
         yetaiFenbu.setCreateTime(date);
         yetaiFenbu.setUpdateTime(date);
         int res = yetaiFenbuMapper.insertSelective(yetaiFenbu);
-//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
-//        returnMsg.setData(yetaiFenbuList);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("添加成功");
-        returnMsg.toString();
-
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "添加成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
     }
     public String selectOverviewByVillageId(Integer id){
         OverviewExample overviewExample = new OverviewExample();
@@ -94,14 +87,11 @@ public class CountryService {
         OverviewExample.Criteria criteria = overviewExample.createCriteria();
         criteria.andIdEqualTo(overview.getId());
         int res = overviewMapper.updateByExampleSelective(overview,overviewExample);
-//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
-//        returnMsg.setData(yetaiFenbuList);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("更新成功");
-        returnMsg.toString();
-
-//        jsonObject.toString();
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "更新成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"更新失败");
+        }
     }
     public String insertOverviewById(Overview overview){
         LocalDateTime dt = LocalDateTime.now();
@@ -109,13 +99,11 @@ public class CountryService {
         overview.setCreateTime(date);
         overview.setUpdateTime(date);
         int res = overviewMapper.insertSelective(overview);
-//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
-//        returnMsg.setData(yetaiFenbuList);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("添加成功");
-        returnMsg.toString();
-
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "添加成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
     }
     public String selectZuimeiByVillageId(Integer id){
         ZuimeiXilieExample zuimeiXilieExample = new ZuimeiXilieExample();
@@ -135,14 +123,11 @@ public class CountryService {
         ZuimeiXilieExample.Criteria criteria = zuimeiXilieExample.createCriteria();
         criteria.andIdEqualTo(zuimeiXilie.getId());
         int res = zuimeiXilieMapper.updateByExampleSelective(zuimeiXilie,zuimeiXilieExample);
-//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
-//        returnMsg.setData(yetaiFenbuList);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("更新成功");
-        returnMsg.toString();
-
-//        jsonObject.toString();
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "更新成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"更新失败");
+        }
     }
     public String insertZuimeiById(ZuimeiXilie zuimeiXilie){
         LocalDateTime dt = LocalDateTime.now();
@@ -150,13 +135,11 @@ public class CountryService {
         zuimeiXilie.setCreateTime(date);
         zuimeiXilie.setUpdateTime(date);
         int res = zuimeiXilieMapper.insertSelective(zuimeiXilie);
-//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
-//        returnMsg.setData(yetaiFenbuList);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("添加成功");
-        returnMsg.toString();
-
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "添加成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
     }
     public String selectXiangtuminsuByVillageId(Integer id){
         XiangtuMinsuExample xiangtuMinsuExample = new XiangtuMinsuExample();
@@ -176,14 +159,11 @@ public class CountryService {
         XiangtuMinsuExample.Criteria criteria = xiangtuMinsuExample.createCriteria();
         criteria.andIdEqualTo(xiangtuMinsu.getId());
         int res = xiangtuMinsuMapper.updateByExampleSelective(xiangtuMinsu,xiangtuMinsuExample);
-//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
-//        returnMsg.setData(yetaiFenbuList);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("更新成功");
-        returnMsg.toString();
-
-//        jsonObject.toString();
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "更新成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"更新失败");
+        }
     }
     public String insertXiangtuminsuById(XiangtuMinsu xiangtuMinsu){
         LocalDateTime dt = LocalDateTime.now();
@@ -191,13 +171,11 @@ public class CountryService {
         xiangtuMinsu.setCreateTime(date);
         xiangtuMinsu.setUpdateTime(date);
         int res = xiangtuMinsuMapper.insertSelective(xiangtuMinsu);
-//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
-//        returnMsg.setData(yetaiFenbuList);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("添加成功");
-        returnMsg.toString();
-
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "添加成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
     }
     public String selectXingangFengcaiByVillageId(Integer id){
         XingangFengcaiExample xingangFengcaiExample = new XingangFengcaiExample();
@@ -217,14 +195,11 @@ public class CountryService {
         XingangFengcaiExample.Criteria criteria = xingangFengcaiExample.createCriteria();
         criteria.andIdEqualTo(xingangFengcai.getId());
         int res = xingangFengcaiMapper.updateByExampleSelective(xingangFengcai,xingangFengcaiExample);
-//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
-//        returnMsg.setData(yetaiFenbuList);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("更新成功");
-        returnMsg.toString();
-
-//        jsonObject.toString();
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "更新成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"更新失败");
+        }
     }
     public String insertXingangFengcaiById(XingangFengcai xingangFengcai){
         LocalDateTime dt = LocalDateTime.now();
@@ -232,13 +207,11 @@ public class CountryService {
         xingangFengcai.setCreateTime(date);
         xingangFengcai.setUpdateTime(date);
         int res = xingangFengcaiMapper.insertSelective(xingangFengcai);
-//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
-//        returnMsg.setData(yetaiFenbuList);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("添加成功");
-        returnMsg.toString();
-
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "添加成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
     }
 
     @DataSource(name = DataSourcesNames.SECOND)
@@ -261,14 +234,11 @@ public class CountryService {
         PeopleStructureExample.Criteria criteria = peopleStructureExample.createCriteria();
         criteria.andIdEqualTo(peopleStructure.getId());
         int res = peopleStructureMapper.updateByExampleSelective(peopleStructure,peopleStructureExample);
-//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
-//        returnMsg.setData(yetaiFenbuList);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("更新成功");
-        returnMsg.toString();
-
-//        jsonObject.toString();
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "更新成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"更新失败");
+        }
     }
     @DataSource(name = DataSourcesNames.SECOND)
     public String insertPeoplestructureById(PeopleStructure peopleStructure){
@@ -277,13 +247,11 @@ public class CountryService {
         peopleStructure.setCreateTime(date);
         peopleStructure.setUpdateTime(date);
         int res = peopleStructureMapper.insertSelective(peopleStructure);
-//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
-//        returnMsg.setData(yetaiFenbuList);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("添加成功");
-        returnMsg.toString();
-
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "添加成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
     }
 
 }

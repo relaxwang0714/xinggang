@@ -59,7 +59,7 @@ public class DigitalLifeController {
     }
     @PostMapping("lingliYouyue")
     public String lingliYouyueInsert(HttpServletRequest request ,@RequestBody LingliYouyue lingliYouyue){
-        return digitalLifeService.updateLingliYouyueById(lingliYouyue);
+        return digitalLifeService.insertLingliYouyueById(lingliYouyue);
     }
     @GetMapping("gongyiGuanggao")
     public String gongyiGuanggao(HttpServletRequest request){
@@ -71,7 +71,7 @@ public class DigitalLifeController {
     }
     @PostMapping("gongyiGuanggao")
     public String gongyiGuanggaoInsert(HttpServletRequest request ,@RequestBody GongyiGuanggao gongyiGuanggao){
-        return digitalLifeService.updateGongyiGuanggaoById(gongyiGuanggao);
+        return digitalLifeService.insertGongyiGuanggaoById(gongyiGuanggao);
     }
     @GetMapping("laonianxiehui")
     public String laonianxiehui(HttpServletRequest request){

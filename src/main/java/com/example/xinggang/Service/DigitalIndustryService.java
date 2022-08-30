@@ -41,12 +41,11 @@ public class DigitalIndustryService {
         JitiFangchanExample.Criteria criteria = jitiFangchanExample.createCriteria();
         criteria.andIdEqualTo(jitiFangchan.getId());
         int res = jitiFangchanMapper.updateByExampleSelective(jitiFangchan,jitiFangchanExample);
-//        JSONObject jsonObject = (JSONObject) JSONObject.toJSON(yetaiFenbuList);
-//        returnMsg.setData(yetaiFenbuList);
-//        returnMsg.setData();
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("更新成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "更新成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"更新失败");
+        }
     }
     public String insertJitiFangchanById(JitiFangchan jitiFangchan){
         LocalDateTime dt = LocalDateTime.now();
@@ -54,9 +53,11 @@ public class DigitalIndustryService {
         jitiFangchan.setCreateTime(date);
         jitiFangchan.setUpdateTime(date);
         int res = jitiFangchanMapper.insertSelective(jitiFangchan);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("添加成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "添加成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
     }
     public String selectTudiLiuzhuanByVillageId(Integer id){
         TudiLiuzhuanExample tudiLiuzhuanExample = new TudiLiuzhuanExample();
@@ -77,9 +78,11 @@ public class DigitalIndustryService {
         TudiLiuzhuanExample.Criteria criteria = tudiLiuzhuanExample.createCriteria();
         criteria.andIdEqualTo(tudiLiuzhuan.getId());
         int res = tudiLiuzhuanMapper.updateByExampleSelective(tudiLiuzhuan,tudiLiuzhuanExample);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("更新成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "更新成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"更新失败");
+        }
     }
     public String insertTudiLiuzhuanById(TudiLiuzhuan tudiLiuzhuan){
         LocalDateTime dt = LocalDateTime.now();
@@ -87,9 +90,11 @@ public class DigitalIndustryService {
         tudiLiuzhuan.setCreateTime(date);
         tudiLiuzhuan.setUpdateTime(date);
         int res = tudiLiuzhuanMapper.insertSelective(tudiLiuzhuan);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("添加成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "添加成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
     }
     public String selectJingjiZengshouByVillageId(Integer id){
         JingjiZengshouExample jingjiZengshouExample = new JingjiZengshouExample();
@@ -110,9 +115,11 @@ public class DigitalIndustryService {
         JingjiZengshouExample.Criteria criteria = jingjiZengshouExample.createCriteria();
         criteria.andIdEqualTo(jingjiZengshou.getId());
         int res = jingjiZengshouMapper.updateByExampleSelective(jingjiZengshou,jingjiZengshouExample);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("更新成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "更新成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"更新失败");
+        }
     }
     public String insertJingjiZengshouById(JingjiZengshou jingjiZengshou){
         LocalDateTime dt = LocalDateTime.now();
@@ -120,9 +127,11 @@ public class DigitalIndustryService {
         jingjiZengshou.setCreateTime(date);
         jingjiZengshou.setUpdateTime(date);
         int res = jingjiZengshouMapper.insertSelective(jingjiZengshou);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("添加成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "添加成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
     }
 
 }

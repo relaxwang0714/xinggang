@@ -47,9 +47,11 @@ public class DigitalLifeService {
         LaonianXiehuiExample.Criteria criteria = laonianXiehuiExample.createCriteria();
         criteria.andIdEqualTo(laonianXiehui.getId());
         int res = laonianXiehuiMapper.updateByExampleSelective(laonianXiehui,laonianXiehuiExample);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("更新成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "更新成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"更新失败");
+        }
     }
     public String insertLaonianXiehuiById(LaonianXiehui laonianXiehui){
         LocalDateTime dt = LocalDateTime.now();
@@ -57,9 +59,11 @@ public class DigitalLifeService {
         laonianXiehui.setCreateTime(date);
         laonianXiehui.setUpdateTime(date);
         int res = laonianXiehuiMapper.insertSelective(laonianXiehui);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("添加成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "添加成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
     }
     public String selectFunvXiehuiByVillageId(Integer id){
         FunvXiehuiExample funvXiehuiExample = new FunvXiehuiExample();
@@ -80,9 +84,11 @@ public class DigitalLifeService {
         FunvXiehuiExample.Criteria criteria = funvXiehuiExample.createCriteria();
         criteria.andIdEqualTo(funvXiehui.getId());
         int res = funvXiehuiMapper.updateByExampleSelective(funvXiehui,funvXiehuiExample);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("更新成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "更新成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"更新失败");
+        }
     }
     public String insertFunvXiehuiById(FunvXiehui funvXiehui){
         LocalDateTime dt = LocalDateTime.now();
@@ -90,9 +96,11 @@ public class DigitalLifeService {
         funvXiehui.setCreateTime(date);
         funvXiehui.setUpdateTime(date);
         int res = funvXiehuiMapper.insertSelective(funvXiehui);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("添加成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "添加成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
     }
 //    public String selectGongyiZuzhiByVillageId(Integer id){
 //        GongyiZuzhiExample gongyiZuzhiExample = new GongyiZuzhiExample();
@@ -124,9 +132,11 @@ public class DigitalLifeService {
         GongyiHuodongExample.Criteria criteria = gongyiHuodongExample.createCriteria();
         criteria.andIdEqualTo(gongyiHuodong.getId());
         int res = gongyiHuodongMapper.updateByExampleSelective(gongyiHuodong,gongyiHuodongExample);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("更新成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "更新成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"更新失败");
+        }
     }
     public String insertGongyiHuodongById(GongyiHuodong gongyiHuodong){
         LocalDateTime dt = LocalDateTime.now();
@@ -134,9 +144,11 @@ public class DigitalLifeService {
         gongyiHuodong.setCreateTime(date);
         gongyiHuodong.setUpdateTime(date);
         int res = gongyiHuodongMapper.insertSelective(gongyiHuodong);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("添加成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "添加成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
     }
     public String selectGongyiGuanggaoByVillageId(Integer id){
         GongyiGuanggaoExample gongyiGuanggaoExample = new GongyiGuanggaoExample();
@@ -157,9 +169,11 @@ public class DigitalLifeService {
         GongyiGuanggaoExample.Criteria criteria = gongyiGuanggaoExample.createCriteria();
         criteria.andIdEqualTo(gongyiGuanggao.getId());
         int res = gongyiGuanggaoMapper.updateByExampleSelective(gongyiGuanggao,gongyiGuanggaoExample);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("更新成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "更新成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"更新失败");
+        }
     }
     public String insertGongyiGuanggaoById(GongyiGuanggao gongyiGuanggao){
         LocalDateTime dt = LocalDateTime.now();
@@ -167,9 +181,11 @@ public class DigitalLifeService {
         gongyiGuanggao.setCreateTime(date);
         gongyiGuanggao.setUpdateTime(date);
         int res = gongyiGuanggaoMapper.insertSelective(gongyiGuanggao);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("添加成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "添加成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
     }
     public String selectLingliYouyueByVillageId(Integer id){
         LingliYouyueExample lingliYouyueExample = new LingliYouyueExample();
@@ -190,9 +206,11 @@ public class DigitalLifeService {
         LingliYouyueExample.Criteria criteria = lingliYouyueExample.createCriteria();
         criteria.andIdEqualTo(lingliYouyue.getId());
         int res = lingliYouyueMapper.updateByExampleSelective(lingliYouyue,lingliYouyueExample);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("更新成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "更新成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"更新失败");
+        }
     }
     public String insertLingliYouyueById(LingliYouyue lingliYouyue){
         LocalDateTime dt = LocalDateTime.now();
@@ -200,9 +218,11 @@ public class DigitalLifeService {
         lingliYouyue.setCreateTime(date);
         lingliYouyue.setUpdateTime(date);
         int res = lingliYouyueMapper.insertSelective(lingliYouyue);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("添加成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "添加成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
     }
     public String selectRuoshiQuntiByVillageId(Integer id){
         RuoshiQuntiExample ruoshiQuntiExample = new RuoshiQuntiExample();
@@ -223,9 +243,11 @@ public class DigitalLifeService {
         RuoshiQuntiExample.Criteria criteria = ruoshiQuntiExample.createCriteria();
         criteria.andIdEqualTo(ruoshiQunti.getId());
         int res = ruoshiQuntiMapper.updateByExampleSelective(ruoshiQunti,ruoshiQuntiExample);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("更新成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "更新成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"更新失败");
+        }
     }
     public String insertRuoshiQuntiById(RuoshiQunti ruoshiQunti){
         LocalDateTime dt = LocalDateTime.now();
@@ -233,9 +255,11 @@ public class DigitalLifeService {
         ruoshiQunti.setCreateTime(date);
         ruoshiQunti.setUpdateTime(date);
         int res = ruoshiQuntiMapper.insertSelective(ruoshiQunti);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("添加成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "添加成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
     }
     public String selectCanjirenByVillageId(Integer id){
         RuoshiQuntiExample ruoshiQuntiExample = new RuoshiQuntiExample();
@@ -293,9 +317,11 @@ public class DigitalLifeService {
         LingliZhongxinExample.Criteria criteria = lingliZhongxinExample.createCriteria();
         criteria.andIdEqualTo(lingliZhongxin.getId());
         int res = lingliZhongxinMapper.updateByExampleSelective(lingliZhongxin,lingliZhongxinExample);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("更新成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "更新成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"更新失败");
+        }
     }
     public String insertLingliZhongxinById(LingliZhongxin lingliZhongxin){
         LocalDateTime dt = LocalDateTime.now();
@@ -303,9 +329,11 @@ public class DigitalLifeService {
         lingliZhongxin.setCreateTime(date);
         lingliZhongxin.setUpdateTime(date);
         int res = lingliZhongxinMapper.insertSelective(lingliZhongxin);
-        returnMsg.setCode(String.valueOf(res));
-        returnMsg.setMsg("添加成功");
-        return returnMsg.toString();
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "添加成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
     }
 
 

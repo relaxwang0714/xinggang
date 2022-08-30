@@ -24,7 +24,7 @@ public class DigitalIndustryController {
     }
     @PostMapping("jingjiZengshou")
     public String jingjiZengshouInsert(HttpServletRequest request ,@RequestBody JingjiZengshou jingjiZengshou){
-        return digitalIndustryService.selectJingjiZengshouByVillageId(1);
+        return digitalIndustryService.insertJingjiZengshouById(jingjiZengshou);
     }
     @GetMapping("tudiLiuzhuan")
     public String tudiLiuzhuan(HttpServletRequest request){
@@ -42,11 +42,11 @@ public class DigitalIndustryController {
     public String jitiFangchan(HttpServletRequest request){
         return digitalIndustryService.selectJitiFangchanByVillageId(1);
     }
-    @PutMapping("tudiLiuzhuan")
+    @PutMapping("jitiFangchan")
     public String jitiFangchanUpdate(HttpServletRequest request, @RequestBody JitiFangchan jitiFangchan){
         return digitalIndustryService.updateJitiFangchanById(jitiFangchan);
     }
-    @PostMapping("tudiLiuzhuan")
+    @PostMapping("jitiFangchan")
     public String jitiFangchanInsert(HttpServletRequest request ,@RequestBody JitiFangchan jitiFangchan){
         return digitalIndustryService.insertJitiFangchanById(jitiFangchan);
     }
