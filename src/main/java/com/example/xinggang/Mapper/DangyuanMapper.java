@@ -12,6 +12,8 @@ public interface DangyuanMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(Dangyuan record);
 
     int insertSelective(Dangyuan record);

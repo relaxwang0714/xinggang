@@ -12,6 +12,8 @@ public interface ZuimeiXilieMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(ZuimeiXilie record);
 
     int insertSelective(ZuimeiXilie record);

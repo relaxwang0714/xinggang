@@ -12,6 +12,8 @@ public interface GongyiZuzhiMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(GongyiZuzhi record);
 
     int insertSelective(GongyiZuzhi record);

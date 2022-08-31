@@ -12,6 +12,8 @@ public interface XiangtuMinsuMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(XiangtuMinsu record);
 
     int insertSelective(XiangtuMinsu record);

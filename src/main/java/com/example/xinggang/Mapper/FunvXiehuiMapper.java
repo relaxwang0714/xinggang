@@ -12,6 +12,8 @@ public interface FunvXiehuiMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(FunvXiehui record);
 
     int insertSelective(FunvXiehui record);

@@ -24,6 +24,10 @@ public class CountryController {
     public String yetaifenbuInsert(HttpServletRequest request, @RequestBody YetaiFenbu yetaiFenbu){
         return countryService.insertYetaiFenbuById(yetaiFenbu);
     }
+    @DeleteMapping("yetaifenbu/{id}")
+    public String yetaifenbuDelete(HttpServletRequest request,@PathVariable("id") Integer id){
+        return countryService.logicdeleteYetaiFenbuById(id);
+    }
     @GetMapping("overview")
     public String Overview(HttpServletRequest request){
         return countryService.selectOverviewByVillageId(1);
@@ -35,6 +39,10 @@ public class CountryController {
     @PostMapping("overview")
     public String OverviewInsert(HttpServletRequest request, @RequestBody Overview overview){
         return countryService.insertOverviewById(overview);
+    }
+    @DeleteMapping("overview/{id}")
+    public String overviewDelete(HttpServletRequest request,@PathVariable("id") Integer id){
+        return countryService.logicdeleteOverviewById(id);
     }
     @GetMapping("zuimei")
     public String Zuimei(HttpServletRequest request){
@@ -48,6 +56,10 @@ public class CountryController {
     public String ZuimeiInsert(HttpServletRequest request, @RequestBody ZuimeiXilie zuimeiXilie){
         return countryService.insertZuimeiById(zuimeiXilie);
     }
+    @DeleteMapping("zuimei/{id}")
+    public String zuimeiDelete(HttpServletRequest request,@PathVariable("id") Integer id){
+        return countryService.logicdeleteZuimeiById(id);
+    }
     @GetMapping("xingangFengcai")
     public String XingangFengcai(HttpServletRequest request){
         return countryService.selectXingangFengcaiByVillageId(1);
@@ -59,6 +71,10 @@ public class CountryController {
     @PostMapping("xingangFengcai")
     public String XingangFengcaiInsert(HttpServletRequest request, @RequestBody XingangFengcai xingangFengcai){
         return countryService.insertXingangFengcaiById(xingangFengcai);
+    }
+    @DeleteMapping("xingangFengcai/{id}")
+    public String xingangFengcaiDelete(HttpServletRequest request,@PathVariable("id") Integer id){
+        return countryService.logicdeleteXingangFengcaiById(id);
     }
     @GetMapping("xiangtuminsu")
     public String Xiangtuminsu(HttpServletRequest request){
@@ -72,6 +88,10 @@ public class CountryController {
     public String XiangtuminsuInsert(HttpServletRequest request, @RequestBody XiangtuMinsu xiangtuMinsu){
         return countryService.insertXiangtuminsuById(xiangtuMinsu);
     }
+    @DeleteMapping("xiangtuminsu/{id}")
+    public String xiangtuminsuDelete(HttpServletRequest request,@PathVariable("id") Integer id){
+        return countryService.logicdeleteXiangtuminsuById(id);
+    }
     @GetMapping("Peoplestructure")
     public String Peoplestructure(HttpServletRequest request){
         return countryService.selectPeoplestructureByVillageId(1);
@@ -83,5 +103,9 @@ public class CountryController {
     @PostMapping("Peoplestructure")
     public String PeoplestructureInsert(HttpServletRequest request, @RequestBody PeopleStructure peopleStructure){
         return countryService.insertPeoplestructureById(peopleStructure);
+    }
+    @DeleteMapping("Peoplestructure/{id}")
+    public String PeoplestructureDelete(HttpServletRequest request,@PathVariable("id") Integer id){
+        return countryService.logicdeletePeoplestructureById(id);
     }
 }

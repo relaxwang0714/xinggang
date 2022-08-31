@@ -24,6 +24,9 @@ public class DigitalServiceController {
     public String puhuiJinrongInsert(HttpServletRequest request, @RequestBody PuhuiJinrong puhuiJinrong){
         return digitalServiceServicess.insertPuhuiJinrongById(puhuiJinrong);
     }
-
+    @DeleteMapping("puhuiJinrong/{id}")
+    public String gongyiHuodongDelete(HttpServletRequest request,@PathVariable("id") Integer id){
+        return digitalServiceServicess.logicDeletePuhuiJinrongById(id);
+    }
 
 }

@@ -12,6 +12,8 @@ public interface RuoshiQuntiMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(RuoshiQunti record);
 
     int insertSelective(RuoshiQunti record);

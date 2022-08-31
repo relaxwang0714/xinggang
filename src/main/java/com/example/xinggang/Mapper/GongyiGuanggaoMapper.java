@@ -12,6 +12,8 @@ public interface GongyiGuanggaoMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(GongyiGuanggao record);
 
     int insertSelective(GongyiGuanggao record);

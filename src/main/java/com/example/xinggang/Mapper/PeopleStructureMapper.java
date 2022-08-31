@@ -12,6 +12,8 @@ public interface PeopleStructureMapper {
 
     int deleteByPrimaryKey(Long id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(PeopleStructure record);
 
     int insertSelective(PeopleStructure record);

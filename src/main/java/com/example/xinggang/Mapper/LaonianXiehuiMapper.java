@@ -12,6 +12,8 @@ public interface LaonianXiehuiMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(LaonianXiehui record);
 
     int insertSelective(LaonianXiehui record);

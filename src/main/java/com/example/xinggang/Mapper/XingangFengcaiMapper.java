@@ -12,6 +12,8 @@ public interface XingangFengcaiMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(XingangFengcai record);
 
     int insertSelective(XingangFengcai record);

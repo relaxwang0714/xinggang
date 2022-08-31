@@ -53,4 +53,13 @@ public class DigitalServiceServices {
             return returnMsg.toString(String.valueOf(res),"添加失败");
         }
     }
+    public String logicDeletePuhuiJinrongById(Integer id){
+
+        int res = puhuiJinrongMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
+        }
+    }
 }

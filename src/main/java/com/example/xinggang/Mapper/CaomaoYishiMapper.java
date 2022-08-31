@@ -12,6 +12,8 @@ public interface CaomaoYishiMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(CaomaoYishi record);
 
     int insertSelective(CaomaoYishi record);

@@ -12,6 +12,8 @@ public interface JitiFangchanMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(JitiFangchan record);
 
     int insertSelective(JitiFangchan record);

@@ -81,6 +81,14 @@ public class DigitalGovernanceService {
             return returnMsg.toString(String.valueOf(res),"添加失败");
         }
     }
+    public String logicdeleteWanggeXinxiById(Integer id){
+        int res = wanggeXinxiMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
+        }
+    }
     public String selectZhihuiDangjianByVillageId(Integer id){
         ZhihuiDangjianExample zhihuiDangjianExample = new ZhihuiDangjianExample();
         //是所有类的方法，不是实例的方法
@@ -116,6 +124,14 @@ public class DigitalGovernanceService {
             return returnMsg.toString(String.valueOf(res), "添加成功");
         }else{
             return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
+    }
+    public String logicdeleteZhihuiDangjianById(Integer id){
+        int res = zhihuiDangjianMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
         }
     }
     public String selectDangyuanAcitivityByVillageId(Integer id){
@@ -155,6 +171,14 @@ public class DigitalGovernanceService {
             return returnMsg.toString(String.valueOf(res),"添加失败");
         }
     }
+    public String logicdeleteDangyuanActivityById(Integer id){
+        int res = dangyuanHuodongMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
+        }
+    }
     public String selectDangyuanByWangGeId(Integer id,Integer wanggeId){
         DangyuanExample dangyuanExample = new DangyuanExample();
         //是所有类的方法，不是实例的方法
@@ -191,6 +215,14 @@ public class DigitalGovernanceService {
             return returnMsg.toString(String.valueOf(res), "添加成功");
         }else{
             return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
+    }
+    public String logicdeleteDangyuanById(Integer id){
+        int res = dangyuanMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
         }
     }
     public String selectLianxihuByWangGeId(Integer id,Integer wanggeId,Integer dangyuanId){
@@ -232,6 +264,14 @@ public class DigitalGovernanceService {
             return returnMsg.toString(String.valueOf(res),"添加失败");
         }
     }
+    public String logicdeleteLianxihuById(Integer id){
+        int res = lianxihuMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
+        }
+    }
     public String selectDangjianZhendiByVillageId(Integer id){
         DangjianZhendiExample dangjianZhendiExample = new DangjianZhendiExample();
         //是所有类的方法，不是实例的方法
@@ -269,6 +309,14 @@ public class DigitalGovernanceService {
             return returnMsg.toString(String.valueOf(res),"添加失败");
         }
     }
+    public String logicdeleteDangjianZhendiById(Integer id){
+        int res = dangjianZhendiMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
+        }
+    }
     public String selectCaomaoyishiByVillageId(Integer id){
         CaomaoYishiExample caomaoYishiExample = new CaomaoYishiExample();
         //是所有类的方法，不是实例的方法
@@ -304,6 +352,14 @@ public class DigitalGovernanceService {
             return returnMsg.toString(String.valueOf(res), "添加成功");
         }else{
             return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
+    }
+    public String logicdeleteCaomaoyishiById(Integer id){
+        int res = caomaoYishiMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
         }
     }
     public String selectCaomaoFengcaiByVillageId(Integer id){
@@ -389,6 +445,15 @@ public class DigitalGovernanceService {
             return returnMsg.toString(String.valueOf(res),"添加失败");
         }
     }
+    public String logicDeleteXiangmuGongkaiById(Integer id){
+
+        int res = caomaoFengcaiMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
+        }
+    }
     public String selectJianchaLianluozhanByVillageId(Integer id){
         JianchaLianluozhanExample jianchaLianluozhanExample = new JianchaLianluozhanExample();
         //是所有类的方法，不是实例的方法
@@ -424,6 +489,15 @@ public class DigitalGovernanceService {
             return returnMsg.toString(String.valueOf(res), "添加成功");
         }else{
             return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
+    }
+    public String logicDeleteJianchaLianluozhanById(Integer id){
+
+        int res = jianchaLianluozhanMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
         }
     }
     public String selectCunminjifenByVillageId(Integer id){
@@ -463,6 +537,15 @@ public class DigitalGovernanceService {
             return returnMsg.toString(String.valueOf(res),"添加失败");
         }
     }
+    public String logicDeleteCunminjifenById(Integer id){
+
+        int res = cunmingJifenMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
+        }
+    }
     public String selectShijianTongbanByVillageId(Integer id){
         ShijianTongbanExample shijianTongbanExample = new ShijianTongbanExample();
         //是所有类的方法，不是实例的方法
@@ -498,6 +581,15 @@ public class DigitalGovernanceService {
             return returnMsg.toString(String.valueOf(res), "添加成功");
         }else{
             return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
+    }
+    public String logicDeleteShijianTongbanById(Integer id){
+
+        int res = shijianTongbanMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
         }
     }
     public String selectChuzufangByVillageId(Integer id){
@@ -537,6 +629,15 @@ public class DigitalGovernanceService {
             return returnMsg.toString(String.valueOf(res),"添加失败");
         }
     }
+    public String logicDeleteChuzufangById(Integer id){
+
+        int res = chuzufangMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
+        }
+    }
     public String selectcollegeByVillageId(Integer id){
         CollegeExample collegeExample = new CollegeExample();
         //是所有类的方法，不是实例的方法
@@ -574,6 +675,15 @@ public class DigitalGovernanceService {
             return returnMsg.toString(String.valueOf(res),"添加失败");
         }
     }
+    public String logicDeleteCollegeById(Integer id){
+
+        int res = collegeMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
+        }
+    }
     public String selectDianpuByVillageId(Integer id){
         DianpuExample dianpuExample = new DianpuExample();
         //是所有类的方法，不是实例的方法
@@ -609,6 +719,15 @@ public class DigitalGovernanceService {
             return returnMsg.toString(String.valueOf(res), "添加成功");
         }else{
             return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
+    }
+    public String logicDeleteDianpuById(Integer id){
+
+        int res = dianpuMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
         }
     }
 }

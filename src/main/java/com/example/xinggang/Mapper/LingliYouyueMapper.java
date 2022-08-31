@@ -12,6 +12,8 @@ public interface LingliYouyueMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(LingliYouyue record);
 
     int insertSelective(LingliYouyue record);

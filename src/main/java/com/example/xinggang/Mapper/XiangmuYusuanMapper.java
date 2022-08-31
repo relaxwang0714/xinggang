@@ -12,6 +12,8 @@ public interface XiangmuYusuanMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(XiangmuYusuan record);
 
     int insertSelective(XiangmuYusuan record);

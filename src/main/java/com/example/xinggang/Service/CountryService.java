@@ -69,6 +69,14 @@ public class CountryService {
             return returnMsg.toString(String.valueOf(res),"添加失败");
         }
     }
+    public String logicdeleteYetaiFenbuById(Integer id){
+        int res = yetaiFenbuMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
+        }
+    }
     public String selectOverviewByVillageId(Integer id){
         OverviewExample overviewExample = new OverviewExample();
         OverviewExample.Criteria criteria = overviewExample.createCriteria();
@@ -103,6 +111,14 @@ public class CountryService {
             return returnMsg.toString(String.valueOf(res), "添加成功");
         }else{
             return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
+    }
+    public String logicdeleteOverviewById(Integer id){
+        int res = overviewMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
         }
     }
     public String selectZuimeiByVillageId(Integer id){
@@ -141,6 +157,14 @@ public class CountryService {
             return returnMsg.toString(String.valueOf(res),"添加失败");
         }
     }
+    public String logicdeleteZuimeiById(Integer id){
+        int res = zuimeiXilieMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
+        }
+    }
     public String selectXiangtuminsuByVillageId(Integer id){
         XiangtuMinsuExample xiangtuMinsuExample = new XiangtuMinsuExample();
         XiangtuMinsuExample.Criteria criteria = xiangtuMinsuExample.createCriteria();
@@ -175,6 +199,14 @@ public class CountryService {
             return returnMsg.toString(String.valueOf(res), "添加成功");
         }else{
             return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
+    }
+    public String logicdeleteXiangtuminsuById(Integer id){
+        int res = xiangtuMinsuMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
         }
     }
     public String selectXingangFengcaiByVillageId(Integer id){
@@ -213,7 +245,14 @@ public class CountryService {
             return returnMsg.toString(String.valueOf(res),"添加失败");
         }
     }
-
+    public String logicdeleteXingangFengcaiById(Integer id){
+        int res = xingangFengcaiMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
+        }
+    }
     @DataSource(name = DataSourcesNames.SECOND)
     public String selectPeoplestructureByVillageId(Integer id){
         PeopleStructureExample peopleStructureExample = new PeopleStructureExample();
@@ -251,6 +290,15 @@ public class CountryService {
             return returnMsg.toString(String.valueOf(res), "添加成功");
         }else{
             return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
+    }
+    @DataSource(name = DataSourcesNames.SECOND)
+    public String logicdeletePeoplestructureById(Integer id){
+        int res = peopleStructureMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
         }
     }
 

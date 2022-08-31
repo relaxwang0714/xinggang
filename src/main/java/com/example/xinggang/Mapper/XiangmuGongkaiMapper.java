@@ -12,6 +12,8 @@ public interface XiangmuGongkaiMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(XiangmuGongkai record);
 
     int insertSelective(XiangmuGongkai record);

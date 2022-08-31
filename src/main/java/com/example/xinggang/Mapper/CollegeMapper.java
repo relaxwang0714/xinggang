@@ -12,6 +12,8 @@ public interface CollegeMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(College record);
 
     int insertSelective(College record);

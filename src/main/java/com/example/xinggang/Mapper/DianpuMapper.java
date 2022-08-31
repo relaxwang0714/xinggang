@@ -12,6 +12,8 @@ public interface DianpuMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(Dianpu record);
 
     int insertSelective(Dianpu record);

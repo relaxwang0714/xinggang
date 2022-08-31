@@ -65,6 +65,15 @@ public class DigitalLifeService {
             return returnMsg.toString(String.valueOf(res),"添加失败");
         }
     }
+    public String logicDeleteLaonianXiehuiById(Integer id){
+
+        int res = laonianXiehuiMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
+        }
+    }
     public String selectFunvXiehuiByVillageId(Integer id){
         FunvXiehuiExample funvXiehuiExample = new FunvXiehuiExample();
         //是所有类的方法，不是实例的方法
@@ -100,6 +109,15 @@ public class DigitalLifeService {
             return returnMsg.toString(String.valueOf(res), "添加成功");
         }else{
             return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
+    }
+    public String logicDeleteFunvXiehuiById(Integer id){
+
+        int res = funvXiehuiMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
         }
     }
 //    public String selectGongyiZuzhiByVillageId(Integer id){
@@ -150,6 +168,15 @@ public class DigitalLifeService {
             return returnMsg.toString(String.valueOf(res),"添加失败");
         }
     }
+    public String logicDeleteGongyiHuodongById(Integer id){
+
+        int res = gongyiHuodongMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
+        }
+    }
     public String selectGongyiGuanggaoByVillageId(Integer id){
         GongyiGuanggaoExample gongyiGuanggaoExample = new GongyiGuanggaoExample();
         //是所有类的方法，不是实例的方法
@@ -185,6 +212,15 @@ public class DigitalLifeService {
             return returnMsg.toString(String.valueOf(res), "添加成功");
         }else{
             return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
+    }
+    public String logicDeleteGongyiGuanggaoById(Integer id){
+
+        int res = gongyiGuanggaoMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
         }
     }
     public String selectLingliYouyueByVillageId(Integer id){
@@ -224,6 +260,15 @@ public class DigitalLifeService {
             return returnMsg.toString(String.valueOf(res),"添加失败");
         }
     }
+    public String logicDeleteLingliYouyueById(Integer id){
+
+        int res = lingliYouyueMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
+        }
+    }
     public String selectRuoshiQuntiByVillageId(Integer id){
         RuoshiQuntiExample ruoshiQuntiExample = new RuoshiQuntiExample();
         //是所有类的方法，不是实例的方法
@@ -259,6 +304,15 @@ public class DigitalLifeService {
             return returnMsg.toString(String.valueOf(res), "添加成功");
         }else{
             return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
+    }
+    public String logicDeleteRuoshiQuntiById(Integer id){
+
+        int res = ruoshiQuntiMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
         }
     }
     public String selectCanjirenByVillageId(Integer id){
@@ -333,6 +387,15 @@ public class DigitalLifeService {
             return returnMsg.toString(String.valueOf(res), "添加成功");
         }else{
             return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
+    }
+    public String logicDeleteLingliZhongxinById(Integer id){
+
+        int res = lingliZhongxinMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
         }
     }
 

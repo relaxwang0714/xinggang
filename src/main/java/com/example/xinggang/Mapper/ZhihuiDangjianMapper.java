@@ -12,6 +12,8 @@ public interface ZhihuiDangjianMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(ZhihuiDangjian record);
 
     int insertSelective(ZhihuiDangjian record);

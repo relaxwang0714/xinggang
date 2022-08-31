@@ -12,6 +12,8 @@ public interface WanggeXinxiMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(WanggeXinxi record);
 
     int insertSelective(WanggeXinxi record);

@@ -12,6 +12,8 @@ public interface ZaijianListMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(ZaijianList record);
 
     int insertSelective(ZaijianList record);

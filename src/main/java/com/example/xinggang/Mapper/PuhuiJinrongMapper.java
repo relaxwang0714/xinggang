@@ -12,6 +12,8 @@ public interface PuhuiJinrongMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(PuhuiJinrong record);
 
     int insertSelective(PuhuiJinrong record);

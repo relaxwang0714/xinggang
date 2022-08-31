@@ -12,6 +12,8 @@ public interface LingliZhongxinMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(LingliZhongxin record);
 
     int insertSelective(LingliZhongxin record);

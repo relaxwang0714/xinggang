@@ -26,6 +26,10 @@ public class DigitalIndustryController {
     public String jingjiZengshouInsert(HttpServletRequest request ,@RequestBody JingjiZengshou jingjiZengshou){
         return digitalIndustryService.insertJingjiZengshouById(jingjiZengshou);
     }
+    @DeleteMapping("jingjiZengshou/{id}")
+    public String jingjiZengshouDelete(HttpServletRequest request,@PathVariable("id") Integer id){
+        return digitalIndustryService.logicDeleteJingjiZengshouById(id);
+    }
     @GetMapping("tudiLiuzhuan")
     public String tudiLiuzhuan(HttpServletRequest request){
         return digitalIndustryService.selectTudiLiuzhuanByVillageId(1);
@@ -38,7 +42,11 @@ public class DigitalIndustryController {
     public String tudiLiuzhuanInsert(HttpServletRequest request ,@RequestBody TudiLiuzhuan tudiLiuzhuan){
         return digitalIndustryService.insertTudiLiuzhuanById(tudiLiuzhuan);
     }
-    @RequestMapping("jitiFangchan")
+    @DeleteMapping("tudiLiuzhuan/{id}")
+    public String tudiLiuzhuanDelete(HttpServletRequest request,@PathVariable("id") Integer id){
+        return digitalIndustryService.logicDeleteTudiLiuzhuanById(id);
+    }
+    @GetMapping("jitiFangchan")
     public String jitiFangchan(HttpServletRequest request){
         return digitalIndustryService.selectJitiFangchanByVillageId(1);
     }
@@ -49,6 +57,10 @@ public class DigitalIndustryController {
     @PostMapping("jitiFangchan")
     public String jitiFangchanInsert(HttpServletRequest request ,@RequestBody JitiFangchan jitiFangchan){
         return digitalIndustryService.insertJitiFangchanById(jitiFangchan);
+    }
+    @DeleteMapping("jitiFangchan/{id}")
+    public String jitiFangchanDelete(HttpServletRequest request,@PathVariable("id") Integer id){
+        return digitalIndustryService.logicDeleteJitiFangchanById(id);
     }
 
 }

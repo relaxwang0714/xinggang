@@ -59,6 +59,15 @@ public class DigitalIndustryService {
             return returnMsg.toString(String.valueOf(res),"添加失败");
         }
     }
+    public String logicDeleteJitiFangchanById(Integer id){
+
+        int res = jitiFangchanMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
+        }
+    }
     public String selectTudiLiuzhuanByVillageId(Integer id){
         TudiLiuzhuanExample tudiLiuzhuanExample = new TudiLiuzhuanExample();
         //是所有类的方法，不是实例的方法
@@ -96,6 +105,15 @@ public class DigitalIndustryService {
             return returnMsg.toString(String.valueOf(res),"添加失败");
         }
     }
+    public String logicDeleteTudiLiuzhuanById(Integer id){
+
+        int res = tudiLiuzhuanMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
+        }
+    }
     public String selectJingjiZengshouByVillageId(Integer id){
         JingjiZengshouExample jingjiZengshouExample = new JingjiZengshouExample();
         //是所有类的方法，不是实例的方法
@@ -131,6 +149,15 @@ public class DigitalIndustryService {
             return returnMsg.toString(String.valueOf(res), "添加成功");
         }else{
             return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
+    }
+    public String logicDeleteJingjiZengshouById(Integer id){
+
+        int res = jingjiZengshouMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
         }
     }
 

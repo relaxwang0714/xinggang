@@ -12,6 +12,8 @@ public interface ChuzufangMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(Chuzufang record);
 
     int insertSelective(Chuzufang record);

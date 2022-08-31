@@ -12,6 +12,8 @@ public interface JingjiZengshouMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(JingjiZengshou record);
 
     int insertSelective(JingjiZengshou record);

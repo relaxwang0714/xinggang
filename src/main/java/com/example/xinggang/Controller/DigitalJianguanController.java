@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 public class DigitalJianguanController {
     @Autowired
     DigitalJianguanService digitalJianguanService;
-    @RequestMapping("fengmaoGuankong")
+    @GetMapping("fengmaoGuankong")
     public String fengmaoGuankong(HttpServletRequest request){
         return digitalJianguanService.selectFengmaoGuankongByVillageId(1);
     }
@@ -26,7 +26,11 @@ public class DigitalJianguanController {
     public String fengmaoGuankongInsert(HttpServletRequest request ,@RequestBody FengmaoGuankong fengmaoGuankong){
         return digitalJianguanService.insertFengmaoGuankongById(fengmaoGuankong);
     }
-    @RequestMapping("zaijian")
+    @DeleteMapping("fengmaoGuankong/{id}")
+    public String fengmaoGuankongDelete(HttpServletRequest request,@PathVariable("id") Integer id){
+        return digitalJianguanService.logicDeleteFengmaoGuankongById(id);
+    }
+    @GetMapping("zaijian")
     public String zaijian(HttpServletRequest request){
         return digitalJianguanService.selectZaijianByVillageId(1);
     }
@@ -37,6 +41,10 @@ public class DigitalJianguanController {
     @PostMapping("zaijian")
     public String zaijianInsert(HttpServletRequest request ,@RequestBody ZaijianList zaijianList){
         return digitalJianguanService.insertZaijianById(zaijianList);
+    }
+    @DeleteMapping("zaijian/{id}")
+    public String zaijianDelete(HttpServletRequest request,@PathVariable("id") Integer id){
+        return digitalJianguanService.logicDeleteZaijianById(id);
     }
 
 }

@@ -25,6 +25,10 @@ public class DigitalLifeController {
     public String lingliZhongxinInsert(HttpServletRequest request ,@RequestBody LingliZhongxin lingliZhongxin){
         return digitalLifeService.insertLingliZhongxinById(lingliZhongxin);
     }
+    @DeleteMapping("lingliZhongxin/{id}")
+    public String lingliZhongxinDelete(HttpServletRequest request,@PathVariable("id") Integer id){
+        return digitalLifeService.logicDeleteLingliZhongxinById(id);
+    }
     @GetMapping("ruoshiQunti")
     public String ruoshiQunti(HttpServletRequest request){
         return digitalLifeService.selectRuoshiQuntiByVillageId(1);
@@ -36,6 +40,10 @@ public class DigitalLifeController {
     @PostMapping("ruoshiQunti")
     public String ruoshiQuntiInsert(HttpServletRequest request ,@RequestBody RuoshiQunti ruoshiQunti){
         return digitalLifeService.insertRuoshiQuntiById(ruoshiQunti);
+    }
+    @DeleteMapping("ruoshiQunti/{id}")
+    public String ruoshiQuntiDelete(HttpServletRequest request,@PathVariable("id") Integer id){
+        return digitalLifeService.logicDeleteRuoshiQuntiById(id);
     }
     @GetMapping("canji")
     public String canjiList(HttpServletRequest request){
@@ -61,6 +69,10 @@ public class DigitalLifeController {
     public String lingliYouyueInsert(HttpServletRequest request ,@RequestBody LingliYouyue lingliYouyue){
         return digitalLifeService.insertLingliYouyueById(lingliYouyue);
     }
+    @DeleteMapping("lingliYouyue/{id}")
+    public String lingliYouyueDelete(HttpServletRequest request,@PathVariable("id") Integer id){
+        return digitalLifeService.logicDeleteLingliYouyueById(id);
+    }
     @GetMapping("gongyiGuanggao")
     public String gongyiGuanggao(HttpServletRequest request){
         return digitalLifeService.selectGongyiGuanggaoByVillageId(1);
@@ -72,6 +84,10 @@ public class DigitalLifeController {
     @PostMapping("gongyiGuanggao")
     public String gongyiGuanggaoInsert(HttpServletRequest request ,@RequestBody GongyiGuanggao gongyiGuanggao){
         return digitalLifeService.insertGongyiGuanggaoById(gongyiGuanggao);
+    }
+    @DeleteMapping("gongyiGuanggao/{id}")
+    public String gongyiGuanggaoDelete(HttpServletRequest request,@PathVariable("id") Integer id){
+        return digitalLifeService.logicDeleteGongyiGuanggaoById(id);
     }
     @GetMapping("laonianxiehui")
     public String laonianxiehui(HttpServletRequest request){
@@ -85,6 +101,10 @@ public class DigitalLifeController {
     public String laonianxiehuiInsert(HttpServletRequest request ,@RequestBody LaonianXiehui laonianXiehui){
         return digitalLifeService.insertLaonianXiehuiById(laonianXiehui);
     }
+    @DeleteMapping("laonianxiehui/{id}")
+    public String laonianxiehuiDelete(HttpServletRequest request,@PathVariable("id") Integer id){
+        return digitalLifeService.logicDeleteLaonianXiehuiById(id);
+    }
     @GetMapping("funvxiehui")
     public String funvxiehui(HttpServletRequest request){
         return digitalLifeService.selectFunvXiehuiByVillageId(1);
@@ -97,6 +117,10 @@ public class DigitalLifeController {
     public String funvxiehuiInsert(HttpServletRequest request ,@RequestBody FunvXiehui funvXiehui){
         return digitalLifeService.insertFunvXiehuiById(funvXiehui);
     }
+    @DeleteMapping("funvxiehui/{id}")
+    public String funvxiehuiDelete(HttpServletRequest request,@PathVariable("id") Integer id){
+        return digitalLifeService.logicDeleteFunvXiehuiById(id);
+    }
     @GetMapping("gongyiHuodong")
     public String gongyiHuodong(HttpServletRequest request){
         return digitalLifeService.selectGongyiHuodongByVillageId(1);
@@ -108,5 +132,9 @@ public class DigitalLifeController {
     @PostMapping("gongyiHuodong")
     public String gongyiHuodongInsert(HttpServletRequest request ,@RequestBody GongyiHuodong gongyiHuodong){
         return digitalLifeService.insertGongyiHuodongById(gongyiHuodong);
+    }
+    @DeleteMapping("gongyiHuodong/{id}")
+    public String gongyiHuodongDelete(HttpServletRequest request,@PathVariable("id") Integer id){
+        return digitalLifeService.logicDeleteGongyiHuodongById(id);
     }
 }

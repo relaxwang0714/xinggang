@@ -56,6 +56,15 @@ public class DigitalJianguanService {
             return returnMsg.toString(String.valueOf(res),"添加失败");
         }
     }
+    public String logicDeleteZaijianById(Integer id){
+
+        int res = zaijianListMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
+        }
+    }
     public String selectFengmaoGuankongByVillageId(Integer id){
         FengmaoGuankongExample fengmaoGuankongExample = new FengmaoGuankongExample();
         //是所有类的方法，不是实例的方法
@@ -91,6 +100,15 @@ public class DigitalJianguanService {
             return returnMsg.toString(String.valueOf(res), "添加成功");
         }else{
             return returnMsg.toString(String.valueOf(res),"添加失败");
+        }
+    }
+    public String logicDeleteFengmaoGuankongById(Integer id){
+
+        int res = fengmaoGuankongMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
         }
     }
 

@@ -12,6 +12,8 @@ public interface JianchaLianluozhanMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(JianchaLianluozhan record);
 
     int insertSelective(JianchaLianluozhan record);

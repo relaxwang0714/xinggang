@@ -12,6 +12,8 @@ public interface ShijianTongbanMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(ShijianTongban record);
 
     int insertSelective(ShijianTongban record);

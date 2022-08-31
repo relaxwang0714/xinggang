@@ -12,6 +12,8 @@ public interface OverviewMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(Overview record);
 
     int insertSelective(Overview record);

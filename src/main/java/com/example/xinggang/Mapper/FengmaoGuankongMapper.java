@@ -12,6 +12,8 @@ public interface FengmaoGuankongMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(FengmaoGuankong record);
 
     int insertSelective(FengmaoGuankong record);

@@ -12,6 +12,8 @@ public interface CunmingJifenMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(CunmingJifen record);
 
     int insertSelective(CunmingJifen record);

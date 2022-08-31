@@ -12,6 +12,8 @@ public interface YetaiFenbuMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(YetaiFenbu record);
 
     int insertSelective(YetaiFenbu record);

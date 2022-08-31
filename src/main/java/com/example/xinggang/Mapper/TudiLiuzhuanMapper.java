@@ -12,6 +12,8 @@ public interface TudiLiuzhuanMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(TudiLiuzhuan record);
 
     int insertSelective(TudiLiuzhuan record);
