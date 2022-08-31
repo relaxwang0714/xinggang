@@ -43,6 +43,7 @@
           </trim>
         </if>
       </foreach>
+      AND is_deleted = 0
     </where>
   </sql>
   <sql id="Update_By_Example_Where_Clause">
@@ -72,6 +73,7 @@
           </trim>
         </if>
       </foreach>
+      AND is_deleted = 0
     </where>
   </sql>
   <sql id="Base_Column_List">
