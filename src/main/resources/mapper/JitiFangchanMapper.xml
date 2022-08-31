@@ -96,6 +96,13 @@
     delete from jiti_fangchan
     where id = #{id,jdbcType=INTEGER}
   </delete>
+  <update id="logicdeleteByPrimaryKey" parameterType="java.lang.Integer">
+    update jiti_fangchan
+    <set>
+      is_deleted = 1,
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
   <delete id="deleteByExample" parameterType="com.example.xinggang.Entity.JitiFangchanExample">
     delete from jiti_fangchan
     <if test="_parameter != null">

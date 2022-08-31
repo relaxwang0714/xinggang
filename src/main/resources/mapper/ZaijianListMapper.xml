@@ -99,6 +99,13 @@
     delete from zaijian_list
     where id = #{id,jdbcType=INTEGER}
   </delete>
+  <update id="logicdeleteByPrimaryKey" parameterType="java.lang.Integer">
+    update zaijian_list
+    <set>
+      is_deleted = 1,
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
   <delete id="deleteByExample" parameterType="com.example.xinggang.Entity.ZaijianListExample">
     delete from zaijian_list
     <if test="_parameter != null">

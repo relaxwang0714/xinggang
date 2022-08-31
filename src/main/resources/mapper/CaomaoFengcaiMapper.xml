@@ -9,6 +9,7 @@
     <result column="mp4_name" jdbcType="VARCHAR" property="mp4Name" />
     <result column="village_id" jdbcType="INTEGER" property="villageId" />
   </resultMap>
+<!--choose 标签是按顺序判断其内部 when 标签中的 test 条件出否成立，如果有一个成立，则 choose 结束。-->
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">
@@ -36,6 +37,7 @@
           </trim>
         </if>
       </foreach>
+      AND is_deleted = 0
     </where>
   </sql>
   <sql id="Update_By_Example_Where_Clause">
@@ -65,6 +67,7 @@
           </trim>
         </if>
       </foreach>
+      AND is_deleted = 0
     </where>
   </sql>
   <sql id="Base_Column_List">
@@ -94,6 +97,13 @@
     delete from caomao_fengcai
     where id = #{id,jdbcType=INTEGER}
   </delete>
+  <update id="logicdeleteByPrimaryKey" parameterType="java.lang.Integer">
+    update caomao_fengcai
+    <set>
+      is_deleted = 1,
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
   <delete id="deleteByExample" parameterType="com.example.xinggang.Entity.CaomaoFengcaiExample">
     delete from caomao_fengcai
     <if test="_parameter != null">

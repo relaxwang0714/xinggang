@@ -343,6 +343,15 @@ public class DigitalGovernanceService {
             return returnMsg.toString(String.valueOf(res),"添加失败");
         }
     }
+    public String logicDeleteCaomaoFengcaiById(Integer id){
+
+        int res = caomaoFengcaiMapper.logicdeleteByPrimaryKey(id);
+        if(res ==1) {
+            return returnMsg.toString(String.valueOf(res), "删除成功");
+        }else{
+            return returnMsg.toString(String.valueOf(res),"删除失败");
+        }
+    }
     public String selectXiangmuGongkaiByVillageId(Integer id){
         XiangmuGongkaiExample xiangmuGongkaiExample = new XiangmuGongkaiExample();
         //是所有类的方法，不是实例的方法

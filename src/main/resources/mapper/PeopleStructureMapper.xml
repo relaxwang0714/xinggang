@@ -98,6 +98,13 @@
     delete from people_structure
     where id = #{id,jdbcType=BIGINT}
   </delete>
+  <update id="logicdeleteByPrimaryKey" parameterType="java.lang.Integer">
+    update people_structure
+    <set>
+      is_deleted = 1,
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
   <delete id="deleteByExample" parameterType="com.example.xinggang.Entity.PeopleStructureExample">
     delete from people_structure
     <if test="_parameter != null">

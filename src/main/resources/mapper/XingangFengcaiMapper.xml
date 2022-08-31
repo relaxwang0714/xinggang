@@ -95,6 +95,13 @@
     delete from xingang_fengcai
     where id = #{id,jdbcType=INTEGER}
   </delete>
+  <update id="logicdeleteByPrimaryKey" parameterType="java.lang.Integer">
+    update xingang_fengcai
+    <set>
+      is_deleted = 1,
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
   <delete id="deleteByExample" parameterType="com.example.xinggang.Entity.XingangFengcaiExample">
     delete from xingang_fengcai
     <if test="_parameter != null">

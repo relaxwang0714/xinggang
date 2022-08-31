@@ -21,8 +21,12 @@ public class DigitalGovernanceController {
         return digitalGovernanceService.updateCaomaoFengcaiById(caomaoFengcai);
     }
     @PostMapping("CaomaoFengcai")
-    public String CaomaoFengcaiInsert(HttpServletRequest request,@RequestBody CaomaoFengcai caomaoFengcai){
+    public String CaomaoFengcaiLogicDelete(HttpServletRequest request,@RequestBody CaomaoFengcai caomaoFengcai){
         return digitalGovernanceService.insertCaomaoFengcaiById(caomaoFengcai);
+    }
+    @DeleteMapping("CaomaoFengcai/{id}")
+    public String CaomaoFengcaiInsert(HttpServletRequest request,@PathVariable("id") Integer id){
+        return digitalGovernanceService.logicDeleteCaomaoFengcaiById(id);
     }
     @GetMapping("Caomaoyishi")
     public String Caomaoyishi(HttpServletRequest request){

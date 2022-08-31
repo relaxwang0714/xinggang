@@ -12,6 +12,8 @@ public interface CaomaoFengcaiMapper {
 
     int deleteByPrimaryKey(Integer id);
 
+    int logicdeleteByPrimaryKey(Integer id);
+
     int insert(CaomaoFengcai record);
 
     int insertSelective(CaomaoFengcai record);
