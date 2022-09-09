@@ -5,6 +5,7 @@ import com.example.xinggang.Entity.*;
 import com.example.xinggang.Mapper.*;
 import com.example.xinggang.utils.Annotation.DataSource;
 import com.example.xinggang.utils.DataSourcesNames;
+import com.example.xinggang.utils.RedisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,8 +33,14 @@ public class CountryService {
     @Autowired
     ReturnMsg returnMsg;
 
+    @Autowired
+    RedisUtils redisUtils;
+
 
     public String selectYetaiFenbuByVillageId(Integer id){
+        redisUtils.setCacheObject("hhh", "123");
+        String str = redisUtils.getCacheObject("hhh");
+        System.out.println(str);
         YetaiFenbuExample yetaiFenbuExample = new YetaiFenbuExample();
         YetaiFenbuExample.Criteria criteria = yetaiFenbuExample.createCriteria();
         criteria.andVillageIdEqualTo(1);
